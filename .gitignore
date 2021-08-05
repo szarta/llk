@@ -1,4 +1,10 @@
 __pycache__
+*.swp
 *.pyc
-secret_settings.py
-logs/
+*.pid
+*.restart
+*.db3
+server/conf/secret_settings.py
+server/logs/
+web/static/*
+web/media/*
