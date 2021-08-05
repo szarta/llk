@@ -5,6 +5,7 @@ __pycache__
 *.restart
 *.db3
 server/conf/secret_settings.py
+server/conf/settings.py
 server/logs/
 web/static/*
 web/media/*
