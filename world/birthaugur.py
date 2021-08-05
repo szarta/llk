@@ -38,7 +38,7 @@ class BirthAugur(Enum):
 BirthAugurTable = {
     str(BirthAugur.HarshWinter): {
         "name": "Harsh Winter",
-        "desc": "Born into a harsh winter.",
+        "desc": "Born into a harsh winter",
         "effects": [
             AuraEffect.MeleeAttack,
             AuraEffect.RangeAttack
@@ -53,28 +53,28 @@ BirthAugurTable = {
     },
     str(BirthAugur.FortunateDate): {
         "name": "Fortunate Date",
-        "desc": "Born on a lucky date.",
+        "desc": "Born on a lucky date",
         "effects": [
             AuraEffect.RangeAttack
         ]
     },
     str(BirthAugur.RaisedByWolves): {
         "name": "Raised by Wolves",
-        "desc": "Raised by wolves.",
+        "desc": "Raised by wolves",
         "effects": [
             AuraEffect.UnarmedAttack
         ]
     },
     str(BirthAugur.ConceivedOnHorseback): {
         "name": "Conceived on Horseback",
-        "desc": "Conceived on horseback.",
+        "desc": "Conceived on horseback",
         "effects": [
             AuraEffect.MountedAttack
         ]
     },
     str(BirthAugur.BornOnTheBattlefield): {
         "name": "Born on the Battlefield",
-        "desc": "Born on the battlefield.",
+        "desc": "Born on the battlefield",
         "effects": [
             AuraEffect.MeleeDamage,
             AuraEffect.RangeDamage,
@@ -83,25 +83,25 @@ BirthAugurTable = {
     },
     str(BirthAugur.PathOfTheBear): {
         "name": "Path of the Bear",
-        "desc": "Followed the Path of the Bear.",
+        "desc": "Followed the Path of the Bear",
         "effects": [
             AuraEffect.MeleeDamage
         ]
     },
     str(BirthAugur.Hawkeye): {
         "name": "Hawkeye",
-        "desc": "Has hawkeye vision.",
+        "desc": "Has hawkeye vision",
         "effects": [
             AuraEffect.RangeDamage
         ]
     },
     str(BirthAugur.PackHunter): {
         "name": "Pack Hunter",
-        "desc": "An innate pack hunter."
+        "desc": "An innate pack hunter"
     },
     str(BirthAugur.BornUnderTheLoom): {
         "name": "Born Under the Loom",
-        "desc": "Born under the loom.",
+        "desc": "Born under the loom",
         "effects": [
             AuraEffect.Skill
         ]
@@ -116,42 +116,42 @@ BirthAugurTable = {
     },
     str(BirthAugur.FourLeafClover): {
         "name": "Four Leaf Clover",
-        "desc": "Influenced by the four leaf clover.",
+        "desc": "Influenced by the four leaf clover",
         "effects": [
             AuraEffect.FindSecretDoors
         ]
     },
     str(BirthAugur.SeventhChild): {
         "name": "Seventh Child",
-        "desc": "The seventh child of the house.",
+        "desc": "The seventh child of the house",
         "effects": [
             AuraEffect.SpellCheck
         ]
     },
     str(BirthAugur.TheRagingStorm): {
         "name": "The Raging Storm",
-        "desc": "Born in the midst of a raging storm.",
+        "desc": "Born in the midst of a raging storm",
         "effects": [
             AuraEffect.SpellDamage
         ]
     },
     str(BirthAugur.RighteousHeart): {
         "name": "Righteous Heart",
-        "desc": "A heart that yearns for righteousness.",
+        "desc": "A heart that yearns for righteousness",
         "effects": [
             AuraEffect.TurnUnholy
         ]
     },
     str(BirthAugur.SurvivedPlague): {
         "name": "Survived Plague",
-        "desc": "Survived a deadly plague.",
+        "desc": "Survived a deadly plague",
         "effects": [
             AuraEffect.Healing
         ]
     },
     str(BirthAugur.LuckySign): {
         "name": "Lucky Sign",
-        "desc": "Has birthmark of a lucky sign.",
+        "desc": "Has birthmark of a lucky sign",
         "effects": [
             AuraEffect.ReflexSave,
             AuraEffect.FortitudeSave,
@@ -167,56 +167,56 @@ BirthAugurTable = {
     },
     str(BirthAugur.SurvivedSpiderBite): {
         "name": "Survived Spider Bite",
-        "desc": "Survived the bite of a deadly spider.",
+        "desc": "Survived the bite of a deadly spider",
         "effects": [
             AuraEffect.PoisonSave
         ]
     },
     str(BirthAugur.StruckByLightning): {
         "name": "Struck By Lightning",
-        "desc": "Was struck by lightning and lived.",
+        "desc": "Was struck by lightning and lived",
         "effects": [
             AuraEffect.ReflexSave
         ]
     },
     str(BirthAugur.LivedThroughFamine): {
         "name": "Lived Through Famine",
-        "desc": "Lived through a severe famine.",
+        "desc": "Lived through a severe famine",
         "effects": [
             AuraEffect.FortitudeSave
         ]
     },
     str(BirthAugur.ResistedTemptation): {
         "name": "Resisted Temptation",
-        "desc": "Resisted a powerful temptation.",
+        "desc": "Resisted a powerful temptation",
         "effects": [
             AuraEffect.WillpowerSave
         ]
     },
     str(BirthAugur.CharmedHouse): {
         "name": "Charmed House",
-        "desc": "Born to a charmed house.",
+        "desc": "Born to a charmed house",
         "effects": [
             AuraEffect.AC
         ]
     },
     str(BirthAugur.SpeedOfTheCobra): {
         "name": "Speed of the Cobra",
-        "desc": "Has the speed of a cobra.",
+        "desc": "Has the speed of a cobra",
         "effects": [
             AuraEffect.Initiative
         ]
     },
     str(BirthAugur.BountifulHarvest): {
         "name": "Bountiful Harvest",
-        "desc": "Childhood blessed by bountiful harvests.",
+        "desc": "Childhood blessed by bountiful harvests",
         "effects": [
             AuraEffect.HP
         ]
     },
     str(BirthAugur.WarriorsArm): {
         "name": "Warrior's Arm",
-        "desc": "Has the arms of a true warrior.",
+        "desc": "Has the arms of a true warrior",
         "modifier_multiplier": 2,
         "effects": [
             AuraEffect.CriticalHit
@@ -224,14 +224,14 @@ BirthAugurTable = {
     },
     str(BirthAugur.UnholyHouse): {
         "name": "Unholy House",
-        "desc": "Born to an unholy household.",
+        "desc": "Born to an unholy household",
         "effects": [
             AuraEffect.Corruption
         ]
     },
     str(BirthAugur.TheBrokenStar): {
         "name": "The Broken Star",
-        "desc": "Born in the light of a Broken Star.",
+        "desc": "Born in the light of a Broken Star",
         "modifier_multiplier": 2,
         "effects": [
             AuraEffect.Fumble
@@ -239,14 +239,14 @@ BirthAugurTable = {
     },
     str(BirthAugur.Birdsong): {
         "name": "Birdsong",
-        "desc": "Heard the songs of birds in the womb.",
+        "desc": "Heard the songs of birds in the womb",
         "effects": [
             AuraEffect.Language
         ]
     },
     str(BirthAugur.WildChild): {
         "name": "Wild Child",
-        "desc": "Was a wild child.",
+        "desc": "Was a wild child",
         "modifier_multiplier": 5,
         "effects": [
             AuraEffect.Speed

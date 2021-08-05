@@ -19,6 +19,7 @@ from world.occupations import OccupationTable
 import typeclasses.auras as auras
 from world.birthaugur import BirthAugur
 from world.birthaugur import BirthAugurTable
+from world.races import Race
 
 from world.weapons import WeaponType
 
@@ -38,19 +39,19 @@ def roll_dice(num_dice, die_type):
 
 def calculate_ability_modifier(ability_score):
     modifier = 0
-    if(ability_score <= 3):
+    if ability_score <= 3:
         modifier = -3
-    elif(ability_score <= 5):
+    elif ability_score <= 5:
         modifier = -2
-    elif(ability_score <= 8):
+    elif ability_score <= 8:
         modifier = -1
-    elif(ability_score <= 12):
+    elif ability_score <= 12:
         modifier = 0
-    elif(ability_score <= 15):
+    elif ability_score <= 15:
         modifier = 1
-    elif(ability_score <= 17):
+    elif ability_score <= 17:
         modifier = 2
-    else:
+    elif ability_score > 17:
         modifier = 3
 
     return modifier
@@ -110,8 +111,8 @@ class Character(gendersub.GenderCharacter):
         self.db.stamina = roll_dice(3, 6)
         self.db.personality = roll_dice(3, 6)
         self.db.intelligence = roll_dice(3, 6)
-        #self.db.luck = roll_dice(3, 6)
-        self.db.luck = 14
+        self.db.luck = roll_dice(3, 6)
+        self.db.base_speed = 30
 
         self.db.birth_augur = BirthAugur(roll_dice(1, 30))
 
@@ -157,13 +158,30 @@ class Character(gendersub.GenderCharacter):
 
         self.db.current_hp = self.db.max_hp
 
-        # self.db.occupation = Occupation(roll_dice(1, 100))
-        self.db.occupation = Occupation(1)
-        self.db.weapon_proficiencies.append(
-            OccupationTable[str(self.db.occupation)]["weapon_proficiencies"]
-        )
+        self.db.occupation = Occupation(roll_dice(1, 100))
+        occupation = str(self.db.occupation)
+        if "weapon_proficiencies" in OccupationTable[occupation]:
+            self.db.weapon_proficiencies.append(
+                OccupationTable[occupation]["weapon_proficiencies"]
+            )
 
-        for item in OccupationTable[str(self.db.occupation)]["items"]:
+        for item in OccupationTable[occupation]["items"]:
             item_clone = dict(item)
             item_clone["location"] = self
             evennia.prototypes.spawner.spawn(item_clone)
+
+        if "race" in OccupationTable[occupation]:
+            self.db.race = OccupationTable[occupation]["race"]
+        else:
+            self.db.race = Race.Human
+
+        if self.db.race == Race.Dwarf or self.db.race == Race.Halfling:
+            self.db.base_speed = 20
+
+        if self.db.intelligence >= 8:
+            if self.db.race == Race.Dwarf:
+                self.db.known_languages.append(Language.Dwarf)
+            elif self.db.race == Race.Elf:
+                self.db.known_languages.append(Language.Elf)
+            elif self.db.race == Race.Halfling:
+                self.db.known_languages.append(Language.Halfling)

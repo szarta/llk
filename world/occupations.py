@@ -1,8 +1,7 @@
 from enum import Enum
-from evennia.utils import create
-import typeclasses.items as items
 from world.weapons import WeaponType
 import world.prototypes as prototypes
+from world.races import Race
 
 
 class Occupation(Enum):
@@ -77,7 +76,7 @@ class Occupation(Enum):
     HunterTwo = 69
     IndenturedServant = 70
     Jester = 71
-    Jewler = 72
+    Jeweler = 72
     Locksmith = 73
     Mendicant = 74
     Mercenary = 75
@@ -139,834 +138,633 @@ OccupationTable = {
         "starting_loc": []
     },
     str(Occupation.Astrologer): {
-        "name": "Alchemist",
+        "name": "Astrologer",
         "items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.Barber): {
-        "name": "Alchemist",
+        "name": "Barber",
         "items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.Beadle): {
-        "name": "Alchemist",
+        "name": "Beadle",
         "items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.Beekeeper): {
-        "name": "Alchemist",
+        "name": "Beekeeper",
         "items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.Blacksmith): {
-        "name": "Alchemist",
+        "name": "Blacksmith",
         "items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.Butcher): {
-        "name": "Alchemist",
+        "name": "Butcher",
         "items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.CaravanGuard): {
-        "name": "Alchemist",
+        "name": "Caravan Guard",
         "items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.Cheesemaker): {
-        "name": "Alchemist",
+        "name": "Cheesemaker",
         "items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.Cobbler): {
-        "name": "Alchemist",
+        "name": "Cobbler",
         "items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.ConfidenceArtist): {
-        "name": "Alchemist",
+        "name": "Confidence Artist",
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.Cooper): {
-        "name": "Alchemist",
+        "name": "Cooper",
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.Costermonger): {
-        "name": "Alchemist",
+        "name": "Costermonger",
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.Cutpurse): {
-        "name": "Alchemist",
+        "name": "Cutpurse",
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.DitchDigger): {
-        "name": "Alchemist",
+        "name": "Ditch Digger",
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.DockWorker): {
-        "name": "Alchemist",
+        "name": "Dock Worker",
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.DwarvenApothecarist): {
-        "name": "Alchemist",
+        "name": "Apothecarist",
+        "race": Race.Dwarf,
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.DwarvenBlacksmith): {
-        "name": "Alchemist",
+        "name": "Blacksmith",
+        "race": Race.Dwarf,
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.DwarvenChestMaker): {
-        "name": "Alchemist",
+        "name": "Chest Maker",
+        "race": Race.Dwarf,
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.DwarvenHerder): {
-        "name": "Alchemist",
+        "name": "Herder",
+        "race": Race.Dwarf,
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.DwarvenMiner): {
-        "name": "Alchemist",
+        "name": "Miner",
+        "race": Race.Dwarf,
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.DwarvenMinerTwo): {
-        "name": "Alchemist",
+        "name": "Miner",
+        "race": Race.Dwarf,
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.DwarvenMushroomFarmer): {
-        "name": "Alchemist",
+        "name": "Mushroom Farmer",
+        "race": Race.Dwarf,
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.DwarvenRatCatcher): {
-        "name": "Alchemist",
+        "name": "Rat Catcher",
+        "race": Race.Dwarf,
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.DwarvenStonemason): {
-        "name": "Alchemist",
+        "name": "Stonemason",
+        "race": Race.Dwarf,
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.DwarvenStonemasonTwo): {
-        "name": "Alchemist",
+        "name": "Stonemason",
+        "race": Race.Dwarf,
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.ElvenArtisan): {
-        "name": "Alchemist",
+        "name": "Artisan",
+        "race": Race.Elf,
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.ElvenBarrister): {
-        "name": "Alchemist",
+        "name": "Barrister",
+        "race": Race.Elf,
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.ElvenChandler): {
-        "name": "Alchemist",
+        "name": "Chandler",
+        "race": Race.Elf,
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.ElvenFalconer): {
-        "name": "Alchemist",
+        "name": "Falconer",
+        "race": Race.Elf,
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.ElvenForester): {
-        "name": "Alchemist",
+        "name": "Forester",
+        "race": Race.Elf,
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.ElvenForesterTwo): {
-        "name": "Alchemist",
+        "name": "Forester",
+        "race": Race.Elf,
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.ElvenGlassblower): {
-        "name": "Alchemist",
+        "name": "Glassblower",
+        "race": Race.Elf,
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.ElvenNavigator): {
-        "name": "Alchemist",
+        "name": "Navigator",
+        "race": Race.Elf,
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.ElvenSage): {
-        "name": "Alchemist",
+        "name": "Sage",
+        "race": Race.Elf,
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.ElvenSageTwo): {
-        "name": "Alchemist",
+        "name": "Sage",
+        "race": Race.Elf,
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.Farmer): {
-        "name": "Alchemist",
+        "name": "Farmer",
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.FarmerTwo): {
-        "name": "Alchemist",
+        "name": "Farmer",
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.FarmerThree): {
-        "name": "Alchemist",
+        "name": "Farmer",
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.FarmerFour): {
-        "name": "Alchemist",
+        "name": "Farmer",
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.FarmerFive): {
-        "name": "Alchemist",
+        "name": "Farmer",
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.FarmerSix): {
-        "name": "Alchemist",
+        "name": "Farmer",
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.FarmerSeven): {
-        "name": "Alchemist",
+        "name": "Farmer",
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.FarmerEight): {
-        "name": "Alchemist",
+        "name": "Farmer",
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.FarmerNine): {
-        "name": "Alchemist",
+        "name": "Farmer",
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.FortuneTeller): {
-        "name": "Alchemist",
+        "name": "Fortune Teller",
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.Gambler): {
-        "name": "Alchemist",
+        "name": "Gambler",
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.Gongfarmer): {
-        "name": "Alchemist",
+        "name": "Gongfarmer",
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.Gravedigger): {
-        "name": "Alchemist",
+        "name": "Grave Digger",
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.GravediggerTwo): {
-        "name": "Alchemist",
+        "name": "Grave Digger",
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.GuildBeggar): {
-        "name": "Alchemist",
+        "name": "Guild Beggar",
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.GuildBeggarTwo): {
-        "name": "Alchemist",
+        "name": "Guild Beggar",
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.HalflingChickenButcher): {
         "name": "Alchemist",
+        "race": Race.Halfling,
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.HalflingDyer): {
-        "name": "Alchemist",
+        "name": "Dyer",
+        "race": Race.Halfling,
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.HalflingDyerTwo): {
-        "name": "Alchemist",
+        "name": "Dyer",
+        "race": Race.Halfling,
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.HalflingGloveMaker): {
-        "name": "Alchemist",
+        "name": "Glovemaker",
+        "race": Race.Halfling,
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.HalflingGypsy): {
-        "name": "Alchemist",
+        "name": "Gypsy",
+        "race": Race.Halfling,
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.HalflingHaberdasher): {
-        "name": "Alchemist",
+        "name": "Haberdasher",
+        "race": Race.Halfling,
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.HalflingMariner): {
-        "name": "Alchemist",
+        "name": "Mariner",
+        "race": Race.Halfling,
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.HalflingMoneylender): {
-        "name": "Alchemist",
+        "name": "Moneylender",
+        "race": Race.Halfling,
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.HalflingTrader): {
-        "name": "Alchemist",
+        "name": "Trader",
+        "race": Race.Halfling,
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.HalflingVagrant): {
-        "name": "Alchemist",
+        "name": "Vagrant",
+        "race": Race.Halfling,
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.Healer): {
-        "name": "Alchemist",
+        "name": "Healer",
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.Herbalist): {
-        "name": "Alchemist",
+        "name": "Herbalist",
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.Herder): {
-        "name": "Alchemist",
+        "name": "Herder",
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.Hunter): {
-        "name": "Alchemist",
+        "name": "Hunter",
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.HunterTwo): {
-        "name": "Alchemist",
+        "name": "Hunter",
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.IndenturedServant): {
-        "name": "Alchemist",
+        "name": "Indentured Servant",
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.Jester): {
-        "name": "Alchemist",
+        "name": "Jester",
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
-    str(Occupation.Jewler): {
-        "name": "Alchemist",
+    str(Occupation.Jeweler): {
+        "name": "Jeweler",
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.Locksmith): {
-        "name": "Alchemist",
+        "name": "Locksmith",
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.Mendicant): {
-        "name": "Alchemist",
+        "name": "Mendicant",
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.Mercenary): {
-        "name": "Alchemist",
+        "name": "Mercenary",
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.Merchant): {
-        "name": "Alchemist",
+        "name": "Merchant",
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.Baker): {
-        "name": "Alchemist",
+        "name": "Baker",
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.Minstrel): {
-        "name": "Alchemist",
+        "name": "Minstrel",
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.Noble): {
-        "name": "Alchemist",
+        "name": "Noble",
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.Orphan): {
-        "name": "Alchemist",
+        "name": "Orphan",
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.Ostler): {
-        "name": "Alchemist",
+        "name": "Ostler",
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.Outlaw): {
-        "name": "Alchemist",
+        "name": "Outlaw",
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.RopeMaker): {
-        "name": "Alchemist",
+        "name": "Rope Maker",
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.Scribe): {
-        "name": "Alchemist",
+        "name": "Scribe",
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.Shaman): {
-        "name": "Alchemist",
+        "name": "Shaman",
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.Slave): {
-        "name": "Alchemist",
+        "name": "Slave",
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.Smuggler): {
-        "name": "Alchemist",
+        "name": "Smuggler",
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.Soldier): {
-        "name": "Alchemist",
+        "name": "Soldier",
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.Squire): {
-        "name": "Alchemist",
+        "name": "Squire",
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
@@ -976,94 +774,73 @@ OccupationTable = {
         "items": [
 
         ],
-        "wearable_items": [
-
-        ],
         "starting_loc": []
     },
     str(Occupation.TaxCollector): {
-        "name": "Alchemist",
+        "name": "Tax Collector",
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.Trapper): {
-        "name": "Alchemist",
+        "name": "Trapper",
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.TrapperTwo): {
-        "name": "Alchemist",
+        "name": "Trapper",
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.Urchin): {
-        "name": "Alchemist",
+        "name": "Urchin",
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.Wainwright): {
-        "name": "Alchemist",
+        "name": "Wainwright",
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.Weaver): {
-        "name": "Alchemist",
+        "name": "Weaver",
         "items": [
-
-        ],
-        "wearable_items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.WizardsApprentice): {
-        "name": "Alchemist",
+        "name": "Wizard's Apprentice",
         "items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.Woodcutter): {
-        "name": "Alchemist",
+        "name": "Woodcutter",
         "items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.WoodcutterTwo): {
-        "name": "Alchemist",
+        "name": "Woodcutter",
         "items": [
 
         ],
         "starting_loc": []
     },
     str(Occupation.WoodcutterThree): {
-        "name": "Alchemist",
+        "name": "Woodcutter",
         "items": [
 
         ],

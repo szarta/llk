@@ -103,6 +103,8 @@ class AuraEffect(Enum):
             return "pers"
         elif self == AuraEffect.Intelligence:
             return "int"
+        elif self == AuraEffect.Corruption:
+            return "corruption"
         elif self == AuraEffect.Luck:
             return "luck"
         elif self == AuraEffect.Age:
@@ -111,6 +113,8 @@ class AuraEffect(Enum):
             return "light"
         elif self == AuraEffect.Darkness:
             return "darkness"
+        else:
+            return "unknown"
 
 
 class PersistentEffectAura(DefaultObject):
@@ -131,10 +135,11 @@ class PersistentEffectAura(DefaultObject):
         modifier_description = ""
         for k in self.db.effect_modifiers.keys():
             effect_desc = k.short_desc()
-            modifier = self.db.effect_modifiers[k]
+            modifier = int(self.db.effect_modifiers[k])
             sign = "-"
             if modifier >= 0:
                 sign = "+"
+            modifier = abs(modifier)
 
             modifier_description = f'{modifier_description},{effect_desc} {sign}{modifier}'
 

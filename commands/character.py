@@ -15,16 +15,16 @@ class CmdSheet(Command):
         stat_sheet = """
 +--------------------------------------------------------
 | Name: {name}
-| Age: {age}, Gender: {gender}
+| Age: {age}, Race: {race}, Gender: {gender}
 | Birth Augur: {augur}
-| Alignment: {align}
 | Occupation: {occupation}
+| Alignment: {align}
 | Wealth: {gold}gp, {silver}sp, {copper}cp
 | Level: {level}, XP: {xp}
 +--------------------------------------------------------
 | Str  : {strength}  |  HP : {cur_hp} (max: {max_hp})
 | Agi  : {agility}  |  AC : {ac}
-| Stam : {stamina}  |
+| Stam : {stamina}  |  Speed : {speed}
 | Pers : {personality}  |
 | Int  : {intelligence}  |
 | Luck : {luck}  |
@@ -47,19 +47,19 @@ class CmdSheet(Command):
                 if first_line:
                     first_line = False
 
-                current_line.rstrip(",")
-                languages += current_line
+                languages += current_line.rstrip().rstrip(",")
                 current_line = "\n|   "
 
-            current_line = f'{current_line}{lang_str},'
+            current_line = f'{current_line}{lang_str}, '
 
-        languages += current_line.rstrip(",")
+        languages += current_line.rstrip().rstrip(",")
 
         augur_str = BirthAugurTable[str(caller.db.birth_augur)]["desc"]
 
         caller.msg(stat_sheet.format(
             name=caller.name,
             age=caller.db.age,
+            race=caller.db.race,
             level=caller.db.level,
             xp=caller.db.xp,
             gender=caller.db.gender,
@@ -79,6 +79,7 @@ class CmdSheet(Command):
             gold=f'{caller.db.gold}'.rjust(3, " "),
             silver=f'{caller.db.silver}'.rjust(3, " "),
             copper=f'{caller.db.copper}'.rjust(3, " "),
+            speed=f'{caller.db.base_speed}'.rjust(2, " ")
         ))
 
 
@@ -133,9 +134,13 @@ class CmdModifiers(Command):
 
         if has_effects:
             effects += "\n+--------------------------------------------------------"
+        else:
+            effects += "\n| None"
+            effects += "\n+--------------------------------------------------------"
+
 
         str_modifier = calculate_ability_modifier(caller.db.strength)
-        str_effect = "to melee atk/dmg rolls."
+        str_effect = "to melee atk/dmg rolls"
 
         agi_modifier = calculate_ability_modifier(caller.db.agility)
         agi_effect = "to AC, ranged atk, initiative, reflex save"
