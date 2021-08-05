@@ -4,6 +4,7 @@ from typeclasses.items import WearLocation
 from typeclasses.characters import calculate_ability_modifier
 from evennia.utils import utils
 from world.birthaugur import BirthAugurTable
+from world.occupations import OccupationTable
 
 
 class CmdSheet(Command):
@@ -62,7 +63,7 @@ class CmdSheet(Command):
             level=caller.db.level,
             xp=caller.db.xp,
             gender=caller.db.gender,
-            occupation=caller.db.occupation,
+            occupation=OccupationTable[str(caller.db.occupation)]["name"],
             align=str(caller.db.alignment),
             augur=augur_str,
             strength=f'{caller.db.strength}'.rjust(2, " "),

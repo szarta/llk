@@ -8,13 +8,14 @@ creation commands.
 
 """
 import random
+import evennia
 from enum import Enum
 
 from evennia.utils import create
 from evennia.contrib import gendersub
 from world.languages import Language
 from world.occupations import Occupation
-from world.occupations import fill_initial_occupation_benefits
+from world.occupations import OccupationTable
 import typeclasses.auras as auras
 from world.birthaugur import BirthAugur
 from world.birthaugur import BirthAugurTable
@@ -158,4 +159,11 @@ class Character(gendersub.GenderCharacter):
 
         # self.db.occupation = Occupation(roll_dice(1, 100))
         self.db.occupation = Occupation(1)
-        fill_initial_occupation_benefits(self, self.db.occupation)
+        self.db.weapon_proficiencies.append(
+            OccupationTable[str(self.db.occupation)]["weapon_proficiencies"]
+        )
+
+        for item in OccupationTable[str(self.db.occupation)]["items"]:
+            item_clone = dict(item)
+            item_clone["location"] = self
+            evennia.prototypes.spawner.spawn(item_clone)

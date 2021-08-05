@@ -116,6 +116,7 @@ class LiquidContainer(Item):
         self.db.liquid_contents = "unknown liquid"
 
     def update_description(self):
+        # TODO: we need to call this at some point after item creation...
         level = str(self.db.fill_level)
         if self.db.fill_level == FillLevel.Empty:
             level = "An {}".format(level)

@@ -47,6 +47,52 @@ Possible keywords are:
 See the `spawn` command and `evennia.prototypes.spawner.spawn` for more info.
 
 """
+from typeclasses.items import WearLocation
+from typeclasses.items import FillLevel
+
+
+SMOCK = {
+    "typeclass": "typeclasses.items.WearableItem",
+    "key": "smock",
+    "desc": "A brown leather smock.",
+    "possible_wear_locations": [WearLocation.Body]
+}
+
+WHITE_LINEN_SHIRT = {
+    "typeclass": "typeclasses.items.WearableItem",
+    "key": "white linen shirt",
+    "desc": "A white long-sleeved linen shirt.",
+    "possible_wear_locations": [WearLocation.Torso]
+}
+
+BLACK_CANVAS_SHOES = {
+    "typeclass": "typeclasses.items.WearableItem",
+    "key": "black canvas shoes",
+    "desc": "A well-worn pair of black-dyed hemp canvas shoes.",
+    "possible_wear_locations": [WearLocation.Feet]
+}
+
+GRAY_LINEN_PANTS = {
+    "typeclass": "typeclasses.items.WearableItem",
+    "key": "gray linen pants",
+    "desc": "A pair of gray linen pants shoes.",
+    "possible_wear_locations": [WearLocation.Legs]
+}
+
+WOODEN_STAFF = {
+    "typeclass": "typeclasses.items.Staff",
+    "key": "wooden staff",
+    "desc": "A simple wooden staff."
+}
+
+FLASK_OF_OIL = {
+    "typeclass": "typeclasses.items.LiquidContainer",
+    "key": "flask",
+    "desc": "A simple flask.",
+    "fill_level": FillLevel.Full,
+    "liquid_contents": "oil"
+}
+
 
 ## example of module-based prototypes using
 ## the variable name as `prototype_key` and
