@@ -39,6 +39,9 @@ class AuraEffect(Enum):
     Age = 34
     Light = 35
     Darkness = 36
+    AttackUnholy = 37
+    DamageUnholy = 38
+    # TODO: likely address the other banes here
 
     def short_desc(self):
         if self == AuraEffect.MeleeAttack:
@@ -113,6 +116,10 @@ class AuraEffect(Enum):
             return "light"
         elif self == AuraEffect.Darkness:
             return "darkness"
+        elif self == AuraEffect.AttackUnholy:
+            return "atk unholy"
+        elif self == AuraEffect.DamageUnholy:
+            return "dmg unholy"
         else:
             return "unknown"
 
@@ -135,7 +142,7 @@ class PersistentEffectAura(DefaultObject):
         modifier_description = ""
         for k in self.db.effect_modifiers.keys():
             effect_desc = k.short_desc()
-            modifier = int(self.db.effect_modifiers[k])
+            modifier = self.db.effect_modifiers[k]
             sign = "-"
             if modifier >= 0:
                 sign = "+"

@@ -51,10 +51,10 @@ from typeclasses.items import WearLocation
 from typeclasses.items import FillLevel
 
 
-SMOCK = {
+APRON = {
     "typeclass": "typeclasses.items.WearableItem",
-    "key": "smock",
-    "desc": "A brown leather smock.",
+    "key": "apron",
+    "desc": "A brown leather apron.",
     "possible_wear_locations": [WearLocation.Body]
 }
 
@@ -72,6 +72,48 @@ BLACK_CANVAS_SHOES = {
     "possible_wear_locations": [WearLocation.Feet]
 }
 
+IRON_HELMET = {
+    "typeclass": "typeclasses.items.WearableItem",
+    "key": "iron helmet",
+    "desc": "An iron helmet.",
+    "armor_modifier": 1,
+    "possible_wear_locations": [WearLocation.Head]
+}
+
+LARGE_BLACK_LEATHER_CLOAK = {
+    "typeclass": "typeclasses.items.WearableItem",
+    "key": "large black leather cloak",
+    "desc": "A large black leather cloak.",
+    "possible_wear_locations": [WearLocation.Back]
+}
+
+SPYGLASS = {
+    "typeclass": "typeclasses.items.Item",
+    "key": "spyglass",
+    "desc": "A spyglass.",
+}
+
+SHOEHORN = {
+    "typeclass": "typeclasses.items.Item",
+    "key": "shoehorn",
+    "desc": "A shoehorn.",
+}
+
+ORNATE_GOLD_RING = {
+    "typeclass": "typeclasses.items.WearableItem",
+    "key": "ornate gold ring",
+    "desc": "An ornate gold ring.",
+    "possible_wear_locations": [WearLocation.Fingers],
+    "copper_value": 100
+}
+
+GIANT_RUBY_GEM = {
+    "typeclass": "typeclasses.items.Item",
+    "key": "giant ruby gem",
+    "desc": "A giant ruby gem.",
+    "copper_value": 200
+}
+
 GRAY_LINEN_PANTS = {
     "typeclass": "typeclasses.items.WearableItem",
     "key": "gray linen pants",
@@ -85,12 +127,112 @@ WOODEN_STAFF = {
     "desc": "A simple wooden staff."
 }
 
+WOODEN_STORAGE_BARREL = {
+    "typeclass": "typeclasses.items.DryGoodsContainer",
+    "key": "wooden storage barrel",
+    "desc": "A wooden storage barrel.",
+    "max_items": 16
+}
+
+DRIED_ASSORTED_FRUIT = {
+    "typeclass": "typeclasses.items.Item",
+    "key": "dried assorted fruit",
+    "desc": "A handful of dried assorted fruit.",
+    "is_edible": True
+}
+
+JAR_OF_HONEY = {
+    "typeclass": "typeclasses.items.LiquidContainer",
+    "key": "clay jar",
+    "desc": "A clay jar.",
+    "fill_level": FillLevel.Full,
+    "liquid_contents": "honey"
+}
+
 FLASK_OF_OIL = {
     "typeclass": "typeclasses.items.LiquidContainer",
     "key": "flask",
     "desc": "A simple flask.",
     "fill_level": FillLevel.Full,
     "liquid_contents": "oil"
+}
+
+WOODEN_CLUB = {
+    "typeclass": "typeclasses.items.Club",
+    "key": "wooden club",
+    "desc": "A simple wooden club."
+}
+
+BALL_PEEN_HAMMER = {
+    "typeclass": "typeclasses.items.Club",
+    "key": "ball-peen hammer",
+    "desc": "A ball-peen hammer."
+}
+
+IRON_CROWBAR = {
+    "typeclass": "typeclasses.items.Club",
+    "key": "iron crowbar",
+    "desc": "An iron crowbar."
+}
+
+IRON_LONG_SWORD = {
+    "typeclass": "typeclasses.items.Longsword",
+    "key": "iron longsword",
+    "desc": "An iron longsword."
+}
+
+SHOVEL = {
+    "typeclass": "typeclasses.items.Staff",
+    "key": "shovel",
+    "desc": "A shovel with a wooden handle and iron spade."
+}
+
+SMALL_IRON_DAGGER = {
+    "typeclass": "typeclasses.items.Dagger",
+    "key": "small iron dagger",
+    "desc": "A small iron dagger."
+}
+
+IRON_PARING_KNIFE = {
+    "typeclass": "typeclasses.items.Dagger",
+    "key": "iron paring knife",
+    "desc": "An iron paring knife."
+}
+
+SCISSORS = {
+    "typeclass": "typeclasses.items.Dagger",
+    "key": "scissors",
+    "desc": "A pair of scissors."
+}
+
+IRON_SHORT_SWORD = {
+    "typeclass": "typeclasses.items.ShortSword",
+    "key": "iron short sword",
+    "desc": "An iron short sword."
+}
+
+FOLDING_STRAIGHT_EDGE_RAZOR = {
+    "typeclass": "typeclasses.items.Dagger",
+    "key": "folding straight-edge razor",
+    "desc": "A folding straight-edge razor."
+}
+
+SHARP_STITCHING_AWL = {
+    "typeclass": "typeclasses.items.Dagger",
+    "key": "sharp stitching awl",
+    "desc": "A sharp stitching awl."
+}
+
+WOODEN_CUDGEL = {
+    "typeclass": "typeclasses.items.Staff",
+    "key": "wooden cudgel",
+    "desc": "A wooden cudgel."
+}
+
+SHARP_IRON_CLEAVER = {
+    "typeclass": "typeclasses.items.Axe",
+    "key": "sharp iron cleaver",
+    "desc": "A sharp iron cleaver."
 }
 
 

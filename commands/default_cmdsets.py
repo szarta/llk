@@ -36,6 +36,7 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         self.add(character.CmdSheet)
         self.add(character.CmdModifiers)
         self.add(character.CmdEquipment)
+        self.add(character.CmdInventory)
 
 
 class AccountCmdSet(default_cmds.AccountCmdSet):

@@ -1,6 +1,8 @@
 from evennia import DefaultObject
 from enum import Enum
 from world.weapons import WeaponType
+from evennia.utils import create
+import typeclasses.auras as auras
 
 
 class WearLocation(Enum):
@@ -84,6 +86,12 @@ class Item(DefaultObject):
         self.db.decay_rate = 0
         self.db.durability = 0
 
+        # 10 cp = 1sp, copper to silver
+        # 10 sp = 1gp, silver to gold
+        # 10 gp = 1ep, gold to electrum
+        # 10 ep = 1pp, electrum to platinum
+        self.copper_value = 0
+
         self.db.desc = "This is an item."
 
 
@@ -104,6 +112,24 @@ class DryGoodsContainer(Item):
         self.db.max_items = 0
         self.db.lockable = False
         self.db.unlock_item = None
+
+
+class HolyItem(Item):
+
+    def at_object_creation(self):
+        super().at_object_creation()
+
+        aura = create.create_object(
+            auras.PersistentEffectAura,
+            key="Holy Aura",
+            location=self,
+            attributes=[
+                ("desc", "A holy aura."),
+                ("effect_modifiers", {auras.AuraEffect.TurnUnholy: 1})
+            ]
+        )
+
+        self.db.auras.append(aura)
 
 
 class LiquidContainer(Item):
@@ -184,7 +210,6 @@ class Blackjack(Weapon):
 
         self.db.die_rolls = 1
         self.db.die_face = 3
-        self.db.two_handed = False
 
         self.db.backstab_die_rolls = 2
         self.db.backstab_die_face = 6
@@ -198,7 +223,7 @@ class Blowgun(Weapon):
 
         self.db.die_rolls = 1
         self.db.die_face = 3
-        self.db.two_handed = False
+
         self.db.projectile_launcher = True
 
         self.db.backstab_die_rolls = 1
@@ -220,6 +245,36 @@ class Battleaxe(Weapon):
         )
 
 
+class ShortSword(Weapon):
+
+    def at_object_creation(self):
+        super().at_object_creation()
+        self.db.required_weapon_proficiency = WeaponType.ShortSword
+
+        self.db.die_rolls = 1
+        self.db.die_face = 6
+
+
+class Longsword(Weapon):
+
+    def at_object_creation(self):
+        super().at_object_creation()
+        self.db.required_weapon_proficiency = WeaponType.Longsword
+
+        self.db.die_rolls = 1
+        self.db.die_face = 8
+
+
+class Axe(Weapon):
+
+    def at_object_creation(self):
+        super().at_object_creation()
+        self.db.required_weapon_proficiency = WeaponType.Axe
+
+        self.db.die_rolls = 1
+        self.db.die_face = 6
+
+
 class Club(Weapon):
 
     def at_object_creation(self):
@@ -228,7 +283,6 @@ class Club(Weapon):
 
         self.db.die_rolls = 1
         self.db.die_face = 4
-        self.db.two_handed = False
 
 
 class Crossbow(Weapon):
@@ -241,7 +295,6 @@ class Crossbow(Weapon):
 
         self.db.die_rolls = 1
         self.db.die_face = 6
-        self.db.two_handed = False
 
 
 class Dagger(Weapon):
@@ -252,7 +305,6 @@ class Dagger(Weapon):
 
         self.db.die_rolls = 1
         self.db.die_face = 4
-        self.db.two_handed = False
 
         self.db.backstab_die_rolls = 1
         self.db.backstab_die_face = 10
@@ -267,4 +319,3 @@ class Staff(Weapon):
 
         self.db.die_rolls = 1
         self.db.die_face = 4
-        self.db.two_handed = False

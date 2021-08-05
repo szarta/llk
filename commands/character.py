@@ -7,6 +7,50 @@ from world.birthaugur import BirthAugurTable
 from world.occupations import OccupationTable
 
 
+class CmdInventory(Command):
+    """
+    view inventory
+
+    Usage:
+      inventory
+      inv
+
+    Shows your inventory.
+    """
+
+    key = "inventory"
+    aliases = ["inv", "i"]
+    locks = "cmd:all()"
+    arg_regex = r"$"
+
+    def func(self):
+        """check inventory"""
+        items = self.caller.contents
+        if not items:
+            string = "You are not carrying anything."
+        else:
+            from evennia.utils.ansi import raw as raw_ansi
+
+            table = self.styled_table(border="header")
+            for item in items:
+                if item.attributes.has("current_worn_location"):
+                    if item.is_currently_worn():
+                        # do not display messages as being in inventory if they
+                        # are being worn
+                        continue
+
+                if item in self.caller.db.auras:
+                    # ignore auras
+                    continue
+
+                table.add_row(
+                    f"|C{item.name}|n",
+                    "{}|n".format(utils.crop(raw_ansi(item.db.desc), width=50) or ""),
+                )
+            string = f"|wYou are carrying:\n{table}"
+        self.caller.msg(string)
+
+
 class CmdSheet(Command):
     key = "sheet"
 
@@ -55,6 +99,15 @@ class CmdSheet(Command):
         languages += current_line.rstrip().rstrip(",")
 
         augur_str = BirthAugurTable[str(caller.db.birth_augur)]["desc"]
+        modified_strength = caller.get_modified_strength()
+        modified_agility = caller.get_modified_agility()
+        modified_stamina = caller.get_modified_stamina()
+        modified_personality = caller.get_modified_personality()
+        modified_intelligence = caller.get_modified_intelligence()
+        modified_luck = caller.get_modified_luck()
+        modified_speed = caller.get_modified_speed()
+        modified_hp = caller.get_modified_hp()
+        modified_ac = caller.get_modified_ac()
 
         caller.msg(stat_sheet.format(
             name=caller.name,
@@ -66,20 +119,20 @@ class CmdSheet(Command):
             occupation=OccupationTable[str(caller.db.occupation)]["name"],
             align=str(caller.db.alignment),
             augur=augur_str,
-            strength=f'{caller.db.strength}'.rjust(2, " "),
-            agility=f'{caller.db.agility}'.rjust(2, " "),
-            stamina=f'{caller.db.stamina}'.rjust(2, " "),
-            personality=f'{caller.db.personality}'.rjust(2, " "),
-            intelligence=f'{caller.db.intelligence}'.rjust(2, " "),
-            luck=f'{caller.db.luck}'.rjust(2, " "),
-            max_hp=f'{caller.db.max_hp}'.rjust(2, " "),
+            strength=f'{modified_strength}'.rjust(2, " "),
+            agility=f'{modified_agility}'.rjust(2, " "),
+            stamina=f'{modified_stamina}'.rjust(2, " "),
+            personality=f'{modified_personality}'.rjust(2, " "),
+            intelligence=f'{modified_intelligence}'.rjust(2, " "),
+            luck=f'{modified_luck}'.rjust(2, " "),
+            max_hp=f'{modified_hp}'.rjust(2, " "),
             cur_hp=f'{caller.db.current_hp}'.rjust(2, " "),
             languages=languages,
-            ac=f'{caller.db.ac}'.rjust(2, " "),
+            ac=f'{modified_ac}'.rjust(2, " "),
             gold=f'{caller.db.gold}'.rjust(3, " "),
             silver=f'{caller.db.silver}'.rjust(3, " "),
             copper=f'{caller.db.copper}'.rjust(3, " "),
-            speed=f'{caller.db.base_speed}'.rjust(2, " ")
+            speed=f'{modified_speed}'.rjust(2, " ")
         ))
 
 

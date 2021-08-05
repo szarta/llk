@@ -113,7 +113,7 @@ OccupationTable = {
         "items": [
             prototypes.WOODEN_STAFF,
             prototypes.FLASK_OF_OIL,
-            prototypes.SMOCK,
+            prototypes.APRON,
             prototypes.WHITE_LINEN_SHIRT,
             prototypes.BLACK_CANVAS_SHOES,
             prototypes.GRAY_LINEN_PANTS
@@ -126,112 +126,160 @@ OccupationTable = {
     str(Occupation.AnimalTrainer): {
         "name": "Animal Trainer",
         "items": [
-
+            prototypes.WOODEN_CLUB
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Club
         ],
         "starting_loc": []
     },
     str(Occupation.Armorer): {
         "name": "Armorer",
         "items": [
-
+            prototypes.BALL_PEEN_HAMMER
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Club
         ],
         "starting_loc": []
     },
     str(Occupation.Astrologer): {
         "name": "Astrologer",
         "items": [
-
+            prototypes.SMALL_IRON_DAGGER
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Dagger
         ],
         "starting_loc": []
     },
     str(Occupation.Barber): {
         "name": "Barber",
         "items": [
-
+            prototypes.FOLDING_STRAIGHT_EDGE_RAZOR
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Dagger
         ],
         "starting_loc": []
     },
     str(Occupation.Beadle): {
         "name": "Beadle",
         "items": [
-
+            prototypes.WOODEN_STAFF
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Staff
         ],
         "starting_loc": []
     },
     str(Occupation.Beekeeper): {
         "name": "Beekeeper",
         "items": [
-
+            prototypes.WOODEN_STAFF
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Staff
         ],
         "starting_loc": []
     },
     str(Occupation.Blacksmith): {
         "name": "Blacksmith",
         "items": [
-
+            prototypes.BALL_PEEN_HAMMER
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Club
         ],
         "starting_loc": []
     },
     str(Occupation.Butcher): {
         "name": "Butcher",
         "items": [
-
+            prototypes.SHARP_IRON_CLEAVER
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Axe
         ],
         "starting_loc": []
     },
     str(Occupation.CaravanGuard): {
         "name": "Caravan Guard",
         "items": [
-
+            prototypes.IRON_SHORT_SWORD
+        ],
+        "weapon_proficiencies": [
+            WeaponType.ShortSword
         ],
         "starting_loc": []
     },
     str(Occupation.Cheesemaker): {
         "name": "Cheesemaker",
         "items": [
-
+            prototypes.WOODEN_CUDGEL
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Staff
         ],
         "starting_loc": []
     },
     str(Occupation.Cobbler): {
         "name": "Cobbler",
         "items": [
-
+            prototypes.SHARP_STITCHING_AWL
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Dagger
         ],
         "starting_loc": []
     },
     str(Occupation.ConfidenceArtist): {
         "name": "Confidence Artist",
         "items": [
-
+            prototypes.SMALL_IRON_DAGGER
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Dagger
         ],
         "starting_loc": []
     },
     str(Occupation.Cooper): {
         "name": "Cooper",
         "items": [
-
+            prototypes.IRON_CROWBAR
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Club
         ],
         "starting_loc": []
     },
     str(Occupation.Costermonger): {
         "name": "Costermonger",
         "items": [
-
+            prototypes.IRON_PARING_KNIFE
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Dagger
         ],
         "starting_loc": []
     },
     str(Occupation.Cutpurse): {
         "name": "Cutpurse",
         "items": [
-
+            prototypes.SMALL_IRON_DAGGER
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Dagger
         ],
         "starting_loc": []
     },
     str(Occupation.DitchDigger): {
         "name": "Ditch Digger",
         "items": [
-
+            prototypes.SHOVEL
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Staff
         ],
         "starting_loc": []
     },
@@ -246,7 +294,10 @@ OccupationTable = {
         "name": "Apothecarist",
         "race": Race.Dwarf,
         "items": [
-
+            prototypes.WOODEN_CUDGEL
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Staff
         ],
         "starting_loc": []
     },
@@ -254,7 +305,10 @@ OccupationTable = {
         "name": "Blacksmith",
         "race": Race.Dwarf,
         "items": [
-
+            prototypes.BALL_PEEN_HAMMER
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Club
         ],
         "starting_loc": []
     },
@@ -270,7 +324,10 @@ OccupationTable = {
         "name": "Herder",
         "race": Race.Dwarf,
         "items": [
-
+            prototypes.WOODEN_STAFF
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Staff
         ],
         "starting_loc": []
     },
@@ -294,7 +351,10 @@ OccupationTable = {
         "name": "Mushroom Farmer",
         "race": Race.Dwarf,
         "items": [
-
+            prototypes.SHOVEL
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Staff
         ],
         "starting_loc": []
     },
@@ -302,6 +362,10 @@ OccupationTable = {
         "name": "Rat Catcher",
         "race": Race.Dwarf,
         "items": [
+            prototypes.WOODEN_CLUB
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Club
 
         ],
         "starting_loc": []
@@ -326,7 +390,10 @@ OccupationTable = {
         "name": "Artisan",
         "race": Race.Elf,
         "items": [
-
+            prototypes.WOODEN_STAFF
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Staff
         ],
         "starting_loc": []
     },
@@ -350,6 +417,10 @@ OccupationTable = {
         "name": "Falconer",
         "race": Race.Elf,
         "items": [
+            prototypes.SMALL_IRON_DAGGER
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Dagger
 
         ],
         "starting_loc": []
@@ -358,7 +429,10 @@ OccupationTable = {
         "name": "Forester",
         "race": Race.Elf,
         "items": [
-
+            prototypes.WOODEN_STAFF
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Staff
         ],
         "starting_loc": []
     },
@@ -366,7 +440,10 @@ OccupationTable = {
         "name": "Forester",
         "race": Race.Elf,
         "items": [
-
+            prototypes.WOODEN_STAFF
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Staff
         ],
         "starting_loc": []
     },
@@ -390,6 +467,10 @@ OccupationTable = {
         "name": "Sage",
         "race": Race.Elf,
         "items": [
+            prototypes.SMALL_IRON_DAGGER
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Dagger
 
         ],
         "starting_loc": []
@@ -398,6 +479,10 @@ OccupationTable = {
         "name": "Sage",
         "race": Race.Elf,
         "items": [
+            prototypes.SMALL_IRON_DAGGER
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Dagger
 
         ],
         "starting_loc": []
@@ -468,6 +553,10 @@ OccupationTable = {
     str(Occupation.FortuneTeller): {
         "name": "Fortune Teller",
         "items": [
+            prototypes.SMALL_IRON_DAGGER
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Dagger
 
         ],
         "starting_loc": []
@@ -475,6 +564,10 @@ OccupationTable = {
     str(Occupation.Gambler): {
         "name": "Gambler",
         "items": [
+            prototypes.WOODEN_CLUB
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Club
 
         ],
         "starting_loc": []
@@ -526,7 +619,10 @@ OccupationTable = {
         "name": "Dyer",
         "race": Race.Halfling,
         "items": [
-
+            prototypes.WOODEN_STAFF
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Staff
         ],
         "starting_loc": []
     },
@@ -534,7 +630,10 @@ OccupationTable = {
         "name": "Dyer",
         "race": Race.Halfling,
         "items": [
-
+            prototypes.WOODEN_STAFF
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Staff
         ],
         "starting_loc": []
     },
@@ -574,7 +673,15 @@ OccupationTable = {
         "name": "Moneylender",
         "race": Race.Halfling,
         "items": [
-
+            prototypes.IRON_SHORT_SWORD
+        ],
+        "money": {
+            "gold": 5,
+            "silver": 10,
+            "copper": 200
+        },
+        "weapon_proficiencies": [
+            WeaponType.ShortSword
         ],
         "starting_loc": []
     },
@@ -582,7 +689,13 @@ OccupationTable = {
         "name": "Trader",
         "race": Race.Halfling,
         "items": [
-
+            prototypes.IRON_SHORT_SWORD
+        ],
+        "money": {
+            "silver": 20,
+        },
+        "weapon_proficiencies": [
+            WeaponType.ShortSword
         ],
         "starting_loc": []
     },
@@ -590,6 +703,10 @@ OccupationTable = {
         "name": "Vagrant",
         "race": Race.Halfling,
         "items": [
+            prototypes.WOODEN_CLUB
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Club
 
         ],
         "starting_loc": []
@@ -597,6 +714,10 @@ OccupationTable = {
     str(Occupation.Healer): {
         "name": "Healer",
         "items": [
+            prototypes.WOODEN_CLUB
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Club
 
         ],
         "starting_loc": []
@@ -604,6 +725,10 @@ OccupationTable = {
     str(Occupation.Herbalist): {
         "name": "Herbalist",
         "items": [
+            prototypes.WOODEN_CLUB
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Club
 
         ],
         "starting_loc": []
@@ -611,7 +736,10 @@ OccupationTable = {
     str(Occupation.Herder): {
         "name": "Herder",
         "items": [
-
+            prototypes.WOODEN_STAFF
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Staff
         ],
         "starting_loc": []
     },
@@ -632,7 +760,10 @@ OccupationTable = {
     str(Occupation.IndenturedServant): {
         "name": "Indentured Servant",
         "items": [
-
+            prototypes.WOODEN_STAFF
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Staff
         ],
         "starting_loc": []
     },
@@ -646,6 +777,10 @@ OccupationTable = {
     str(Occupation.Jeweler): {
         "name": "Jeweler",
         "items": [
+            prototypes.SMALL_IRON_DAGGER
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Dagger
 
         ],
         "starting_loc": []
@@ -653,6 +788,10 @@ OccupationTable = {
     str(Occupation.Locksmith): {
         "name": "Locksmith",
         "items": [
+            prototypes.SMALL_IRON_DAGGER
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Dagger
 
         ],
         "starting_loc": []
@@ -660,6 +799,10 @@ OccupationTable = {
     str(Occupation.Mendicant): {
         "name": "Mendicant",
         "items": [
+            prototypes.WOODEN_CLUB
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Club
 
         ],
         "starting_loc": []
@@ -667,13 +810,25 @@ OccupationTable = {
     str(Occupation.Mercenary): {
         "name": "Mercenary",
         "items": [
-
+            prototypes.IRON_LONG_SWORD
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Longsword
         ],
         "starting_loc": []
     },
     str(Occupation.Merchant): {
         "name": "Merchant",
         "items": [
+            prototypes.SMALL_IRON_DAGGER
+        ],
+        "money": {
+            "gold": 4,
+            "silver": 14,
+            "copper": 27
+        },
+        "weapon_proficiencies": [
+            WeaponType.Dagger
 
         ],
         "starting_loc": []
@@ -688,20 +843,30 @@ OccupationTable = {
     str(Occupation.Minstrel): {
         "name": "Minstrel",
         "items": [
-
+            prototypes.SMALL_IRON_DAGGER
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Dagger
         ],
         "starting_loc": []
     },
     str(Occupation.Noble): {
         "name": "Noble",
         "items": [
-
+            prototypes.IRON_LONG_SWORD
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Longsword
         ],
         "starting_loc": []
     },
     str(Occupation.Orphan): {
         "name": "Orphan",
         "items": [
+            prototypes.WOODEN_CLUB
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Club
 
         ],
         "starting_loc": []
@@ -709,14 +874,20 @@ OccupationTable = {
     str(Occupation.Ostler): {
         "name": "Ostler",
         "items": [
-
+            prototypes.WOODEN_STAFF
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Staff
         ],
         "starting_loc": []
     },
     str(Occupation.Outlaw): {
         "name": "Outlaw",
         "items": [
-
+            prototypes.IRON_SHORT_SWORD
+        ],
+        "weapon_proficiencies": [
+            WeaponType.ShortSword
         ],
         "starting_loc": []
     },
@@ -744,7 +915,10 @@ OccupationTable = {
     str(Occupation.Slave): {
         "name": "Slave",
         "items": [
-
+            prototypes.WOODEN_CLUB
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Club
         ],
         "starting_loc": []
     },
@@ -765,7 +939,10 @@ OccupationTable = {
     str(Occupation.Squire): {
         "name": "Squire",
         "items": [
-
+            prototypes.IRON_LONG_SWORD
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Longsword
         ],
         "starting_loc": []
     },
@@ -779,7 +956,13 @@ OccupationTable = {
     str(Occupation.TaxCollector): {
         "name": "Tax Collector",
         "items": [
-
+            prototypes.IRON_LONG_SWORD
+        ],
+        "money": {
+            "copper": 100
+        },
+        "weapon_proficiencies": [
+            WeaponType.Longsword
         ],
         "starting_loc": []
     },
@@ -807,21 +990,30 @@ OccupationTable = {
     str(Occupation.Wainwright): {
         "name": "Wainwright",
         "items": [
-
+            prototypes.WOODEN_CLUB
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Club
         ],
         "starting_loc": []
     },
     str(Occupation.Weaver): {
         "name": "Weaver",
         "items": [
-
+            prototypes.SMALL_IRON_DAGGER
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Dagger
         ],
         "starting_loc": []
     },
     str(Occupation.WizardsApprentice): {
         "name": "Wizard's Apprentice",
         "items": [
-
+            prototypes.SMALL_IRON_DAGGER
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Dagger
         ],
         "starting_loc": []
     },

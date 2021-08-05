@@ -97,6 +97,88 @@ class Character(gendersub.GenderCharacter):
     at_post_puppet - Echoes "AccountName has entered the game" to the room.
 
     """
+    def get_modified_hp(self):
+        stam = self.get_modified_stamina()
+        modifier = calculate_ability_modifier(stam)
+
+        for aura in self.db.auras:
+            if auras.AuraEffect.HP in aura.db.effect_modifiers.keys():
+                modifier += aura.db.effect_modifiers[auras.AuraEffect.HP]
+
+        return (self.db.hp + modifier)
+
+    def get_modified_strength(self):
+        modifier = 0
+
+        for aura in self.db.auras:
+            if auras.AuraEffect.Strength in aura.db.effect_modifiers.keys():
+                modifier += aura.db.effect_modifiers[auras.AuraEffect.Strength]
+
+        return (self.db.strength + modifier)
+
+    def get_modified_agility(self):
+        modifier = 0
+
+        for aura in self.db.auras:
+            if auras.AuraEffect.Agility in aura.db.effect_modifiers.keys():
+                modifier += aura.db.effect_modifiers[auras.AuraEffect.Agility]
+
+        return (self.db.agility + modifier)
+
+    def get_modified_stamina(self):
+        modifier = 0
+
+        for aura in self.db.auras:
+            if auras.AuraEffect.Stamina in aura.db.effect_modifiers.keys():
+                modifier += aura.db.effect_modifiers[auras.AuraEffect.Stamina]
+
+        return (self.db.stamina + modifier)
+
+    def get_modified_personality(self):
+        modifier = 0
+
+        for aura in self.db.auras:
+            if auras.AuraEffect.Personality in aura.db.effect_modifiers.keys():
+                modifier += aura.db.effect_modifiers[auras.AuraEffect.Personality]
+
+        return (self.db.personality + modifier)
+
+    def get_modified_intelligence(self):
+        modifier = 0
+
+        for aura in self.db.auras:
+            if auras.AuraEffect.Intelligence in aura.db.effect_modifiers.keys():
+                modifier += aura.db.effect_modifiers[auras.AuraEffect.Intelligence]
+
+        return (self.db.intelligence + modifier)
+
+    def get_modified_luck(self):
+        modifier = 0
+
+        for aura in self.db.auras:
+            if auras.AuraEffect.Luck in aura.db.effect_modifiers.keys():
+                modifier += aura.db.effect_modifiers[auras.AuraEffect.Luck]
+
+        return (self.db.luck + modifier)
+
+    def get_modified_speed(self):
+        modifier = 0
+
+        for aura in self.db.auras:
+            if auras.AuraEffect.Speed in aura.db.effect_modifiers.keys():
+                modifier += aura.db.effect_modifiers[auras.AuraEffect.Speed]
+
+        return (self.db.speed + modifier)
+
+    def get_modified_ac(self):
+        agi = self.get_modified_agility()
+        modifier = calculate_ability_modifier(agi)
+        for aura in self.db.auras:
+            if auras.AuraEffect.AC in aura.db.effect_modifiers.keys():
+                modifier += aura.db.effect_modifiers[auras.AuraEffect.AC]
+
+        return (self.db.ac + modifier)
+
     def at_object_creation(self):
         super().at_object_creation()
 
@@ -106,13 +188,15 @@ class Character(gendersub.GenderCharacter):
         self.db.age = 0  # TODO: figure this out, random?  races?
         self.db.alignment = Alignment.Neutral  # TODO: alignment selection
 
+        # these are base stats before any modifiers or active effects
         self.db.strength = roll_dice(3, 6)
         self.db.agility = roll_dice(3, 6)
         self.db.stamina = roll_dice(3, 6)
         self.db.personality = roll_dice(3, 6)
         self.db.intelligence = roll_dice(3, 6)
         self.db.luck = roll_dice(3, 6)
-        self.db.base_speed = 30
+        self.db.hp = roll_dice(1, 4)
+        self.db.speed = 30
 
         self.db.birth_augur = BirthAugur(roll_dice(1, 30))
 
@@ -151,13 +235,6 @@ class Character(gendersub.GenderCharacter):
         self.db.silver = 0
         self.db.copper = roll_dice(5, 12)
 
-        self.db.base_hp = roll_dice(1, 4)
-        self.db.max_hp = self.db.base_hp + calculate_ability_modifier(
-            self.db.stamina
-        )
-
-        self.db.current_hp = self.db.max_hp
-
         self.db.occupation = Occupation(roll_dice(1, 100))
         occupation = str(self.db.occupation)
         if "weapon_proficiencies" in OccupationTable[occupation]:
@@ -176,7 +253,16 @@ class Character(gendersub.GenderCharacter):
             self.db.race = Race.Human
 
         if self.db.race == Race.Dwarf or self.db.race == Race.Halfling:
-            self.db.base_speed = 20
+            self.db.speed = 20
+
+        if "money" in OccupationTable[occupation]:
+            money_data = OccupationTable[occupation]["money"]
+            if "gold" in money_data:
+                self.db.gold += money_data["gold"]
+            if "silver" in money_data:
+                self.db.silver += money_data["silver"]
+            if "copper" in money_data:
+                self.db.copper += money_data["copper"]
 
         if self.db.intelligence >= 8:
             if self.db.race == Race.Dwarf:
@@ -185,3 +271,5 @@ class Character(gendersub.GenderCharacter):
                 self.db.known_languages.append(Language.Elf)
             elif self.db.race == Race.Halfling:
                 self.db.known_languages.append(Language.Halfling)
+
+        self.db.current_hp = self.get_modified_hp()
