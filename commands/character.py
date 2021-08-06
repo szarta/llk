@@ -116,7 +116,7 @@ class CmdSheet(Command):
             level=caller.db.level,
             xp=caller.db.xp,
             gender=caller.db.gender,
-            occupation=OccupationTable[str(caller.db.occupation)]["name"],
+            occupation=caller.db.occupation.display_name,
             align=str(caller.db.alignment),
             augur=augur_str,
             strength=f'{modified_strength}'.rjust(2, " "),

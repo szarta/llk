@@ -1,115 +1,120 @@
-from enum import Enum
+import random
+
+from utils.enum import AutoNumberEnum
 from world.weapons import WeaponType
 import world.prototypes as prototypes
 from world.races import Race
 
 
-class Occupation(Enum):
-    Alchemist = 1
-    AnimalTrainer = 2
-    Armorer = 3
-    Astrologer = 4
-    Barber = 5
-    Beadle = 6
-    Beekeeper = 7
-    Blacksmith = 8
-    Butcher = 9
-    CaravanGuard = 10
-    Cheesemaker = 11
-    Cobbler = 12
-    ConfidenceArtist = 13
-    Cooper = 14
-    Costermonger = 15
-    Cutpurse = 16
-    DitchDigger = 17
-    DockWorker = 18
-    DwarvenApothecarist = 19
-    DwarvenBlacksmith = 20
-    DwarvenChestMaker = 21
-    DwarvenHerder = 22
-    DwarvenMiner = 23
-    DwarvenMinerTwo = 24
-    DwarvenMushroomFarmer = 25
-    DwarvenRatCatcher = 26
-    DwarvenStonemason = 27
-    DwarvenStonemasonTwo = 28
-    ElvenArtisan = 29
-    ElvenBarrister = 30
-    ElvenChandler = 31
-    ElvenFalconer = 32
-    ElvenForester = 33
-    ElvenForesterTwo = 34
-    ElvenGlassblower = 35
-    ElvenNavigator = 36
-    ElvenSage = 37
-    ElvenSageTwo = 38
-    Farmer = 39
-    FarmerTwo = 40
-    FarmerThree = 41
-    FarmerFour = 42
-    FarmerFive = 43
-    FarmerSix = 44
-    FarmerSeven = 45
-    FarmerEight = 46
-    FarmerNine = 47
-    FortuneTeller = 48
-    Gambler = 49
-    Gongfarmer = 50
-    Gravedigger = 51
-    GravediggerTwo = 52
-    GuildBeggar = 53
-    GuildBeggarTwo = 54
-    HalflingChickenButcher = 55
-    HalflingDyer = 56
-    HalflingDyerTwo = 57
-    HalflingGloveMaker = 58
-    HalflingGypsy = 59
-    HalflingHaberdasher = 60
-    HalflingMariner = 61
-    HalflingMoneylender = 62
-    HalflingTrader = 63
-    HalflingVagrant = 64
-    Healer = 65
-    Herbalist = 66
-    Herder = 67
-    Hunter = 68
-    HunterTwo = 69
-    IndenturedServant = 70
-    Jester = 71
-    Jeweler = 72
-    Locksmith = 73
-    Mendicant = 74
-    Mercenary = 75
-    Merchant = 76
-    Baker = 77
-    Minstrel = 78
-    Noble = 79
-    Orphan = 80
-    Ostler = 81
-    Outlaw = 82
-    RopeMaker = 83
-    Scribe = 84
-    Shaman = 85
-    Slave = 86
-    Smuggler = 87
-    Soldier = 88
-    Squire = 89
-    SquireTwo = 90
-    TaxCollector = 91
-    Trapper = 92
-    TrapperTwo = 93
-    Urchin = 94
-    Wainwright = 95
-    Weaver = 96
-    WizardsApprentice = 97
-    Woodcutter = 98
-    WoodcutterTwo = 99
-    WoodcutterThree = 100
+class Occupation(AutoNumberEnum):
+    def __init__(self, display_name='unknown'):
+        self.display_name = display_name
+
+    Alchemist = "Alchemist"
+    AnimalTrainer = "Animal Trainer"
+    Armorer = "Armorer"
+    Astrologer = "Astrologer"
+    Barber = "Barber"
+    Beadle = "Beadle"
+    Beekeeper = "Beekeeper"
+    Blacksmith = "Blacksmith"
+    Butcher = "Butcher"
+    CaravanGuard = "Caravan Guard"
+    Cheesemaker = "Cheesemaker"
+    Cobbler = "Cobbler"
+    ConfidenceArtist = "Confidence Artist"
+    Cooper = "Cooper"
+    Costermonger = "Costermonger"
+    Cutpurse = "Cutpurse"
+    DitchDigger = "Ditch Digger"
+    DockWorker = "Dock Worker"
+    DwarvenApothecarist = "Apothecarist"
+    DwarvenBlacksmith = "Blacksmith"
+    DwarvenChestMaker = "Chest Maker"
+    DwarvenHerder = "Herder"
+    DwarvenMiner = "Miner"
+    DwarvenMushroomFarmer = "Mushroom Farmer"
+    DwarvenRatCatcher = "Rat Catcher"
+    DwarvenStonemason = "Stonemason"
+    ElvenArtisan = "Artisan"
+    ElvenBarrister = "Barrister"
+    ElvenChandler = "Chandler"
+    ElvenFalconer = "Falconer"
+    ElvenForester = "Forester"
+    ElvenGlassblower = "Glassblower"
+    ElvenNavigator = "Navigator"
+    ElvenSage = "Sage"
+    Farmer = "Farmer"
+    FortuneTeller = "FortuneTeller"
+    Gambler = "Gambler"
+    Gongfarmer = "Gongfarmer"
+    Gravedigger = "Gravedigger"
+    GuildBeggar = "Guild Beggar"
+    HalflingChickenButcher = "Chicken Butcher"
+    HalflingDyer = "Dyer"
+    HalflingGloveMaker = "Glove Maker"
+    HalflingGypsy = "Gypsy"
+    HalflingHaberdasher = "Haberdasher"
+    HalflingMariner = "Mariner"
+    HalflingMoneylender = "Moneylender"
+    HalflingTrader = "Trader"
+    HalflingVagrant = "Vagrant"
+    Healer = "Healer"
+    Herbalist = "Herbalist"
+    Herder = "Herder"
+    Hunter = "Hunter"
+    IndenturedServant = "Indentured Servant"
+    Jester = "Jester"
+    Jeweler = "Jeweler"
+    Locksmith = "Locksmith"
+    Mendicant = "Mendicant"
+    Mercenary = "Mercenary"
+    Merchant = "Merchant"
+    Baker = "Baker"
+    Minstrel = "Minstrel"
+    Noble = "Noble"
+    Orphan = "Orphan"
+    Ostler = "Ostler"
+    Outlaw = "Outlaw"
+    RopeMaker = "Rope Maker"
+    Scribe = "Scribe"
+    Shaman = "Shaman"
+    Slave = "Slave"
+    Smuggler = "Smuggler"
+    Soldier = "Soldier"
+    Squire = "Squire"
+    TaxCollector = "Tax Collector"
+    Trapper = "Trapper"
+    Urchin = "Urchin"
+    Wainwright = "Wainwright"
+    Weaver = "Weaver"
+    WizardsApprentice = "Wizard's Apprentice"
+    Woodcutter = "Woodcutter"
+
+
+def get_random_occupation():
+    occupations = list(Occupation)
+
+    # DCC occupation table gives some occupations multiple chances
+    occupations.append(Occupation.DwarvenMiner)
+    occupations.append(Occupation.DwarvenStonemason)
+    occupations.append(Occupation.ElvenForester)
+    occupations.append(Occupation.ElvenSage)
+    for i in range(0, 8):
+        occupations.append(Occupation.Farmer)
+    occupations.append(Occupation.Gravedigger)
+    occupations.append(Occupation.GuildBeggar)
+    occupations.append(Occupation.HalflingDyer)
+    occupations.append(Occupation.Hunter)
+    occupations.append(Occupation.Squire)
+    occupations.append(Occupation.Trapper)
+    occupations.append(Occupation.Woodcutter)
+
+    return random.choice(occupations)
 
 
 OccupationTable = {
-    str(Occupation.Alchemist): {
-        "name": "Alchemist",
+    Occupation.Alchemist: {
         "items": [
             prototypes.WOODEN_STAFF,
             prototypes.FLASK_OF_OIL,
@@ -123,8 +128,7 @@ OccupationTable = {
         ],
         "starting_loc": []
     },
-    str(Occupation.AnimalTrainer): {
-        "name": "Animal Trainer",
+    Occupation.AnimalTrainer: {
         "items": [
             prototypes.GREEN_FEATHERED_CAP,
             prototypes.LARGE_HIDE_CLOAK,
@@ -139,8 +143,7 @@ OccupationTable = {
         ],
         "starting_loc": []
     },
-    str(Occupation.Armorer): {
-        "name": "Armorer",
+    Occupation.Armorer: {
         "items": [
             prototypes.WHITE_LINEN_SHIRT,
             prototypes.IRON_HELMET,
@@ -155,8 +158,7 @@ OccupationTable = {
         ],
         "starting_loc": []
     },
-    str(Occupation.Astrologer): {
-        "name": "Astrologer",
+    Occupation.Astrologer: {
         "items": [
             prototypes.SMALL_IRON_DAGGER,
             prototypes.SPYGLASS,
@@ -168,8 +170,7 @@ OccupationTable = {
         ],
         "starting_loc": []
     },
-    str(Occupation.Barber): {
-        "name": "Barber",
+    Occupation.Barber: {
         "items": [
             prototypes.APRON,
             prototypes.RED_SILK_SHIRT,
@@ -184,8 +185,7 @@ OccupationTable = {
         ],
         "starting_loc": []
     },
-    str(Occupation.Beadle): {
-        "name": "Beadle",
+    Occupation.Beadle: {
         "items": [
             prototypes.PURPLE_CEREMONIAL_OVERCOAT,
             prototypes.ORANGE_COTTON_SHIRT,
@@ -198,8 +198,7 @@ OccupationTable = {
         ],
         "starting_loc": []
     },
-    str(Occupation.Beekeeper): {
-        "name": "Beekeeper",
+    Occupation.Beekeeper: {
         "items": [
             prototypes.WOODEN_STAFF,
             prototypes.JAR_OF_HONEY,
@@ -212,8 +211,7 @@ OccupationTable = {
         ],
         "starting_loc": []
     },
-    str(Occupation.Blacksmith): {
-        "name": "Blacksmith",
+    Occupation.Blacksmith: {
         "items": [
             prototypes.WHITE_LINEN_SHIRT,
             prototypes.LEATHER_PANTS,
@@ -228,8 +226,7 @@ OccupationTable = {
         ],
         "starting_loc": []
     },
-    str(Occupation.Butcher): {
-        "name": "Butcher",
+    Occupation.Butcher: {
         "items": [
             prototypes.SHARP_IRON_CLEAVER,
             prototypes.WHITE_COTTON_SHIRT,
@@ -243,8 +240,7 @@ OccupationTable = {
         ],
         "starting_loc": []
     },
-    str(Occupation.CaravanGuard): {
-        "name": "Caravan Guard",
+    Occupation.CaravanGuard: {
         "items": [
             prototypes.IRON_SHORT_SWORD,
             prototypes.SILK_SASH_BELT,
@@ -258,8 +254,7 @@ OccupationTable = {
         ],
         "starting_loc": []
     },
-    str(Occupation.Cheesemaker): {
-        "name": "Cheesemaker",
+    Occupation.Cheesemaker: {
         "items": [
             prototypes.APRON,
             prototypes.WHITE_LINEN_SHIRT,
@@ -274,8 +269,7 @@ OccupationTable = {
         ],
         "starting_loc": []
     },
-    str(Occupation.Cobbler): {
-        "name": "Cobbler",
+    Occupation.Cobbler: {
         "items": [
             prototypes.SHARP_STITCHING_AWL
         ],
@@ -284,8 +278,7 @@ OccupationTable = {
         ],
         "starting_loc": []
     },
-    str(Occupation.ConfidenceArtist): {
-        "name": "Confidence Artist",
+    Occupation.ConfidenceArtist: {
         "items": [
             prototypes.SMALL_IRON_DAGGER
         ],
@@ -294,8 +287,7 @@ OccupationTable = {
         ],
         "starting_loc": []
     },
-    str(Occupation.Cooper): {
-        "name": "Cooper",
+    Occupation.Cooper: {
         "items": [
             prototypes.IRON_CROWBAR
         ],
@@ -304,8 +296,7 @@ OccupationTable = {
         ],
         "starting_loc": []
     },
-    str(Occupation.Costermonger): {
-        "name": "Costermonger",
+    Occupation.Costermonger: {
         "items": [
             prototypes.IRON_PARING_KNIFE
         ],
@@ -314,8 +305,7 @@ OccupationTable = {
         ],
         "starting_loc": []
     },
-    str(Occupation.Cutpurse): {
-        "name": "Cutpurse",
+    Occupation.Cutpurse: {
         "items": [
             prototypes.SMALL_IRON_DAGGER
         ],
@@ -324,8 +314,7 @@ OccupationTable = {
         ],
         "starting_loc": []
     },
-    str(Occupation.DitchDigger): {
-        "name": "Ditch Digger",
+    Occupation.DitchDigger: {
         "items": [
             prototypes.SHOVEL
         ],
@@ -334,15 +323,13 @@ OccupationTable = {
         ],
         "starting_loc": []
     },
-    str(Occupation.DockWorker): {
-        "name": "Dock Worker",
+    Occupation.DockWorker: {
         "items": [
 
         ],
         "starting_loc": []
     },
-    str(Occupation.DwarvenApothecarist): {
-        "name": "Apothecarist",
+    Occupation.DwarvenApothecarist: {
         "race": Race.Dwarf,
         "items": [
             prototypes.WOODEN_CUDGEL
@@ -352,8 +339,7 @@ OccupationTable = {
         ],
         "starting_loc": []
     },
-    str(Occupation.DwarvenBlacksmith): {
-        "name": "Blacksmith",
+    Occupation.DwarvenBlacksmith: {
         "race": Race.Dwarf,
         "items": [
             prototypes.BALL_PEEN_HAMMER
@@ -363,16 +349,14 @@ OccupationTable = {
         ],
         "starting_loc": []
     },
-    str(Occupation.DwarvenChestMaker): {
-        "name": "Chest Maker",
+    Occupation.DwarvenChestMaker: {
         "race": Race.Dwarf,
         "items": [
 
         ],
         "starting_loc": []
     },
-    str(Occupation.DwarvenHerder): {
-        "name": "Herder",
+    Occupation.DwarvenHerder: {
         "race": Race.Dwarf,
         "items": [
             prototypes.WOODEN_STAFF
@@ -382,24 +366,14 @@ OccupationTable = {
         ],
         "starting_loc": []
     },
-    str(Occupation.DwarvenMiner): {
-        "name": "Miner",
+    Occupation.DwarvenMiner: {
         "race": Race.Dwarf,
         "items": [
 
         ],
         "starting_loc": []
     },
-    str(Occupation.DwarvenMinerTwo): {
-        "name": "Miner",
-        "race": Race.Dwarf,
-        "items": [
-
-        ],
-        "starting_loc": []
-    },
-    str(Occupation.DwarvenMushroomFarmer): {
-        "name": "Mushroom Farmer",
+    Occupation.DwarvenMushroomFarmer: {
         "race": Race.Dwarf,
         "items": [
             prototypes.SHOVEL
@@ -409,8 +383,7 @@ OccupationTable = {
         ],
         "starting_loc": []
     },
-    str(Occupation.DwarvenRatCatcher): {
-        "name": "Rat Catcher",
+    Occupation.DwarvenRatCatcher: {
         "race": Race.Dwarf,
         "items": [
             prototypes.WOODEN_CLUB
@@ -421,24 +394,14 @@ OccupationTable = {
         ],
         "starting_loc": []
     },
-    str(Occupation.DwarvenStonemason): {
-        "name": "Stonemason",
+    Occupation.DwarvenStonemason: {
         "race": Race.Dwarf,
         "items": [
 
         ],
         "starting_loc": []
     },
-    str(Occupation.DwarvenStonemasonTwo): {
-        "name": "Stonemason",
-        "race": Race.Dwarf,
-        "items": [
-
-        ],
-        "starting_loc": []
-    },
-    str(Occupation.ElvenArtisan): {
-        "name": "Artisan",
+    Occupation.ElvenArtisan: {
         "race": Race.Elf,
         "items": [
             prototypes.WOODEN_STAFF
@@ -448,24 +411,21 @@ OccupationTable = {
         ],
         "starting_loc": []
     },
-    str(Occupation.ElvenBarrister): {
-        "name": "Barrister",
+    Occupation.ElvenBarrister: {
         "race": Race.Elf,
         "items": [
 
         ],
         "starting_loc": []
     },
-    str(Occupation.ElvenChandler): {
-        "name": "Chandler",
+    Occupation.ElvenChandler: {
         "race": Race.Elf,
         "items": [
 
         ],
         "starting_loc": []
     },
-    str(Occupation.ElvenFalconer): {
-        "name": "Falconer",
+    Occupation.ElvenFalconer: {
         "race": Race.Elf,
         "items": [
             prototypes.SMALL_IRON_DAGGER
@@ -476,8 +436,7 @@ OccupationTable = {
         ],
         "starting_loc": []
     },
-    str(Occupation.ElvenForester): {
-        "name": "Forester",
+    Occupation.ElvenForester: {
         "race": Race.Elf,
         "items": [
             prototypes.WOODEN_STAFF
@@ -487,35 +446,21 @@ OccupationTable = {
         ],
         "starting_loc": []
     },
-    str(Occupation.ElvenForesterTwo): {
-        "name": "Forester",
-        "race": Race.Elf,
-        "items": [
-            prototypes.WOODEN_STAFF
-        ],
-        "weapon_proficiencies": [
-            WeaponType.Staff
-        ],
-        "starting_loc": []
-    },
-    str(Occupation.ElvenGlassblower): {
-        "name": "Glassblower",
+    Occupation.ElvenGlassblower: {
         "race": Race.Elf,
         "items": [
 
         ],
         "starting_loc": []
     },
-    str(Occupation.ElvenNavigator): {
-        "name": "Navigator",
+    Occupation.ElvenNavigator: {
         "race": Race.Elf,
         "items": [
 
         ],
         "starting_loc": []
     },
-    str(Occupation.ElvenSage): {
-        "name": "Sage",
+    Occupation.ElvenSage: {
         "race": Race.Elf,
         "items": [
             prototypes.SMALL_IRON_DAGGER
@@ -526,9 +471,13 @@ OccupationTable = {
         ],
         "starting_loc": []
     },
-    str(Occupation.ElvenSageTwo): {
-        "name": "Sage",
-        "race": Race.Elf,
+    Occupation.Farmer: {
+        "items": [
+
+        ],
+        "starting_loc": []
+    },
+    Occupation.FortuneTeller: {
         "items": [
             prototypes.SMALL_IRON_DAGGER
         ],
@@ -538,82 +487,7 @@ OccupationTable = {
         ],
         "starting_loc": []
     },
-    str(Occupation.Farmer): {
-        "name": "Farmer",
-        "items": [
-
-        ],
-        "starting_loc": []
-    },
-    str(Occupation.FarmerTwo): {
-        "name": "Farmer",
-        "items": [
-
-        ],
-        "starting_loc": []
-    },
-    str(Occupation.FarmerThree): {
-        "name": "Farmer",
-        "items": [
-
-        ],
-        "starting_loc": []
-    },
-    str(Occupation.FarmerFour): {
-        "name": "Farmer",
-        "items": [
-
-        ],
-        "starting_loc": []
-    },
-    str(Occupation.FarmerFive): {
-        "name": "Farmer",
-        "items": [
-
-        ],
-        "starting_loc": []
-    },
-    str(Occupation.FarmerSix): {
-        "name": "Farmer",
-        "items": [
-
-        ],
-        "starting_loc": []
-    },
-    str(Occupation.FarmerSeven): {
-        "name": "Farmer",
-        "items": [
-
-        ],
-        "starting_loc": []
-    },
-    str(Occupation.FarmerEight): {
-        "name": "Farmer",
-        "items": [
-
-        ],
-        "starting_loc": []
-    },
-    str(Occupation.FarmerNine): {
-        "name": "Farmer",
-        "items": [
-
-        ],
-        "starting_loc": []
-    },
-    str(Occupation.FortuneTeller): {
-        "name": "Fortune Teller",
-        "items": [
-            prototypes.SMALL_IRON_DAGGER
-        ],
-        "weapon_proficiencies": [
-            WeaponType.Dagger
-
-        ],
-        "starting_loc": []
-    },
-    str(Occupation.Gambler): {
-        "name": "Gambler",
+    Occupation.Gambler: {
         "items": [
             prototypes.WOODEN_CLUB
         ],
@@ -623,51 +497,32 @@ OccupationTable = {
         ],
         "starting_loc": []
     },
-    str(Occupation.Gongfarmer): {
-        "name": "Gongfarmer",
+    Occupation.Gongfarmer: {
         "items": [
 
         ],
         "starting_loc": []
     },
-    str(Occupation.Gravedigger): {
-        "name": "Grave Digger",
+    Occupation.Gravedigger: {
         "items": [
 
         ],
         "starting_loc": []
     },
-    str(Occupation.GravediggerTwo): {
-        "name": "Grave Digger",
+    Occupation.GuildBeggar: {
         "items": [
 
         ],
         "starting_loc": []
     },
-    str(Occupation.GuildBeggar): {
-        "name": "Guild Beggar",
-        "items": [
-
-        ],
-        "starting_loc": []
-    },
-    str(Occupation.GuildBeggarTwo): {
-        "name": "Guild Beggar",
-        "items": [
-
-        ],
-        "starting_loc": []
-    },
-    str(Occupation.HalflingChickenButcher): {
-        "name": "Alchemist",
+    Occupation.HalflingChickenButcher: {
         "race": Race.Halfling,
         "items": [
 
         ],
         "starting_loc": []
     },
-    str(Occupation.HalflingDyer): {
-        "name": "Dyer",
+    Occupation.HalflingDyer: {
         "race": Race.Halfling,
         "items": [
             prototypes.WOODEN_STAFF
@@ -677,51 +532,35 @@ OccupationTable = {
         ],
         "starting_loc": []
     },
-    str(Occupation.HalflingDyerTwo): {
-        "name": "Dyer",
-        "race": Race.Halfling,
-        "items": [
-            prototypes.WOODEN_STAFF
-        ],
-        "weapon_proficiencies": [
-            WeaponType.Staff
-        ],
-        "starting_loc": []
-    },
-    str(Occupation.HalflingGloveMaker): {
-        "name": "Glovemaker",
+    Occupation.HalflingGloveMaker: {
         "race": Race.Halfling,
         "items": [
 
         ],
         "starting_loc": []
     },
-    str(Occupation.HalflingGypsy): {
-        "name": "Gypsy",
+    Occupation.HalflingGypsy: {
         "race": Race.Halfling,
         "items": [
 
         ],
         "starting_loc": []
     },
-    str(Occupation.HalflingHaberdasher): {
-        "name": "Haberdasher",
+    Occupation.HalflingHaberdasher: {
         "race": Race.Halfling,
         "items": [
 
         ],
         "starting_loc": []
     },
-    str(Occupation.HalflingMariner): {
-        "name": "Mariner",
+    Occupation.HalflingMariner: {
         "race": Race.Halfling,
         "items": [
 
         ],
         "starting_loc": []
     },
-    str(Occupation.HalflingMoneylender): {
-        "name": "Moneylender",
+    Occupation.HalflingMoneylender: {
         "race": Race.Halfling,
         "items": [
             prototypes.IRON_SHORT_SWORD
@@ -736,8 +575,7 @@ OccupationTable = {
         ],
         "starting_loc": []
     },
-    str(Occupation.HalflingTrader): {
-        "name": "Trader",
+    Occupation.HalflingTrader: {
         "race": Race.Halfling,
         "items": [
             prototypes.IRON_SHORT_SWORD
@@ -750,8 +588,7 @@ OccupationTable = {
         ],
         "starting_loc": []
     },
-    str(Occupation.HalflingVagrant): {
-        "name": "Vagrant",
+    Occupation.HalflingVagrant: {
         "race": Race.Halfling,
         "items": [
             prototypes.WOODEN_CLUB
@@ -762,8 +599,7 @@ OccupationTable = {
         ],
         "starting_loc": []
     },
-    str(Occupation.Healer): {
-        "name": "Healer",
+    Occupation.Healer: {
         "items": [
             prototypes.WOODEN_CLUB
         ],
@@ -773,8 +609,7 @@ OccupationTable = {
         ],
         "starting_loc": []
     },
-    str(Occupation.Herbalist): {
-        "name": "Herbalist",
+    Occupation.Herbalist: {
         "items": [
             prototypes.WOODEN_CLUB
         ],
@@ -784,8 +619,7 @@ OccupationTable = {
         ],
         "starting_loc": []
     },
-    str(Occupation.Herder): {
-        "name": "Herder",
+    Occupation.Herder: {
         "items": [
             prototypes.WOODEN_STAFF
         ],
@@ -794,22 +628,13 @@ OccupationTable = {
         ],
         "starting_loc": []
     },
-    str(Occupation.Hunter): {
-        "name": "Hunter",
+    Occupation.Hunter: {
         "items": [
 
         ],
         "starting_loc": []
     },
-    str(Occupation.HunterTwo): {
-        "name": "Hunter",
-        "items": [
-
-        ],
-        "starting_loc": []
-    },
-    str(Occupation.IndenturedServant): {
-        "name": "Indentured Servant",
+    Occupation.IndenturedServant: {
         "items": [
             prototypes.WOODEN_STAFF
         ],
@@ -818,15 +643,13 @@ OccupationTable = {
         ],
         "starting_loc": []
     },
-    str(Occupation.Jester): {
-        "name": "Jester",
+    Occupation.Jester: {
         "items": [
 
         ],
         "starting_loc": []
     },
-    str(Occupation.Jeweler): {
-        "name": "Jeweler",
+    Occupation.Jeweler: {
         "items": [
             prototypes.SMALL_IRON_DAGGER
         ],
@@ -836,8 +659,7 @@ OccupationTable = {
         ],
         "starting_loc": []
     },
-    str(Occupation.Locksmith): {
-        "name": "Locksmith",
+    Occupation.Locksmith: {
         "items": [
             prototypes.SMALL_IRON_DAGGER
         ],
@@ -847,8 +669,7 @@ OccupationTable = {
         ],
         "starting_loc": []
     },
-    str(Occupation.Mendicant): {
-        "name": "Mendicant",
+    Occupation.Mendicant: {
         "items": [
             prototypes.WOODEN_CLUB
         ],
@@ -858,8 +679,7 @@ OccupationTable = {
         ],
         "starting_loc": []
     },
-    str(Occupation.Mercenary): {
-        "name": "Mercenary",
+    Occupation.Mercenary: {
         "items": [
             prototypes.IRON_LONG_SWORD
         ],
@@ -868,8 +688,7 @@ OccupationTable = {
         ],
         "starting_loc": []
     },
-    str(Occupation.Merchant): {
-        "name": "Merchant",
+    Occupation.Merchant: {
         "items": [
             prototypes.SMALL_IRON_DAGGER
         ],
@@ -884,15 +703,13 @@ OccupationTable = {
         ],
         "starting_loc": []
     },
-    str(Occupation.Baker): {
-        "name": "Baker",
+    Occupation.Baker: {
         "items": [
 
         ],
         "starting_loc": []
     },
-    str(Occupation.Minstrel): {
-        "name": "Minstrel",
+    Occupation.Minstrel: {
         "items": [
             prototypes.SMALL_IRON_DAGGER
         ],
@@ -901,8 +718,7 @@ OccupationTable = {
         ],
         "starting_loc": []
     },
-    str(Occupation.Noble): {
-        "name": "Noble",
+    Occupation.Noble: {
         "items": [
             prototypes.IRON_LONG_SWORD
         ],
@@ -911,8 +727,7 @@ OccupationTable = {
         ],
         "starting_loc": []
     },
-    str(Occupation.Orphan): {
-        "name": "Orphan",
+    Occupation.Orphan: {
         "items": [
             prototypes.WOODEN_CLUB
         ],
@@ -922,8 +737,7 @@ OccupationTable = {
         ],
         "starting_loc": []
     },
-    str(Occupation.Ostler): {
-        "name": "Ostler",
+    Occupation.Ostler: {
         "items": [
             prototypes.WOODEN_STAFF
         ],
@@ -932,8 +746,7 @@ OccupationTable = {
         ],
         "starting_loc": []
     },
-    str(Occupation.Outlaw): {
-        "name": "Outlaw",
+    Occupation.Outlaw: {
         "items": [
             prototypes.IRON_SHORT_SWORD
         ],
@@ -942,29 +755,25 @@ OccupationTable = {
         ],
         "starting_loc": []
     },
-    str(Occupation.RopeMaker): {
-        "name": "Rope Maker",
+    Occupation.RopeMaker: {
         "items": [
 
         ],
         "starting_loc": []
     },
-    str(Occupation.Scribe): {
-        "name": "Scribe",
+    Occupation.Scribe: {
         "items": [
 
         ],
         "starting_loc": []
     },
-    str(Occupation.Shaman): {
-        "name": "Shaman",
+    Occupation.Shaman: {
         "items": [
 
         ],
         "starting_loc": []
     },
-    str(Occupation.Slave): {
-        "name": "Slave",
+    Occupation.Slave: {
         "items": [
             prototypes.WOODEN_CLUB
         ],
@@ -973,22 +782,19 @@ OccupationTable = {
         ],
         "starting_loc": []
     },
-    str(Occupation.Smuggler): {
-        "name": "Smuggler",
+    Occupation.Smuggler: {
         "items": [
 
         ],
         "starting_loc": []
     },
-    str(Occupation.Soldier): {
-        "name": "Soldier",
+    Occupation.Soldier: {
         "items": [
 
         ],
         "starting_loc": []
     },
-    str(Occupation.Squire): {
-        "name": "Squire",
+    Occupation.Squire: {
         "items": [
             prototypes.IRON_LONG_SWORD
         ],
@@ -997,15 +803,7 @@ OccupationTable = {
         ],
         "starting_loc": []
     },
-    str(Occupation.SquireTwo): {
-        "name": "Alchemist",
-        "items": [
-
-        ],
-        "starting_loc": []
-    },
-    str(Occupation.TaxCollector): {
-        "name": "Tax Collector",
+    Occupation.TaxCollector: {
         "items": [
             prototypes.IRON_LONG_SWORD
         ],
@@ -1017,29 +815,19 @@ OccupationTable = {
         ],
         "starting_loc": []
     },
-    str(Occupation.Trapper): {
-        "name": "Trapper",
+    Occupation.Trapper: {
         "items": [
 
         ],
         "starting_loc": []
     },
-    str(Occupation.TrapperTwo): {
-        "name": "Trapper",
+    Occupation.Urchin: {
         "items": [
 
         ],
         "starting_loc": []
     },
-    str(Occupation.Urchin): {
-        "name": "Urchin",
-        "items": [
-
-        ],
-        "starting_loc": []
-    },
-    str(Occupation.Wainwright): {
-        "name": "Wainwright",
+    Occupation.Wainwright: {
         "items": [
             prototypes.WOODEN_CLUB
         ],
@@ -1048,8 +836,7 @@ OccupationTable = {
         ],
         "starting_loc": []
     },
-    str(Occupation.Weaver): {
-        "name": "Weaver",
+    Occupation.Weaver: {
         "items": [
             prototypes.SMALL_IRON_DAGGER
         ],
@@ -1058,8 +845,7 @@ OccupationTable = {
         ],
         "starting_loc": []
     },
-    str(Occupation.WizardsApprentice): {
-        "name": "Wizard's Apprentice",
+    Occupation.WizardsApprentice: {
         "items": [
             prototypes.SMALL_IRON_DAGGER
         ],
@@ -1068,22 +854,7 @@ OccupationTable = {
         ],
         "starting_loc": []
     },
-    str(Occupation.Woodcutter): {
-        "name": "Woodcutter",
-        "items": [
-
-        ],
-        "starting_loc": []
-    },
-    str(Occupation.WoodcutterTwo): {
-        "name": "Woodcutter",
-        "items": [
-
-        ],
-        "starting_loc": []
-    },
-    str(Occupation.WoodcutterThree): {
-        "name": "Woodcutter",
+    Occupation.Woodcutter: {
         "items": [
 
         ],

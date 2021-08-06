@@ -14,8 +14,8 @@ from enum import Enum
 from evennia.utils import create
 from evennia.contrib import gendersub
 from world.languages import Language
-from world.occupations import Occupation
 from world.occupations import OccupationTable
+from world.occupations import get_random_occupation
 import typeclasses.auras as auras
 from world.birthaugur import BirthAugur
 from world.birthaugur import BirthAugurTable
@@ -234,8 +234,8 @@ class Character(gendersub.GenderCharacter):
         self.db.silver = 0
         self.db.copper = roll_dice(5, 12)
 
-        self.db.occupation = Occupation(roll_dice(1, 100))
-        occupation = str(self.db.occupation)
+        self.db.occupation = get_random_occupation()
+        occupation = self.db.occupation
         if "weapon_proficiencies" in OccupationTable[occupation]:
             self.db.weapon_proficiencies.append(
                 OccupationTable[occupation]["weapon_proficiencies"]
