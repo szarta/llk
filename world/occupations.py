@@ -1,111 +1,40 @@
-from enum import Enum
+#from enum import Enum
 from world.weapons import WeaponType
 import world.prototypes as prototypes
 from world.races import Race
 
 
-class Occupation(Enum):
-    Alchemist = 1
-    AnimalTrainer = 2
-    Armorer = 3
-    Astrologer = 4
-    Barber = 5
-    Beadle = 6
-    Beekeeper = 7
-    Blacksmith = 8
-    Butcher = 9
-    CaravanGuard = 10
-    Cheesemaker = 11
-    Cobbler = 12
-    ConfidenceArtist = 13
-    Cooper = 14
-    Costermonger = 15
-    Cutpurse = 16
-    DitchDigger = 17
-    DockWorker = 18
-    DwarvenApothecarist = 19
-    DwarvenBlacksmith = 20
-    DwarvenChestMaker = 21
-    DwarvenHerder = 22
-    DwarvenMiner = 23
-    DwarvenMinerTwo = 24
-    DwarvenMushroomFarmer = 25
-    DwarvenRatCatcher = 26
-    DwarvenStonemason = 27
-    DwarvenStonemasonTwo = 28
-    ElvenArtisan = 29
-    ElvenBarrister = 30
-    ElvenChandler = 31
-    ElvenFalconer = 32
-    ElvenForester = 33
-    ElvenForesterTwo = 34
-    ElvenGlassblower = 35
-    ElvenNavigator = 36
-    ElvenSage = 37
-    ElvenSageTwo = 38
-    Farmer = 39
-    FarmerTwo = 40
-    FarmerThree = 41
-    FarmerFour = 42
-    FarmerFive = 43
-    FarmerSix = 44
-    FarmerSeven = 45
-    FarmerEight = 46
-    FarmerNine = 47
-    FortuneTeller = 48
-    Gambler = 49
-    Gongfarmer = 50
-    Gravedigger = 51
-    GravediggerTwo = 52
-    GuildBeggar = 53
-    GuildBeggarTwo = 54
-    HalflingChickenButcher = 55
-    HalflingDyer = 56
-    HalflingDyerTwo = 57
-    HalflingGloveMaker = 58
-    HalflingGypsy = 59
-    HalflingHaberdasher = 60
-    HalflingMariner = 61
-    HalflingMoneylender = 62
-    HalflingTrader = 63
-    HalflingVagrant = 64
-    Healer = 65
-    Herbalist = 66
-    Herder = 67
-    Hunter = 68
-    HunterTwo = 69
-    IndenturedServant = 70
-    Jester = 71
-    Jeweler = 72
-    Locksmith = 73
-    Mendicant = 74
-    Mercenary = 75
-    Merchant = 76
-    Baker = 77
-    Minstrel = 78
-    Noble = 79
-    Orphan = 80
-    Ostler = 81
-    Outlaw = 82
-    RopeMaker = 83
-    Scribe = 84
-    Shaman = 85
-    Slave = 86
-    Smuggler = 87
-    Soldier = 88
-    Squire = 89
-    SquireTwo = 90
-    TaxCollector = 91
-    Trapper = 92
-    TrapperTwo = 93
-    Urchin = 94
-    Wainwright = 95
-    Weaver = 96
-    WizardsApprentice = 97
-    Woodcutter = 98
-    WoodcutterTwo = 99
-    WoodcutterThree = 100
+class Occupation:
+    occupation_list = ('', 'Alchemist', 'AnimalTrainer', 'Armorer',
+        'Astrologer', 'Barber', 'Beadle', 'Beekeeper', 'Blacksmith',
+        'Butcher', 'CaravanGuard', 'Cheesemaker', 'Cobbler',
+        'ConfidenceArtist', 'Cooper', 'Costermonger', 'Cutpurse',
+        'DitchDigger', 'DockWorker', 'DwarvenApothecarist',
+        'DwarvenBlacksmith', 'DwarvenChestMaker', 'DwarvenHerder',
+        'DwarvenMiner', 'DwarvenMinerTwo', 'DwarvenMushroomFarmer',
+        'DwarvenRatCatcher', 'DwarvenStonemason', 'DwarvenStonemasonTwo',
+        'ElvenArtisan', 'ElvenBarrister', 'ElvenChandler', 'ElvenFalconer',
+        'ElvenForester', 'ElvenForesterTwo', 'ElvenGlassblower',
+        'ElvenNavigator', 'ElvenSage', 'ElvenSageTwo', 'Farmer', 'FarmerTwo',
+        'FarmerThree', 'FarmerFour', 'FarmerFive', 'FarmerSix', 'FarmerSeven',
+        'FarmerEight', 'FarmerNine', 'FortuneTeller', 'Gambler', 'Gongfarmer',
+        'Gravedigger','GravediggerTwo', 'GuildBeggar', 'GuildBeggarTwo',
+        'HalflingChickenButcher', 'HalflingDyer', 'HalflingDyerTwo',
+        'HalflingGloveMaker', 'HalflingGypsy', 'HalflingHaberdasher',
+        'HalflingMariner', 'HalflingMoneylender', 'HalflingTrader',
+        'HalflingVagrant', 'Healer', 'Herbalist', 'Herder', 'Hunter',
+        'HunterTwo', 'IndenturedServant', 'Jester', 'Jeweler', 'Locksmith',
+        'Mendicant', 'Mercenary', 'Merchant', 'Baker', 'Minstrel', 'Noble',
+        'Orphan', 'Ostler', 'Outlaw', 'RopeMaker', 'Scribe', 'Shaman',
+        'Slave', 'Smuggler', 'Soldier', 'Squire', 'SquireTwo', 'TaxCollector',
+        'Trapper', 'TrapperTwo', 'Urchin', 'Wainwright', 'Weaver',
+        'WizardsApprentice', 'Woodcutter', 'WoodcutterTwo', 'WoodcutterThree0')
 
+    def __init__(self, name):
+        self.name = self.occupation_list[name]
+
+    def __str__(self):
+        return str(self.name)
 
 OccupationTable = {
     str(Occupation.Alchemist): {
