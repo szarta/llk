@@ -58,6 +58,42 @@ APRON = {
     "possible_wear_locations": [WearLocation.Body]
 }
 
+PURPLE_CEREMONIAL_OVERCOAT = {
+    "typeclass": "typeclasses.items.WearableItem",
+    "key": "purple ceremonial overcoat",
+    "desc": "A purple ceremonial overcoat.",
+    "possible_wear_locations": [WearLocation.Body]
+}
+
+BLACK_SILK_TIGHTS = {
+    "typeclass": "typeclasses.items.WearableItem",
+    "key": "black silk tights",
+    "desc": "A pair of black silk tights.",
+    "possible_wear_locations": [WearLocation.Legs]
+}
+
+HOLY_SYMBOL = {
+    "typeclass": "typeclasses.items.HolyItem",
+    "key": "holy symbol",
+    "desc": "A holy symbol.",
+    "possible_wear_locations": [WearLocation.Held]
+}
+
+ORANGE_COTTON_SHIRT = {
+    "typeclass": "typeclasses.items.WearableItem",
+    "key": "orange cotton shirt",
+    "desc": "An orange cotton shirt.",
+    "possible_wear_locations": [WearLocation.Torso]
+}
+
+
+RED_SILK_SHIRT = {
+    "typeclass": "typeclasses.items.WearableItem",
+    "key": "red silk shirt",
+    "desc": "A red short-sleeved silk shirt.",
+    "possible_wear_locations": [WearLocation.Torso]
+}
+
 WHITE_LINEN_SHIRT = {
     "typeclass": "typeclasses.items.WearableItem",
     "key": "white linen shirt",
@@ -70,6 +106,120 @@ BLACK_CANVAS_SHOES = {
     "key": "black canvas shoes",
     "desc": "A well-worn pair of black-dyed hemp canvas shoes.",
     "possible_wear_locations": [WearLocation.Feet]
+}
+
+MIXED_HIDE_PANTS = {
+    "typeclass": "typeclasses.items.WearableItem",
+    "key": "mixed-hide pants",
+    "desc": "A pair of mixed-hide pants.",
+    "possible_wear_locations": [WearLocation.Legs]
+}
+
+LARGE_HIDE_CLOAK = {
+    "typeclass": "typeclasses.items.WearableItem",
+    "key": "large hide cloak",
+    "desc": "A large cloak made of animal hides.",
+    "possible_wear_locations": [WearLocation.Back]
+}
+
+GREEN_FEATHERED_CAP = {
+    "typeclass": "typeclasses.items.WearableItem",
+    "key": "green feathered cap",
+    "desc": "A green feathered cap.",
+    "possible_wear_locations": [WearLocation.Head]
+}
+
+YELLOW_SUSPENDERS = {
+    "typeclass": "typeclasses.items.WearableItem",
+    "key": "yellow suspenders",
+    "desc": "A set of yellow suspenders.",
+    "possible_wear_locations": [WearLocation.Shoulders]
+}
+
+BLUE_COTTON_JEANS = {
+    "typeclass": "typeclasses.items.WearableItem",
+    "key": "blue cotton jeans",
+    "desc": "A pair of blue cotton jeans.",
+    "possible_wear_locations": [WearLocation.Legs]
+}
+
+LARGE_BROWN_HOODED_CLOAK = {
+    "typeclass": "typeclasses.items.WearableItem",
+    "key": "large brown hooded cloak",
+    "desc": "A large brown hooded cloak.",
+    "possible_wear_locations": [WearLocation.Back]
+}
+
+SILK_SASH_BELT = {
+    "typeclass": "typeclasses.items.WearableItem",
+    "key": "silk sash belt",
+    "desc": "A silk sash belt.",
+    "possible_wear_locations": [WearLocation.Waist]
+}
+
+ROPE_BELT = {
+    "typeclass": "typeclasses.items.WearableItem",
+    "key": "rope belt",
+    "desc": "A belt made of rope.",
+    "possible_wear_locations": [WearLocation.Waist]
+}
+
+BLACK_LEATHER_BELT = {
+    "typeclass": "typeclasses.items.WearableItem",
+    "key": "black leather belt",
+    "desc": "A black leather belt.",
+    "possible_wear_locations": [WearLocation.Waist]
+}
+
+MONOCLE = {
+    "typeclass": "typeclasses.items.WearableItem",
+    "key": "monocle",
+    "desc": "A monocle.",
+    "possible_wear_locations": [WearLocation.Head]
+}
+
+PURPLE_STARRY_ROBE = {
+    "typeclass": "typeclasses.items.WearableItem",
+    "key": "purple star robe",
+    "desc": "A purple robe with yellow stars on it.",
+    "possible_wear_locations": [WearLocation.Body]
+}
+
+THICK_LEATHER_GLOVES = {
+    "typeclass": "typeclasses.items.WearableItem",
+    "key": "thick leather gloves",
+    "desc": "A set of thick leather gloves.",
+    "possible_wear_locations": [WearLocation.Hands]
+}
+
+LEATHER_TUNIC = {
+    "typeclass": "typeclasses.items.WearableItem",
+    "key": "leather tunic",
+    "desc": "A leather tunic.",
+    "possible_wear_locations": [WearLocation.Torso]
+}
+
+LEATHER_BOOTS = {
+    "typeclass": "typeclasses.items.WearableItem",
+    "key": "leather boots",
+    "desc": "A set of leather boots.",
+    "possible_wear_locations": [WearLocation.Feet]
+}
+
+WHITE_COTTON_SHIRT = {
+    "typeclass": "typeclasses.items.WearableItem",
+    "key": "white cotton shirt",
+    "desc": "A white cotton shirt.",
+    "possible_wear_locations": [WearLocation.Torso]
+}
+
+
+
+LEATHER_PANTS = {
+    "typeclass": "typeclasses.items.WearableItem",
+    "key": "leather pants",
+    "desc": "A set of leather pants.",
+    "possible_wear_locations": [WearLocation.Legs]
 }
 
 IRON_HELMET = {
@@ -139,6 +289,26 @@ DRIED_ASSORTED_FRUIT = {
     "key": "dried assorted fruit",
     "desc": "A handful of dried assorted fruit.",
     "is_edible": True
+}
+
+SIDE_OF_BEEF = {
+    "typeclass": "typeclasses.items.Item",
+    "key": "side of beef",
+    "desc": "A side of beef.",
+    "is_edible": True
+}
+
+STINKY_CHEESE = {
+    "typeclass": "typeclasses.items.Item",
+    "key": "quarter wheel stinky cheese",
+    "desc": "A quarter wheel of stinky cheese.",
+    "is_edible": True
+}
+
+STEEL_TONGS = {
+    "typeclass": "typeclasses.items.Item",
+    "key": "steel tongs",
+    "desc": "A pair of steel tongs.",
 }
 
 JAR_OF_HONEY = {

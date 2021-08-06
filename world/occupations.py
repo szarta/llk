@@ -126,7 +126,13 @@ OccupationTable = {
     str(Occupation.AnimalTrainer): {
         "name": "Animal Trainer",
         "items": [
-            prototypes.WOODEN_CLUB
+            prototypes.GREEN_FEATHERED_CAP,
+            prototypes.LARGE_HIDE_CLOAK,
+            prototypes.WHITE_LINEN_SHIRT,
+            prototypes.ROPE_BELT,
+            prototypes.MIXED_HIDE_PANTS,
+            prototypes.WOODEN_CLUB,
+            prototypes.LEATHER_BOOTS
         ],
         "weapon_proficiencies": [
             WeaponType.Club
@@ -136,6 +142,12 @@ OccupationTable = {
     str(Occupation.Armorer): {
         "name": "Armorer",
         "items": [
+            prototypes.WHITE_LINEN_SHIRT,
+            prototypes.IRON_HELMET,
+            prototypes.LEATHER_PANTS,
+            prototypes.THICK_LEATHER_GLOVES,
+            prototypes.BLACK_LEATHER_BELT,
+            prototypes.LEATHER_BOOTS,
             prototypes.BALL_PEEN_HAMMER
         ],
         "weapon_proficiencies": [
@@ -146,7 +158,10 @@ OccupationTable = {
     str(Occupation.Astrologer): {
         "name": "Astrologer",
         "items": [
-            prototypes.SMALL_IRON_DAGGER
+            prototypes.SMALL_IRON_DAGGER,
+            prototypes.SPYGLASS,
+            prototypes.PURPLE_STARRY_ROBE,
+            prototypes.ROPE_BELT,
         ],
         "weapon_proficiencies": [
             WeaponType.Dagger
@@ -156,7 +171,13 @@ OccupationTable = {
     str(Occupation.Barber): {
         "name": "Barber",
         "items": [
-            prototypes.FOLDING_STRAIGHT_EDGE_RAZOR
+            prototypes.APRON,
+            prototypes.RED_SILK_SHIRT,
+            prototypes.BLACK_LEATHER_BELT,
+            prototypes.LEATHER_PANTS,
+            prototypes.BLACK_CANVAS_SHOES,
+            prototypes.FOLDING_STRAIGHT_EDGE_RAZOR,
+            prototypes.SCISSORS
         ],
         "weapon_proficiencies": [
             WeaponType.Dagger
@@ -166,6 +187,10 @@ OccupationTable = {
     str(Occupation.Beadle): {
         "name": "Beadle",
         "items": [
+            prototypes.PURPLE_CEREMONIAL_OVERCOAT,
+            prototypes.ORANGE_COTTON_SHIRT,
+            prototypes.BLACK_SILK_TIGHTS,
+            prototypes.BLACK_CANVAS_SHOES,
             prototypes.WOODEN_STAFF
         ],
         "weapon_proficiencies": [
@@ -176,7 +201,11 @@ OccupationTable = {
     str(Occupation.Beekeeper): {
         "name": "Beekeeper",
         "items": [
-            prototypes.WOODEN_STAFF
+            prototypes.WOODEN_STAFF,
+            prototypes.JAR_OF_HONEY,
+            prototypes.WHITE_LINEN_SHIRT,
+            prototypes.LEATHER_PANTS,
+            prototypes.LEATHER_BOOTS
         ],
         "weapon_proficiencies": [
             WeaponType.Staff
@@ -186,7 +215,13 @@ OccupationTable = {
     str(Occupation.Blacksmith): {
         "name": "Blacksmith",
         "items": [
-            prototypes.BALL_PEEN_HAMMER
+            prototypes.WHITE_LINEN_SHIRT,
+            prototypes.LEATHER_PANTS,
+            prototypes.THICK_LEATHER_GLOVES,
+            prototypes.BLACK_LEATHER_BELT,
+            prototypes.LEATHER_BOOTS,
+            prototypes.BALL_PEEN_HAMMER,
+            prototypes.STEEL_TONGS
         ],
         "weapon_proficiencies": [
             WeaponType.Club
@@ -196,7 +231,12 @@ OccupationTable = {
     str(Occupation.Butcher): {
         "name": "Butcher",
         "items": [
-            prototypes.SHARP_IRON_CLEAVER
+            prototypes.SHARP_IRON_CLEAVER,
+            prototypes.WHITE_COTTON_SHIRT,
+            prototypes.LEATHER_PANTS,
+            prototypes.BLACK_CANVAS_SHOES,
+            prototypes.APRON,
+            prototypes.SIDE_OF_BEEF
         ],
         "weapon_proficiencies": [
             WeaponType.Axe
@@ -206,7 +246,12 @@ OccupationTable = {
     str(Occupation.CaravanGuard): {
         "name": "Caravan Guard",
         "items": [
-            prototypes.IRON_SHORT_SWORD
+            prototypes.IRON_SHORT_SWORD,
+            prototypes.SILK_SASH_BELT,
+            prototypes.LARGE_BROWN_HOODED_CLOAK,
+            prototypes.LEATHER_TUNIC,
+            prototypes.LEATHER_PANTS,
+            prototypes.LEATHER_BOOTS
         ],
         "weapon_proficiencies": [
             WeaponType.ShortSword
@@ -216,7 +261,13 @@ OccupationTable = {
     str(Occupation.Cheesemaker): {
         "name": "Cheesemaker",
         "items": [
-            prototypes.WOODEN_CUDGEL
+            prototypes.APRON,
+            prototypes.WHITE_LINEN_SHIRT,
+            prototypes.YELLOW_SUSPENDERS,
+            prototypes.BLUE_COTTON_JEANS,
+            prototypes.LEATHER_BOOTS,
+            prototypes.WOODEN_CUDGEL,
+            prototypes.STINKY_CHEESE
         ],
         "weapon_proficiencies": [
             WeaponType.Staff

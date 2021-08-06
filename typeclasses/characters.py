@@ -185,7 +185,6 @@ class Character(gendersub.GenderCharacter):
         self.db.level = 0
         self.db.ac = 0
         self.db.xp = 0
-        self.db.age = 0  # TODO: figure this out, random?  races?
         self.db.alignment = Alignment.Neutral  # TODO: alignment selection
 
         # these are base stats before any modifiers or active effects
@@ -254,6 +253,15 @@ class Character(gendersub.GenderCharacter):
 
         if self.db.race == Race.Dwarf or self.db.race == Race.Halfling:
             self.db.speed = 20
+
+        if self.db.race == Race.Human:
+            self.db.age = random.randint(18, 45)
+        elif self.db.race == Race.Dwarf:
+            self.db.age = random.randint(37, 75)
+        elif self.db.race == Race.Elf:
+            self.db.age = random.randint(35, 100)
+        elif self.db.race == Race.Halfling:
+            self.db.age = random.randint(20, 55)
 
         if "money" in OccupationTable[occupation]:
             money_data = OccupationTable[occupation]["money"]
