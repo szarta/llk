@@ -209,9 +209,9 @@ class Character(gendersub.GenderCharacter):
         super().at_object_creation()
 
         self.db.level = 0
-        self.db.ac = 0
+        self.db.ac = 10
         self.db.xp = 0
-        self.db.alignment = Alignment.Neutral  # TODO: alignment selection
+        self.db.alignment = Alignment.Neutral
 
         # these are base stats before any modifiers or active effects
         self.db.strength = roll_dice(3, 6)
