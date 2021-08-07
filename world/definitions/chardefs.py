@@ -595,7 +595,8 @@ OccupationTable = {
             armor.LARGE_BROWN_HOODED_CLOAK,
             armor.LEATHER_TUNIC,
             armor.LEATHER_PANTS,
-            armor.LEATHER_BOOTS
+            armor.LEATHER_BOOTS,
+            miscitems.ROLL_OF_LINEN
         ],
         "weapon_proficiencies": [
             WeaponType.ShortSword
@@ -617,7 +618,13 @@ OccupationTable = {
     },
     Occupation.Cobbler: {
         "items": [
-            weapons.SHARP_STITCHING_AWL
+            clothes.SPECTACLES,
+            clothes.WHITE_LINEN_SHIRT,
+            clothes.BLACK_LEATHER_BELT,
+            clothes.GRAY_LINEN_PANTS,
+            armor.LEATHER_BOOTS,
+            weapons.SHARP_STITCHING_AWL,
+            miscitems.SHOEHORN
         ],
         "weapon_proficiencies": [
             WeaponType.Dagger
@@ -625,6 +632,10 @@ OccupationTable = {
     },
     Occupation.ConfidenceArtist: {
         "items": [
+            clothes.RED_SILK_SHIRT,
+            armor.HIDE_PANTS,
+            armor.LARGE_BLACK_LEATHER_CLOAK,
+            armor.LEATHER_BOOTS,
             weapons.SMALL_IRON_DAGGER
         ],
         "weapon_proficiencies": [
@@ -633,7 +644,12 @@ OccupationTable = {
     },
     Occupation.Cooper: {
         "items": [
-            weapons.IRON_CROWBAR
+            armor.THICK_LEATHER_GLOVES,
+            clothes.WHITE_LINEN_SHIRT,
+            clothes.GRAY_LINEN_PANTS,
+            armor.LEATHER_BOOTS,
+            weapons.IRON_CROWBAR,
+            containers.WOODEN_STORAGE_BARREL
         ],
         "weapon_proficiencies": [
             WeaponType.Club
@@ -641,6 +657,11 @@ OccupationTable = {
     },
     Occupation.Costermonger: {
         "items": [
+            clothes.WHITE_COTTON_APRON,
+            clothes.WHITE_LINEN_SHIRT,
+            clothes.BLACK_CANVAS_SHOES,
+            clothes.GRAY_LINEN_PANTS,
+            armor.LEATHER_BRACERS,
             weapons.IRON_PARING_KNIFE
         ],
         "weapon_proficiencies": [
@@ -649,7 +670,12 @@ OccupationTable = {
     },
     Occupation.Cutpurse: {
         "items": [
-            weapons.SMALL_IRON_DAGGER
+            armor.LARGE_BROWN_HOODED_CLOAK,
+            weapons.SMALL_IRON_DAGGER,
+            clothes.WHITE_LINEN_SHIRT,
+            clothes.GRAY_LINEN_PANTS,
+            armor.LEATHER_BOOTS,
+            containers.SMALL_CHEST
         ],
         "weapon_proficiencies": [
             WeaponType.Dagger
@@ -657,6 +683,12 @@ OccupationTable = {
     },
     Occupation.DitchDigger: {
         "items": [
+            clothes.BROWN_WOOL_CAP,
+            clothes.STITCHED_HEMP_VEST,
+            armor.THICK_LEATHER_GLOVES,
+            clothes.GRAY_LINEN_PANTS,
+            armor.LEATHER_BOOTS,
+            miscitems.BAG_OF_FINE_DIRT,
             weapons.SHOVEL
         ],
         "weapon_proficiencies": [
@@ -665,13 +697,25 @@ OccupationTable = {
     },
     Occupation.DockWorker: {
         "items": [
-
+            clothes.WHITE_LINEN_SHIRT,
+            armor.LEATHER_PANTS,
+            weapons.POLE,
+            miscitems.BOOK_OF_RPG_SECRETS,
+            armor.LEATHER_BOOTS,
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Staff
         ]
     },
     Occupation.DwarvenApothecarist: {
         "race": Race.Dwarf,
         "items": [
-            weapons.WOODEN_CUDGEL
+            clothes.WHITE_COTTON_SHIRT,
+            armor.THICK_LEATHER_GLOVES,
+            clothes.BLACK_CANVAS_SHOES,
+            clothes.GRAY_LINEN_PANTS,
+            weapons.WOODEN_CUDGEL,
+            containers.STEEL_VIAL
         ],
         "weapon_proficiencies": [
             WeaponType.Staff

@@ -24,6 +24,25 @@ SOFTWARE.
 from typeclasses.items import WearLocation
 
 
+ROLL_OF_LINEN = {
+    "typeclass": "typeclasses.items.Item",
+    "key": "one yard linen roll",
+    "desc": "A roll of linen (one yard)."
+}
+
+BAG_OF_FINE_DIRT = {
+    "typeclass": "typeclasses.items.Item",
+    "key": "bag of fine dirt",
+    "desc": "A bag of fine dirt (one pound)."
+}
+
+BOOK_OF_RPG_SECRETS = {
+    "typeclass": "typeclasses.items.Item",
+    "key": "book of rpg secrets",
+    "desc": "A book of rpg secrets.",
+    "copper_value": 50
+}
+
 HOLY_SYMBOL = {
     "typeclass": "typeclasses.items.HolyItem",
     "key": "holy symbol",

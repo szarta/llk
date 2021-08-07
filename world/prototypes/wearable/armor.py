@@ -73,6 +73,17 @@ LARGE_BLACK_LEATHER_CLOAK = {
     "possible_wear_locations": [WearLocation.Back]
 }
 
+########
+# Arms #
+########
+
+LEATHER_BRACERS = {
+    "typeclass": "typeclasses.items.WearableItem",
+    "key": "bracers",
+    "armor_value": 20,
+    "material": MaterialType.Leather,
+    "possible_wear_locations": [WearLocation.Arms]
+}
 
 #########
 # Hands #

@@ -106,17 +106,23 @@ class LiquidContainer(Item):
 
     def update_description(self):
         # TODO: we need to call this at some point after item creation...
-        level = str(self.db.fill_level)
+        level = str(self.db.fill_level.display_name)
         if self.db.fill_level == FillLevel.Empty:
             level = "An {}".format(level)
+
+            self.db.desc = "{} {}".format(
+                level,
+                self.key,
+            )
+
         else:
             level = "A {}".format(level)
 
-        self.db.desc = "{} {} of {}.".format(
-            level,
-            self.key,
-            self.db.liquid_contents
-        )
+            self.db.desc = "{} {} of {}.".format(
+                level,
+                self.key,
+                self.db.liquid_contents
+            )
 
 
 class WearableItem(Item):

@@ -27,10 +27,16 @@ from typeclasses.items import MaterialType
 
 WOODEN_STORAGE_BARREL = {
     "typeclass": "typeclasses.items.DryGoodsContainer",
-    "key": "wooden storage barrel",
-    "desc": "A wooden storage barrel.",
+    "key": "storage barrel",
     "material": MaterialType.Wood,
     "max_items": 16
+}
+
+SMALL_CHEST = {
+    "typeclass": "typeclasses.items.DryGoodsContainer",
+    "key": "small chest",
+    "material": MaterialType.Wood,
+    "max_items": 4
 }
 
 JAR_OF_HONEY = {
@@ -45,8 +51,14 @@ JAR_OF_HONEY = {
 FLASK_OF_OIL = {
     "typeclass": "typeclasses.items.LiquidContainer",
     "key": "flask",
-    "desc": "A simple flask.",
     "fill_level": FillLevel.Full,
     "material": MaterialType.Steel,
     "liquid_contents": "oil"
+}
+
+STEEL_VIAL = {
+    "typeclass": "typeclasses.items.LiquidContainer",
+    "key": "vial",
+    "fill_level": FillLevel.Empty,
+    "material": MaterialType.Steel,
 }

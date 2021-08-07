@@ -29,7 +29,7 @@ class BodyType(AutoNumberEnum):
         self.display_name = display_name
 
     Tiny = "Tiny"  # like, pixie or insect-sized
-    Small = "Small"  # dwarves and halflings
+    Short = "Short"  # dwarves and halflings
     Normal = "Normal"  # humans/humanoids
     Tall = "Tall"  # elves
     Giant = "Giant"  # giants, adult dragons

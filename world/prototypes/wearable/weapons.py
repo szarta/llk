@@ -34,6 +34,12 @@ WOODEN_STAFF = {
     "material": MaterialType.Wood
 }
 
+POLE = {
+    "typeclass": "typeclasses.items.Staff",
+    "key": "pole",
+    "material": MaterialType.Wood
+}
+
 WOODEN_CLUB = {
     "typeclass": "typeclasses.items.Club",
     "key": "club",

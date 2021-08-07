@@ -57,6 +57,13 @@ WHITE_LINEN_SHIRT = {
     "possible_wear_locations": [WearLocation.Torso]
 }
 
+STITCHED_HEMP_VEST = {
+    "typeclass": "typeclasses.items.WearableItem",
+    "key": "stitched vest",
+    "material": MaterialType.Hemp,
+    "possible_wear_locations": [WearLocation.Torso]
+}
+
 ########
 # Legs #
 ########
@@ -126,6 +133,20 @@ GREEN_FEATHERED_CAP = {
     "typeclass": "typeclasses.items.WearableItem",
     "key": "green feathered cap",
     "material": MaterialType.Wool,
+    "possible_wear_locations": [WearLocation.Head]
+}
+
+BROWN_WOOL_CAP = {
+    "typeclass": "typeclasses.items.WearableItem",
+    "key": "brown cap",
+    "material": MaterialType.Wool,
+    "possible_wear_locations": [WearLocation.Head]
+}
+
+SPECTACLES = {
+    "typeclass": "typeclasses.items.WearableItem",
+    "key": "spectacles",
+    "material": MaterialType.Glass,
     "possible_wear_locations": [WearLocation.Head]
 }
 

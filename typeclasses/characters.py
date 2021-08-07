@@ -34,6 +34,7 @@ from world.definitions.chardefs import BirthAugur
 from world.definitions.chardefs import BirthAugurAuraTable
 from world.definitions.chardefs import Race
 from world.definitions.chardefs import Alignment
+from world.definitions.bodytype import BodyType
 
 import typeclasses.auras as auras
 
@@ -194,10 +195,10 @@ class Character(gendersub.GenderCharacter):
 
             aura = create.create_object(
                 auras.PersistentEffectAura,
-                key=augur_data["name"],
+                key=self.db.birth_augur.display_name[0],
                 location=self,
                 attributes=[
-                    ("desc", augur_data["desc"]),
+                    ("desc", self.db.birth_augur.display_name[1]),
                     ("effect_modifiers", aura_effects)
                 ]
             )
@@ -257,13 +258,23 @@ class Character(gendersub.GenderCharacter):
             self.db.speed = 20
 
         if self.db.race == Race.Human:
+            self.db.body_type = BodyType.Normal
             self.db.age = random.randint(18, 45)
         elif self.db.race == Race.Dwarf:
+            self.db.body_type = BodyType.Short
             self.db.age = random.randint(37, 75)
         elif self.db.race == Race.Elf:
             self.db.age = random.randint(35, 100)
+            self.db.body_type = BodyType.Tall
         elif self.db.race == Race.Halfling:
+            self.db.body_type = BodyType.Short
             self.db.age = random.randint(20, 55)
+
+        items = self.contents
+        if items:
+            for item in items:
+                if "possible_wear_locations" in item.db:
+                    item.db.target_body_type = self.db.body_type
 
         if "money" in OccupationTable[occupation]:
             money_data = OccupationTable[occupation]["money"]
