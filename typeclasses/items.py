@@ -1,75 +1,36 @@
+"""
+MIT License
+
+Copyright (c) 2021 Brandon Arrendondo
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+"""
 from evennia import DefaultObject
-from enum import Enum
-from world.weapons import WeaponType
 from evennia.utils import create
+
+from world.definitions.itemdefs import WeaponType
+from world.definitions.itemdefs import MaterialType
+from world.definitions.itemdefs import FillLevel
+from world.definitions.itemdefs import WearLocation
+from world.definitions.chardefs import BodyType
+
 import typeclasses.auras as auras
-
-
-class WearLocation(Enum):
-    Inventory = 2
-    Head = 3
-    Neck = 4
-    Shoulders = 5
-    Arms = 6
-    Hands = 7
-    Fingers = 8
-    Waist = 9
-    Torso = 10
-    Legs = 11
-    Feet = 12
-    Body = 13
-    Back = 14
-    Held = 15
-
-    def __str__(self):
-        if self == WearLocation.Head:
-            return "head"
-        elif self == WearLocation.Neck:
-            return "neck"
-        elif self == WearLocation.Shoulders:
-            return "shoulders"
-        elif self == WearLocation.Arms:
-            return "arms"
-        elif self == WearLocation.Hands:
-            return "hands"
-        elif self == WearLocation.Fingers:
-            return "finger"
-        elif self == WearLocation.Waist:
-            return "waist"
-        elif self == WearLocation.Torso:
-            return "torso"
-        elif self == WearLocation.Legs:
-            return "legs"
-        elif self == WearLocation.Feet:
-            return "feet"
-        elif self == WearLocation.Body:
-            return "body"
-        elif self == WearLocation.Back:
-            return "back"
-        elif self == WearLocation.Held:
-            return "holding"
-        else:
-            return ""
-
-
-class FillLevel(Enum):
-    Empty = 0
-    NearlyEmpty = 1
-    HalfFull = 2
-    NearlyFull = 3
-    Full = 4
-
-    def __str__(self):
-        if self == FillLevel.Empty:
-            return "empty"
-        elif self == FillLevel.NearlyEmpty:
-            return "nearly empty"
-        elif self == FillLevel.HalfFull:
-            return "half full"
-        elif self == FillLevel.NearlyFull:
-            return "nearly full"
-        elif self == FillLevel.Full:
-            return "full"
 
 
 class Item(DefaultObject):
@@ -81,6 +42,8 @@ class Item(DefaultObject):
         self.db.is_edible = False
 
         self.db.auras = []
+
+        self.db.material = MaterialType.Unknown
 
         self.db.age = 0
         self.db.decay_rate = 0
@@ -161,12 +124,17 @@ class WearableItem(Item):
     def at_object_creation(self):
         super().at_object_creation()
 
-        self.db.armor_modifier = 0
+        self.db.armor_value = 0
 
         self.db.possible_wear_locations = [
         ]
 
         self.db.current_worn_location = WearLocation.Inventory
+
+        # note that armor find from fallen has 25% chance of being useless
+        # demi-humans cannot wear armor sized for human
+        # 75% chance discovered armor is human-sized, default to human
+        self.db.target_body_type = BodyType.Normal
 
     def is_currently_worn(self):
         worn = (

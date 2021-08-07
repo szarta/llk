@@ -1,27 +1,41 @@
 """
-Characters
+MIT License
 
-Characters are (by default) Objects setup to be puppeted by Accounts.
-They are what you "see" in game. The Character class in this module
-is setup to be the "default" character type created by the default
-creation commands.
+Copyright (c) 2021 Brandon Arrendondo
 
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 """
 import random
-import evennia
-from enum import Enum
 
+import evennia
 from evennia.utils import create
 from evennia.contrib import gendersub
-from world.languages import Language
-from world.occupations import OccupationTable
-from world.occupations import get_random_occupation
-import typeclasses.auras as auras
-from world.birthaugur import BirthAugur
-from world.birthaugur import BirthAugurTable
-from world.races import Race
 
-from world.weapons import WeaponType
+from world.definitions.chardefs import Language
+from world.definitions.chardefs import OccupationTable
+from world.definitions.chardefs import get_random_occupation
+from world.definitions.chardefs import BirthAugur
+from world.definitions.chardefs import BirthAugurAuraTable
+from world.definitions.chardefs import Race
+from world.definitions.chardefs import Alignment
+
+import typeclasses.auras as auras
 
 
 # PLACED IN THIS FILE UNTIL A BETTER SPOT FOUND
@@ -55,23 +69,6 @@ def calculate_ability_modifier(ability_score):
         modifier = 3
 
     return modifier
-
-
-class Alignment(Enum):
-    Lawful = 0
-    Neutral = 1
-    Chaotic = 2
-
-    def __str__(self):
-        if self == Alignment.Lawful:
-            return "Lawful"
-        elif self == Alignment.Neutral:
-            return "Neutral"
-        elif self == Alignment.Chaotic:
-            return "Chaotic"
-        else:
-            return "unknown"
-
 
 # PLACED IN THIS FILE UNTIL A BETTER SPOT FOUND
 
@@ -137,18 +134,19 @@ class Character(gendersub.GenderCharacter):
     def get_modified_personality(self):
         modifier = 0
 
-        for aura in self.db.auras:
-            if auras.AuraEffect.Personality in aura.db.effect_modifiers.keys():
-                modifier += aura.db.effect_modifiers[auras.AuraEffect.Personality]
+        for a in self.db.auras:
+            if auras.AuraEffect.Personality in a.db.effect_modifiers.keys():
+                modifier += a.db.effect_modifiers[auras.AuraEffect.Personality]
 
         return (self.db.personality + modifier)
 
     def get_modified_intelligence(self):
         modifier = 0
 
-        for aura in self.db.auras:
-            if auras.AuraEffect.Intelligence in aura.db.effect_modifiers.keys():
-                modifier += aura.db.effect_modifiers[auras.AuraEffect.Intelligence]
+        for a in self.db.auras:
+            if auras.AuraEffect.Intelligence in a.db.effect_modifiers.keys():
+                modifier += \
+                    a.db.effect_modifiers[auras.AuraEffect.Intelligence]
 
         return (self.db.intelligence + modifier)
 
@@ -179,30 +177,12 @@ class Character(gendersub.GenderCharacter):
 
         return (self.db.ac + modifier)
 
-    def at_object_creation(self):
-        super().at_object_creation()
-
-        self.db.level = 0
-        self.db.ac = 0
-        self.db.xp = 0
-        self.db.alignment = Alignment.Neutral  # TODO: alignment selection
-
-        # these are base stats before any modifiers or active effects
-        self.db.strength = roll_dice(3, 6)
-        self.db.agility = roll_dice(3, 6)
-        self.db.stamina = roll_dice(3, 6)
-        self.db.personality = roll_dice(3, 6)
-        self.db.intelligence = roll_dice(3, 6)
-        self.db.luck = roll_dice(3, 6)
-        self.db.hp = roll_dice(1, 4)
-        self.db.speed = 30
-
-        self.db.birth_augur = BirthAugur(roll_dice(1, 30))
+    def set_birth_augur_effect(self):
+        if self.db.birth_augur not in BirthAugurAuraTable:
+            return
 
         luck_modifier = calculate_ability_modifier(self.db.luck)
-        self.db.auras = []
-
-        augur_data = BirthAugurTable[str(self.db.birth_augur)]
+        augur_data = BirthAugurAuraTable[str(self.db.birth_augur)]
         if "effects" in augur_data and luck_modifier != 0:
             aura_effects = {}
             for m in augur_data["effects"]:
@@ -224,11 +204,33 @@ class Character(gendersub.GenderCharacter):
             aura.build_modifier_description()
             self.db.auras.append(aura)
 
+    def at_object_creation(self):
+        super().at_object_creation()
+
+        self.db.level = 0
+        self.db.ac = 0
+        self.db.xp = 0
+        self.db.alignment = Alignment.Neutral  # TODO: alignment selection
+
+        # these are base stats before any modifiers or active effects
+        self.db.strength = roll_dice(3, 6)
+        self.db.agility = roll_dice(3, 6)
+        self.db.stamina = roll_dice(3, 6)
+        self.db.personality = roll_dice(3, 6)
+        self.db.intelligence = roll_dice(3, 6)
+        self.db.luck = roll_dice(3, 6)
+        self.db.hp = roll_dice(1, 4)
+        self.db.speed = 30
+
+        self.db.auras = []
+
+        self.db.birth_augur = BirthAugur(roll_dice(1, 30))
+        self.set_birth_augur_effect()
+
         self.db.known_languages = []
         self.db.known_languages.append(Language.Common)
 
         self.db.weapon_proficiencies = []
-        self.db.weapon_proficiencies.append(WeaponType.Basic)
 
         self.db.gold = 0
         self.db.silver = 0

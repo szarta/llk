@@ -74,6 +74,15 @@ class Race(AutoNumberEnum):
     Spider = "Spider"
 
 
+class Alignment(AutoNumberEnum):
+    def __init__(self, display_name='unknown'):
+        self.display_name = display_name
+
+    Lawful = "Lawful"
+    Neutral = "Neutral"
+    Chaotic = "Chaotic"
+
+
 class BirthAugur(AutoNumberEnum):
     def __init__(self, display_name='unknown'):
         self.display_name = display_name
