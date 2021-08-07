@@ -41,7 +41,7 @@ class PersistentEffectAura(DefaultObject):
     def build_modifier_description(self):
         modifier_description = ""
         for k in self.db.effect_modifiers.keys():
-            effect_desc = k.short_desc()
+            effect_desc = k.display_name
             modifier = self.db.effect_modifiers[k]
             sign = "-"
             if modifier >= 0:

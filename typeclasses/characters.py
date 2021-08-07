@@ -37,6 +37,7 @@ from world.definitions.chardefs import Alignment
 from world.definitions.bodytype import BodyType
 
 import typeclasses.auras as auras
+from world.definitions.auradefs import AuraEffectType
 
 
 # PLACED IN THIS FILE UNTIL A BETTER SPOT FOUND
@@ -100,8 +101,8 @@ class Character(gendersub.GenderCharacter):
         modifier = calculate_ability_modifier(stam)
 
         for aura in self.db.auras:
-            if auras.AuraEffect.HP in aura.db.effect_modifiers.keys():
-                modifier += aura.db.effect_modifiers[auras.AuraEffect.HP]
+            if AuraEffectType.HP in aura.db.effect_modifiers.keys():
+                modifier += aura.db.effect_modifiers[AuraEffectType.HP]
 
         return (self.db.hp + modifier)
 
@@ -109,8 +110,8 @@ class Character(gendersub.GenderCharacter):
         modifier = 0
 
         for aura in self.db.auras:
-            if auras.AuraEffect.Strength in aura.db.effect_modifiers.keys():
-                modifier += aura.db.effect_modifiers[auras.AuraEffect.Strength]
+            if AuraEffectType.Strength in aura.db.effect_modifiers.keys():
+                modifier += aura.db.effect_modifiers[AuraEffectType.Strength]
 
         return (self.db.strength + modifier)
 
@@ -118,8 +119,8 @@ class Character(gendersub.GenderCharacter):
         modifier = 0
 
         for aura in self.db.auras:
-            if auras.AuraEffect.Agility in aura.db.effect_modifiers.keys():
-                modifier += aura.db.effect_modifiers[auras.AuraEffect.Agility]
+            if AuraEffectType.Agility in aura.db.effect_modifiers.keys():
+                modifier += aura.db.effect_modifiers[AuraEffectType.Agility]
 
         return (self.db.agility + modifier)
 
@@ -127,8 +128,8 @@ class Character(gendersub.GenderCharacter):
         modifier = 0
 
         for aura in self.db.auras:
-            if auras.AuraEffect.Stamina in aura.db.effect_modifiers.keys():
-                modifier += aura.db.effect_modifiers[auras.AuraEffect.Stamina]
+            if AuraEffectType.Stamina in aura.db.effect_modifiers.keys():
+                modifier += aura.db.effect_modifiers[AuraEffectType.Stamina]
 
         return (self.db.stamina + modifier)
 
@@ -136,8 +137,8 @@ class Character(gendersub.GenderCharacter):
         modifier = 0
 
         for a in self.db.auras:
-            if auras.AuraEffect.Personality in a.db.effect_modifiers.keys():
-                modifier += a.db.effect_modifiers[auras.AuraEffect.Personality]
+            if AuraEffectType.Personality in a.db.effect_modifiers.keys():
+                modifier += a.db.effect_modifiers[AuraEffectType.Personality]
 
         return (self.db.personality + modifier)
 
@@ -145,9 +146,9 @@ class Character(gendersub.GenderCharacter):
         modifier = 0
 
         for a in self.db.auras:
-            if auras.AuraEffect.Intelligence in a.db.effect_modifiers.keys():
+            if AuraEffectType.Intelligence in a.db.effect_modifiers.keys():
                 modifier += \
-                    a.db.effect_modifiers[auras.AuraEffect.Intelligence]
+                    a.db.effect_modifiers[AuraEffectType.Intelligence]
 
         return (self.db.intelligence + modifier)
 
@@ -155,8 +156,8 @@ class Character(gendersub.GenderCharacter):
         modifier = 0
 
         for aura in self.db.auras:
-            if auras.AuraEffect.Luck in aura.db.effect_modifiers.keys():
-                modifier += aura.db.effect_modifiers[auras.AuraEffect.Luck]
+            if AuraEffectType.Luck in aura.db.effect_modifiers.keys():
+                modifier += aura.db.effect_modifiers[AuraEffectType.Luck]
 
         return (self.db.luck + modifier)
 
@@ -164,8 +165,8 @@ class Character(gendersub.GenderCharacter):
         modifier = 0
 
         for aura in self.db.auras:
-            if auras.AuraEffect.Speed in aura.db.effect_modifiers.keys():
-                modifier += aura.db.effect_modifiers[auras.AuraEffect.Speed]
+            if AuraEffectType.Speed in aura.db.effect_modifiers.keys():
+                modifier += aura.db.effect_modifiers[AuraEffectType.Speed]
 
         return (self.db.speed + modifier)
 
@@ -173,8 +174,8 @@ class Character(gendersub.GenderCharacter):
         agi = self.get_modified_agility()
         modifier = calculate_ability_modifier(agi)
         for aura in self.db.auras:
-            if auras.AuraEffect.AC in aura.db.effect_modifiers.keys():
-                modifier += aura.db.effect_modifiers[auras.AuraEffect.AC]
+            if AuraEffectType.AC in aura.db.effect_modifiers.keys():
+                modifier += aura.db.effect_modifiers[AuraEffectType.AC]
 
         return (self.db.ac + modifier)
 
@@ -273,7 +274,7 @@ class Character(gendersub.GenderCharacter):
         items = self.contents
         if items:
             for item in items:
-                if "possible_wear_locations" in item.db:
+                if item.attributes.has("possible_wear_locations"):
                     item.db.target_body_type = self.db.body_type
 
         if "money" in OccupationTable[occupation]:

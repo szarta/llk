@@ -158,7 +158,7 @@ class Weapon(WearableItem):
         self.db.die_face = 2
         self.db.projectile_launcher = False
         self.db.throwable = False
-        self.db.required_weapon_proficiency = WeaponType.Basic
+        self.db.required_weapon_proficiency = WeaponType.Improvised
         self.db.ammo_per_shot = 0
         self.db.matching_ammunition_types = []
 
