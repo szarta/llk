@@ -132,3 +132,11 @@ IRON_COIF = {
     "material": MaterialType.Iron,
     "possible_wear_locations": [WearLocation.Head]
 }
+
+IRON_HELM = {
+    "typeclass": "typeclasses.items.WearableItem",
+    "key": "helm",
+    "armor_value ": 40,
+    "material": MaterialType.Iron,
+    "possible_wear_locations": [WearLocation.Head]
+}

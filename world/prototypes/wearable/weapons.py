@@ -68,9 +68,21 @@ IRON_CROWBAR = {
     "material": MaterialType.Iron
 }
 
+IRON_CHISEL = {
+    "typeclass": "typeclasses.items.Dagger",
+    "key": "chisel",
+    "material": MaterialType.Iron
+}
+
 IRON_LONG_SWORD = {
     "typeclass": "typeclasses.items.Longsword",
     "key": "longsword",
+    "material": MaterialType.Iron
+}
+
+IRON_MINING_PICK = {
+    "typeclass": "typeclasses.items.Club",
+    "key": "mining pick",
     "material": MaterialType.Iron
 }
 

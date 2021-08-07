@@ -26,8 +26,20 @@ from typeclasses.items import WearLocation
 
 ROLL_OF_LINEN = {
     "typeclass": "typeclasses.items.Item",
-    "key": "one yard linen roll",
+    "key": "linen roll",
     "desc": "A roll of linen (one yard)."
+}
+
+CLUMP_OF_MITHRIL = {
+    "typeclass": "typeclasses.items.Item",
+    "key": "clump mithril",
+    "desc": "A clump of mithril (one ounce)."
+}
+
+STACK_OF_WOOD = {
+    "typeclass": "typeclasses.items.Item",
+    "key": "stacked wood",
+    "desc": "A stack of wood (ten pounds)."
 }
 
 BAG_OF_FINE_DIRT = {

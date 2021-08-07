@@ -50,6 +50,13 @@ RED_SILK_SHIRT = {
     "possible_wear_locations": [WearLocation.Torso]
 }
 
+CHECKERED_FLANNEL_SHIRT = {
+    "typeclass": "typeclasses.items.WearableItem",
+    "key": "checkered shirt",
+    "material": MaterialType.Flannel,
+    "possible_wear_locations": [WearLocation.Torso]
+}
+
 WHITE_LINEN_SHIRT = {
     "typeclass": "typeclasses.items.WearableItem",
     "key": "white shirt",

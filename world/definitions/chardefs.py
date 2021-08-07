@@ -724,6 +724,12 @@ OccupationTable = {
     Occupation.DwarvenBlacksmith: {
         "race": Race.Dwarf,
         "items": [
+            clothes.WHITE_LINEN_SHIRT,
+            armor.LEATHER_PANTS,
+            armor.THICK_LEATHER_GLOVES,
+            clothes.BLACK_LEATHER_BELT,
+            armor.LEATHER_BOOTS,
+            miscitems.CLUMP_OF_MITHRIL,
             weapons.BALL_PEEN_HAMMER
         ],
         "weapon_proficiencies": [
@@ -733,13 +739,26 @@ OccupationTable = {
     Occupation.DwarvenChestMaker: {
         "race": Race.Dwarf,
         "items": [
-
+            clothes.CHECKERED_FLANNEL_SHIRT,
+            armor.LEATHER_PANTS,
+            armor.THICK_LEATHER_GLOVES,
+            clothes.BLACK_LEATHER_BELT,
+            miscitems.STACK_OF_WOOD,
+            clothes.BLACK_CANVAS_SHOES,
+            weapons.IRON_CHISEL
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Dagger
         ]
     },
     Occupation.DwarvenHerder: {
         "race": Race.Dwarf,
         "items": [
-            weapons.WOODEN_STAFF
+            clothes.STITCHED_HEMP_VEST,
+            armor.THICK_LEATHER_GLOVES,
+            weapons.WOODEN_STAFF,
+            armor.HIDE_PANTS,
+            armor.LEATHER_BOOTS
         ],
         "weapon_proficiencies": [
             WeaponType.Staff
@@ -748,7 +767,16 @@ OccupationTable = {
     Occupation.DwarvenMiner: {
         "race": Race.Dwarf,
         "items": [
+            clothes.STITCHED_HEMP_VEST,
+            clothes.IRON_HELM,
+            weapons.IRON_MINING_PICK,
+            armor.LEATHER_BOOTS,
+            armor.LEATHER_PANTS,
+            armor.THICK_LEATHER_GLOVES,
 
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Club
         ]
     },
     Occupation.DwarvenMushroomFarmer: {

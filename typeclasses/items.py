@@ -77,6 +77,12 @@ class DryGoodsContainer(Item):
         self.db.unlock_item = None
 
 
+class ControllableLightSource(Item):
+
+    def at_object_creation(self):
+        super().at_object_creation()
+
+
 class HolyItem(Item):
 
     def at_object_creation(self):
