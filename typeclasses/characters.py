@@ -182,7 +182,7 @@ class Character(gendersub.GenderCharacter):
             return
 
         luck_modifier = calculate_ability_modifier(self.db.luck)
-        augur_data = BirthAugurAuraTable[str(self.db.birth_augur)]
+        augur_data = BirthAugurAuraTable[self.db.birth_augur]
         if "effects" in augur_data and luck_modifier != 0:
             aura_effects = {}
             for m in augur_data["effects"]:
@@ -224,7 +224,7 @@ class Character(gendersub.GenderCharacter):
 
         self.db.auras = []
 
-        self.db.birth_augur = BirthAugur(roll_dice(1, 30))
+        self.db.birth_augur = random.choice(list(BirthAugur))
         self.set_birth_augur_effect()
 
         self.db.known_languages = []

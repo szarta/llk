@@ -1,10 +1,32 @@
+"""
+MIT License
+
+Copyright (c) 2021 Brandon Arrendondo
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+"""
 from evennia import Command
 from evennia.utils.ansi import raw as raw_ansi
-from typeclasses.items import WearLocation
-from typeclasses.characters import calculate_ability_modifier
 from evennia.utils import utils
-from world.birthaugur import BirthAugurTable
-from world.occupations import OccupationTable
+
+from world.definitions.itemdefs import WearLocation
+from typeclasses.characters import calculate_ability_modifier
 
 
 class CmdInventory(Command):
@@ -45,7 +67,9 @@ class CmdInventory(Command):
 
                 table.add_row(
                     f"|C{item.name}|n",
-                    "{}|n".format(utils.crop(raw_ansi(item.db.desc), width=50) or ""),
+                    "{}|n".format(
+                        utils.crop(raw_ansi(item.db.desc), width=50) or ""
+                    ),
                 )
             string = f"|wYou are carrying:\n{table}"
         self.caller.msg(string)
@@ -81,7 +105,7 @@ class CmdSheet(Command):
         current_line = ""
         first_line = True
         for lang in caller.db.known_languages:
-            lang_str = str(lang)
+            lang_str = lang.display_name
             lang_len = len(lang_str)
             line_length = 52
             if first_line:
@@ -98,7 +122,7 @@ class CmdSheet(Command):
 
         languages += current_line.rstrip().rstrip(",")
 
-        augur_str = BirthAugurTable[str(caller.db.birth_augur)]["desc"]
+        augur_str = caller.db.birth_augur.display_name[1]
         modified_strength = caller.get_modified_strength()
         modified_agility = caller.get_modified_agility()
         modified_stamina = caller.get_modified_stamina()
@@ -112,12 +136,12 @@ class CmdSheet(Command):
         caller.msg(stat_sheet.format(
             name=caller.name,
             age=caller.db.age,
-            race=caller.db.race,
+            race=caller.db.race.display_name,
             level=caller.db.level,
             xp=caller.db.xp,
             gender=caller.db.gender,
             occupation=caller.db.occupation.display_name,
-            align=str(caller.db.alignment),
+            align=caller.db.alignment.display_name,
             augur=augur_str,
             strength=f'{modified_strength}'.rjust(2, " "),
             agility=f'{modified_agility}'.rjust(2, " "),
@@ -155,14 +179,20 @@ class CmdModifiers(Command):
 """
         augur_effect = "No effect."
 
-        calamaties = "+--------------------------------------------------------"
+        calamaties = \
+            "+--------------------------------------------------------"
+
         has_calamaties = False
         if caller.db.strength <= 5:
-            calamaties += "\n| You can only hold a weapon or a shield, not both."
+            calamaties += \
+                "\n| You can only hold a weapon or a shield, not both."
+
             has_calamaties = True
 
         if caller.db.stamina <= 5:
-            calamaties += "\n| You take double damage from poisons and diseases."
+            calamaties += \
+                "\n| You take double damage from poisons and diseases."
+
             has_calamaties = True
 
         if caller.db.intelligence <= 7:
@@ -174,7 +204,8 @@ class CmdModifiers(Command):
             has_calamaties = True
 
         if has_calamaties:
-            calamaties += "\n+--------------------------------------------------------"
+            calamaties += \
+                "\n+--------------------------------------------------------"
 
         effects = "| Effects:"
         has_effects = False
@@ -186,11 +217,12 @@ class CmdModifiers(Command):
                     has_effects = True
 
         if has_effects:
-            effects += "\n+--------------------------------------------------------"
+            effects += \
+                "\n+--------------------------------------------------------"
         else:
             effects += "\n| None"
-            effects += "\n+--------------------------------------------------------"
-
+            effects += \
+                "\n+--------------------------------------------------------"
 
         str_modifier = calculate_ability_modifier(caller.db.strength)
         str_effect = "to melee atk/dmg rolls"

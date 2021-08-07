@@ -84,66 +84,66 @@ class Alignment(AutoNumberEnum):
 
 
 class BirthAugur(AutoNumberEnum):
-    def __init__(self, display_name='unknown'):
+    def __init__(self, display_name=['unknown', 'unknown']):
         self.display_name = display_name
 
-    HarshWinter = ("Harsh Winter", "Born into a harsh winter.")
-    TheBull = ("The Bull", "Childhood nickname: The Bull")
-    FortunateDate = ("Fortunate Date", "Born on a fortunate date.")
-    RaisedByWolves = ("Raised By Wolves", "Raised by wolves.")
-    ConceivedOnHorseback = (
+    HarshWinter = ["Harsh Winter", "Born into a harsh winter."]
+    TheBull = ["The Bull", "Childhood nickname: The Bull"]
+    FortunateDate = ["Fortunate Date", "Born on a fortunate date."]
+    RaisedByWolves = ["Raised By Wolves", "Raised by wolves."]
+    ConceivedOnHorseback = [
         "Conceived on Horseback", "Conceived on horseback."
-    )
-    BornOnTheBattlefield = (
+    ]
+    BornOnTheBattlefield = [
         "Born on the Battlefield", "Born on the battlefield."
-    )
-    PathOfTheBear = ("Path of the Bear", "Followed the Path of the Bear.")
-    Hawkeye = ("Hawkeye", "Has hawkeye vision.")
+    ]
+    PathOfTheBear = ["Path of the Bear", "Followed the Path of the Bear."]
+    Hawkeye = ["Hawkeye", "Has hawkeye vision."]
 
     # TODO: for packhunter, make initial weapon +1 and
     # useable only by that character
-    PackHunter = ("Packhunter", "An innate pack hunter.")
+    PackHunter = ["Packhunter", "An innate pack hunter."]
 
-    BornUnderTheLoom = ("Born Under the Loom", "Was born under a loom.")
-    FoxCunning = ("Fox Cunning", "Born with the cunning of a fox.")
-    FourLeafClover = (
+    BornUnderTheLoom = ["Born Under the Loom", "Was born under a loom."]
+    FoxCunning = ["Fox Cunning", "Born with the cunning of a fox."]
+    FourLeafClover = [
         "Four Leaf Clover", "Influenced by the four leaf clover."
-    )
-    SeventhChild = ("Seventh Child", "The seventh child of the house.")
-    TheRagingStorm = (
+    ]
+    SeventhChild = ["Seventh Child", "The seventh child of the house."]
+    TheRagingStorm = [
         "The Raging Storm", "Born in the midst of a raging storm."
-    )
-    RighteousHeart = (
+    ]
+    RighteousHeart = [
         "Righteous Heart", "A heart that yearns for righteousness."
-    )
+    ]
 
-    SurvivedPlague = ("Survived Plague", "Survived a deadly plague.")
-    LuckySign = ("Lucky Sign", "Has birthmark of a lucky sign.")
-    GuardianAngel = ("Guardian Angel", "Visited by a guardian angel.")
-    SurvivedSpiderBite = (
+    SurvivedPlague = ["Survived Plague", "Survived a deadly plague."]
+    LuckySign = ["Lucky Sign", "Has birthmark of a lucky sign."]
+    GuardianAngel = ["Guardian Angel", "Visited by a guardian angel."]
+    SurvivedSpiderBite = [
         "Survived Spider Bite", "Survived the bite of a deadly spider."
-    )
+    ]
 
-    StruckByLightning = (
+    StruckByLightning = [
         "Struck by Lightning", "Was struck by lightning and lived."
-    )
+    ]
 
-    LivedThroughFamine = ("Lived Through Famine", "Survived a brutal famine.")
-    ResistedTemptation = (
+    LivedThroughFamine = ["Lived Through Famine", "Survived a brutal famine."]
+    ResistedTemptation = [
         "Resisted Temptation", "Resisted a powerful temptation."
-    )
-    CharmedHouse = ("Charmed House", "Was born to a charmed house.")
-    SpeedOfTheCobra = ("Speed of the Cobra", "Has the speed of a cobra.")
-    BountifulHarvest = (
+    ]
+    CharmedHouse = ["Charmed House", "Was born to a charmed house."]
+    SpeedOfTheCobra = ["Speed of the Cobra", "Has the speed of a cobra."]
+    BountifulHarvest = [
         "Bountiful Harvest", "Every childhood harvest was bountiful."
-    )
-    WarriorsArm = ("Warrior's Arm", "Has the arms of a warrior of old.")
-    UnholyHouse = ("Unholy House", "Was born in an unholy house.")
-    TheBrokenStar = (
+    ]
+    WarriorsArm = ["Warrior's Arm", "Has the arms of a warrior of old."]
+    UnholyHouse = ["Unholy House", "Was born in an unholy house."]
+    TheBrokenStar = [
         "The Broken Star", "Was born under the light of a broken star."
-    )
-    Birdsong = ("Birdsong", "Heard the songs of birds in the womb.")
-    WildChild = ("Wild Child", "Was a wild child.")
+    ]
+    Birdsong = ["Birdsong", "Heard the songs of birds in the womb."]
+    WildChild = ["Wild Child", "Was a wild child."]
 
 
 BirthAugurAuraTable = {
@@ -318,18 +318,6 @@ class ArmorCoverageLevel(AutoNumberEnum):
     Strong = "Strong"
     Armored = "Armored"
     Tank = "Tank"
-
-
-class BodyType(AutoNumberEnum):
-    def __init__(self, display_name='unknown'):
-        self.display_name = display_name
-
-    Tiny = "Tiny"  # like, pixie or insect-sized
-    Small = "Small"  # dwarves and halflings
-    Normal = "Normal"  # humans/humanoids
-    Tall = "Tall"  # elves
-    Giant = "Giant"  # giants, adult dragons
-    Godlike = "Godlike"  # avatars/manifestation of gods
 
 
 class Language(AutoNumberEnum):
@@ -514,7 +502,7 @@ OccupationTable = {
         "items": [
             weapons.BALL_PEEN_HAMMER,
             clothes.WHITE_LINEN_SHIRT,
-            armor.IRON_HELMET,
+            armor.IRON_COIF,
             armor.LEATHER_PANTS,
             armor.THICK_LEATHER_GLOVES,
             clothes.BLACK_LEATHER_BELT,

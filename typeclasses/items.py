@@ -28,7 +28,7 @@ from world.definitions.itemdefs import WeaponType
 from world.definitions.itemdefs import MaterialType
 from world.definitions.itemdefs import FillLevel
 from world.definitions.itemdefs import WearLocation
-from world.definitions.chardefs import BodyType
+from world.definitions.bodytype import BodyType
 
 import typeclasses.auras as auras
 
