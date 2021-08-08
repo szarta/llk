@@ -103,7 +103,6 @@ class CmdTime(Command):
     Usage:
       time
 
-    Shows your inventory.
     """
     key = "time"
     locks = "cmd:all()"

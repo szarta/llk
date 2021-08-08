@@ -289,11 +289,12 @@ class CmdEquipment(Command):
                             item
                         )
 
-            for i in range(3, 16):
-                if WearLocation(i) in worn_items:
-                    for item in worn_items[WearLocation(i)]:
+            wearlocs = list(WearLocation)
+            for loc in wearlocs:
+                if loc in worn_items:
+                    for item in worn_items[loc]:
                         table.add_row(
-                            "[{}]".format(str(WearLocation(i))),
+                            "[{}]".format(loc.display_name),
                             "{}|n".format(
                                 utils.crop(raw_ansi(item.name), width=50)
                             ),
