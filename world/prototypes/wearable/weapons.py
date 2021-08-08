@@ -21,7 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
-from typeclasses.items import MaterialType
+from world.definitions.itemdefs import MaterialType
 
 
 ########
@@ -49,6 +49,12 @@ WOODEN_CLUB = {
 WOODEN_CUDGEL = {
     "typeclass": "typeclasses.items.Staff",
     "key": "cudgel",
+    "material": MaterialType.Wood
+}
+
+WOODEN_MALLET = {
+    "typeclass": "typeclasses.items.Club",
+    "key": "mallet",
     "material": MaterialType.Wood
 }
 
@@ -131,6 +137,12 @@ BALL_PEEN_HAMMER = {
     "typeclass": "typeclasses.items.Club",
     "key": "ball-peen hammer",
     "desc": "A ball-peen hammer."
+}
+
+MITHRIL_QUILL = {
+    "typeclass": "typeclasses.items.Dart",
+    "key": "feather quill",
+    "material": MaterialType.Mithril
 }
 
 SCISSORS = {

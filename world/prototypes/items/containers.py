@@ -21,8 +21,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
-from typeclasses.items import FillLevel
-from typeclasses.items import MaterialType
+from world.definitions.itemdefs import FillLevel
+from world.definitions.itemdefs import MaterialType
 
 
 WOODEN_STORAGE_BARREL = {
@@ -42,7 +42,6 @@ SMALL_CHEST = {
 JAR_OF_HONEY = {
     "typeclass": "typeclasses.items.LiquidContainer",
     "key": "clay jar",
-    "desc": "A clay jar.",
     "material": MaterialType.Clay,
     "fill_level": FillLevel.Full,
     "liquid_contents": "honey"

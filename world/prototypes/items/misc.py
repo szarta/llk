@@ -21,31 +21,51 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
-from typeclasses.items import WearLocation
-
+from world.definitions.itemdefs import MaterialType
 
 ROLL_OF_LINEN = {
     "typeclass": "typeclasses.items.Item",
     "key": "linen roll",
-    "desc": "A roll of linen (one yard)."
+    "desc": "A roll of linen (one yard).",
+    "material": MaterialType.Linen,
 }
 
 CLUMP_OF_MITHRIL = {
     "typeclass": "typeclasses.items.Item",
     "key": "clump mithril",
-    "desc": "A clump of mithril (one ounce)."
+    "desc": "A clump of mithril (one ounce).",
+    "material": MaterialType.Mithril,
 }
 
 STACK_OF_WOOD = {
     "typeclass": "typeclasses.items.Item",
     "key": "stacked wood",
-    "desc": "A stack of wood (ten pounds)."
+    "desc": "A stack of wood (ten pounds).",
+    "material": MaterialType.Wood,
+}
+
+BURLAP_SACK = {
+    "typeclass": "typeclasses.items.Item",
+    "key": "sack",
+    "material": MaterialType.Burlap,
 }
 
 BAG_OF_FINE_DIRT = {
     "typeclass": "typeclasses.items.Item",
     "key": "bag of fine dirt",
     "desc": "A bag of fine dirt (one pound)."
+}
+
+BAG_OF_FINE_STONE = {
+    "typeclass": "typeclasses.items.Item",
+    "key": "bag of fine stone",
+    "desc": "A bag of fine stone (ten pounds)."
+}
+
+BAG_OF_CLAY = {
+    "typeclass": "typeclasses.items.Item",
+    "key": "bag of clay",
+    "desc": "A bag of clay (one pound)."
 }
 
 BOOK_OF_RPG_SECRETS = {
@@ -55,34 +75,22 @@ BOOK_OF_RPG_SECRETS = {
     "copper_value": 50
 }
 
-HOLY_SYMBOL = {
-    "typeclass": "typeclasses.items.HolyItem",
-    "key": "holy symbol",
-    "desc": "A holy symbol.",
-    "possible_wear_locations": [WearLocation.Held]
-}
-
-SPYGLASS = {
+BOOK_OF_LEGAL_OPINIONS = {
     "typeclass": "typeclasses.items.Item",
-    "key": "spyglass",
-    "desc": "A spyglass.",
+    "key": "book of legal opinions",
+    "desc": "A book of legal opinions.",
+    "copper_value": 200
 }
 
 SHOEHORN = {
     "typeclass": "typeclasses.items.Item",
     "key": "shoehorn",
-    "desc": "A shoehorn.",
+    "material": MaterialType.Steel,
 }
 
 GIANT_RUBY_GEM = {
     "typeclass": "typeclasses.items.Item",
-    "key": "giant ruby gem",
-    "desc": "A giant ruby gem.",
+    "key": "giant gem",
+    "material": MaterialType.Ruby,
     "copper_value": 200
-}
-
-STEEL_TONGS = {
-    "typeclass": "typeclasses.items.Item",
-    "key": "steel tongs",
-    "desc": "A pair of steel tongs.",
 }

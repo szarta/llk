@@ -34,6 +34,7 @@ import world.prototypes.wearable.weapons as weapons
 import world.prototypes.items.containers as containers
 import world.prototypes.items.misc as miscitems
 import world.prototypes.items.food as food
+import world.prototypes.items.implements as implements
 
 
 class Race(AutoNumberEnum):
@@ -515,7 +516,7 @@ OccupationTable = {
     Occupation.Astrologer: {
         "items": [
             weapons.SMALL_IRON_DAGGER,
-            miscitems.SPYGLASS,
+            implements.SPYGLASS,
             clothes.PURPLE_STARRY_ROBE,
             clothes.ROPE_BELT
         ],
@@ -543,7 +544,8 @@ OccupationTable = {
             clothes.PURPLE_CEREMONIAL_OVERCOAT,
             clothes.ORANGE_COTTON_SHIRT,
             clothes.BLACK_SILK_TIGHTS,
-            clothes.BLACK_CANVAS_SHOES
+            clothes.BLACK_CANVAS_SHOES,
+            implements.HOLY_SYMBOL
         ],
         "weapon_proficiencies": [
             WeaponType.Staff
@@ -569,7 +571,7 @@ OccupationTable = {
             clothes.BLACK_LEATHER_BELT,
             armor.LEATHER_BOOTS,
             weapons.BALL_PEEN_HAMMER,
-            miscitems.STEEL_TONGS
+            implements.STEEL_TONGS
         ],
         "weapon_proficiencies": [
             WeaponType.Club
@@ -768,12 +770,12 @@ OccupationTable = {
         "race": Race.Dwarf,
         "items": [
             clothes.STITCHED_HEMP_VEST,
-            clothes.IRON_HELM,
+            armor.IRON_HELM,
             weapons.IRON_MINING_PICK,
             armor.LEATHER_BOOTS,
             armor.LEATHER_PANTS,
             armor.THICK_LEATHER_GLOVES,
-
+            implements.LANTERN
         ],
         "weapon_proficiencies": [
             WeaponType.Club
@@ -782,7 +784,13 @@ OccupationTable = {
     Occupation.DwarvenMushroomFarmer: {
         "race": Race.Dwarf,
         "items": [
-            weapons.SHOVEL
+            weapons.SHOVEL,
+            clothes.WHITE_LINEN_SHIRT,
+            clothes.ROPE_BELT,
+            clothes.GRAY_LINEN_PANTS,
+            armor.LEATHER_BOOTS,
+            armor.THICK_LEATHER_GLOVES,
+            miscitems.BURLAP_SACK
         ],
         "weapon_proficiencies": [
             WeaponType.Staff
@@ -791,7 +799,11 @@ OccupationTable = {
     Occupation.DwarvenRatCatcher: {
         "race": Race.Dwarf,
         "items": [
-            weapons.WOODEN_CLUB
+            clothes.WHITE_LINEN_SHIRT,
+            clothes.GRAY_LINEN_PANTS,
+            weapons.WOODEN_CLUB,
+            clothes.BLACK_CANVAS_SHOES,
+            implements.HEMP_NET
         ],
         "weapon_proficiencies": [
             WeaponType.Club
@@ -801,13 +813,25 @@ OccupationTable = {
     Occupation.DwarvenStonemason: {
         "race": Race.Dwarf,
         "items": [
-
+            weapons.WOODEN_MALLET,
+            clothes.WHITE_LINEN_SHIRT,
+            clothes.GRAY_LINEN_PANTS,
+            clothes.BLACK_CANVAS_SHOES,
+            miscitems.BAG_OF_FINE_STONE
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Club
         ]
     },
     Occupation.ElvenArtisan: {
         "race": Race.Elf,
         "items": [
-            weapons.WOODEN_STAFF
+            clothes.GREEN_FEATHERED_CAP,
+            weapons.WOODEN_STAFF,
+            clothes.BLACK_LINEN_PANTS,
+            clothes.PURPLE_SILK_SHIRT,
+            armor.LEATHER_BOOTS,
+            miscitems.BAG_OF_CLAY
         ],
         "weapon_proficiencies": [
             WeaponType.Staff
@@ -816,13 +840,24 @@ OccupationTable = {
     Occupation.ElvenBarrister: {
         "race": Race.Elf,
         "items": [
-
+            clothes.WHITE_SILK_SHIRT,
+            clothes.FINE_BLACK_LEATHER_SHOES,
+            clothes.FINE_BLACK_SLACKS,
+            clothes.SPECTACLES,
+            weapons.MITHRIL_QUILL,
+            miscitems.BOOK_OF_LEGAL_OPINIONS
         ]
     },
     Occupation.ElvenChandler: {
         "race": Race.Elf,
         "items": [
-
+            clothes.WHITE_SILK_SHIRT,
+            clothes.BLACK_LINEN_PANTS,
+            clothes.BLACK_CANVAS_SHOES,
+            weapons.SCISSORS
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Dagger
         ]
     },
     Occupation.ElvenFalconer: {

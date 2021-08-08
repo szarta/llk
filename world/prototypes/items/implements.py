@@ -21,22 +21,40 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
+from world.definitions.itemdefs import WearLocation
+from world.definitions.itemdefs import MaterialType
+from world.definitions.light import LightGenerationType
 
-DRIED_ASSORTED_FRUIT = {
-    "typeclass": "typeclasses.items.Item",
-    "key": "dried assorted fruit",
-    "desc": "A handful of dried assorted fruit.",
-    "is_edible": True
+HOLY_SYMBOL = {
+    "typeclass": "typeclasses.items.HolyItem",
+    "key": "holy symbol",
+    "material": MaterialType.Ivory,
+    "possible_wear_locations": [WearLocation.Held]
 }
 
-SIDE_OF_BEEF = {
-    "typeclass": "typeclasses.items.Item",
-    "key": "side of beef",
-    "is_edible": True
+LANTERN = {
+    "typeclass": "typeclasses.items.IgnitableLightSource",
+    "key": "lantern",
+    "light_type": LightGenerationType.AverageAmbientLight,
+    "possible_wear_locations": [WearLocation.Held]
 }
 
-STINKY_CHEESE = {
+STEEL_TONGS = {
     "typeclass": "typeclasses.items.Item",
-    "key": "quarter wheel stinky cheese",
-    "is_edible": True
+    "key": "steel tongs",
+    "material": MaterialType.Steel,
+    "possible_wear_locations": [WearLocation.Held]
+}
+
+HEMP_NET = {
+    "typeclass": "typeclasses.items.Item",
+    "key": "net",
+    "material": MaterialType.Hemp,
+    "possible_wear_locations": [WearLocation.Held]
+}
+
+SPYGLASS = {
+    "typeclass": "typeclasses.items.Item",
+    "key": "spyglass",
+    "possible_wear_locations": [WearLocation.Held]
 }

@@ -21,8 +21,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
-from typeclasses.items import WearLocation
-from typeclasses.items import MaterialType
+from world.definitions.itemdefs import WearLocation
+from world.definitions.itemdefs import MaterialType
 
 
 #########
@@ -43,9 +43,23 @@ WHITE_COTTON_SHIRT = {
     "possible_wear_locations": [WearLocation.Torso]
 }
 
+WHITE_SILK_SHIRT = {
+    "typeclass": "typeclasses.items.WearableItem",
+    "key": "white shirt",
+    "material": MaterialType.Silk,
+    "possible_wear_locations": [WearLocation.Torso]
+}
+
 RED_SILK_SHIRT = {
     "typeclass": "typeclasses.items.WearableItem",
     "key": "red shirt",
+    "material": MaterialType.Silk,
+    "possible_wear_locations": [WearLocation.Torso]
+}
+
+PURPLE_SILK_SHIRT = {
+    "typeclass": "typeclasses.items.WearableItem",
+    "key": "purple shirt",
     "material": MaterialType.Silk,
     "possible_wear_locations": [WearLocation.Torso]
 }
@@ -78,6 +92,20 @@ STITCHED_HEMP_VEST = {
 GRAY_LINEN_PANTS = {
     "typeclass": "typeclasses.items.WearableItem",
     "key": "gray pants",
+    "material": MaterialType.Linen,
+    "possible_wear_locations": [WearLocation.Legs]
+}
+
+FINE_BLACK_SLACKS = {
+    "typeclass": "typeclasses.items.WearableItem",
+    "key": "fine black slacks",
+    "material": MaterialType.Cotton,
+    "possible_wear_locations": [WearLocation.Legs]
+}
+
+BLACK_LINEN_PANTS = {
+    "typeclass": "typeclasses.items.WearableItem",
+    "key": "black pants",
     "material": MaterialType.Linen,
     "possible_wear_locations": [WearLocation.Legs]
 }
@@ -129,6 +157,13 @@ BLACK_CANVAS_SHOES = {
     "typeclass": "typeclasses.items.WearableItem",
     "key": "black canvas shoes",
     "material": MaterialType.Hemp,
+    "possible_wear_locations": [WearLocation.Feet]
+}
+
+FINE_BLACK_LEATHER_SHOES = {
+    "typeclass": "typeclasses.items.WearableItem",
+    "key": "fine black shoes",
+    "material": MaterialType.Leather,
     "possible_wear_locations": [WearLocation.Feet]
 }
 

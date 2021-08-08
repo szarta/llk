@@ -38,6 +38,7 @@ class Item(DefaultObject):
     def at_object_creation(self):
         super().at_object_creation()
 
+        self.db.is_ignitable = False
         self.db.is_drinkable = False
         self.db.is_edible = False
 
@@ -77,10 +78,12 @@ class DryGoodsContainer(Item):
         self.db.unlock_item = None
 
 
-class ControllableLightSource(Item):
+class IgnitableLightSource(Item):
 
     def at_object_creation(self):
         super().at_object_creation()
+
+        self.db.is_ignitable = True
 
 
 class HolyItem(Item):
@@ -275,6 +278,18 @@ class Crossbow(Weapon):
 
         self.db.die_rolls = 1
         self.db.die_face = 6
+
+
+class Dart(Weapon):
+
+    def at_object_creation(self):
+        super().at_object_creation()
+        self.db.required_weapon_proficiency = WeaponType.Dart
+
+        self.db.die_rolls = 1
+        self.db.die_face = 4
+
+        self.db.throwable = True
 
 
 class Dagger(Weapon):

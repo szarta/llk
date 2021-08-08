@@ -21,8 +21,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
-from typeclasses.items import WearLocation
-from typeclasses.items import MaterialType
+from world.definitions.itemdefs import WearLocation
+from world.definitions.itemdefs import MaterialType
 
 
 ########
