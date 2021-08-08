@@ -807,7 +807,6 @@ OccupationTable = {
         ],
         "weapon_proficiencies": [
             WeaponType.Club
-
         ]
     },
     Occupation.DwarvenStonemason: {
@@ -854,6 +853,16 @@ OccupationTable = {
             clothes.WHITE_SILK_SHIRT,
             clothes.BLACK_LINEN_PANTS,
             clothes.BLACK_CANVAS_SHOES,
+            implements.CANDLE,
+            implements.CANDLE,
+            implements.CANDLE,
+            implements.CANDLE,
+            implements.CANDLE,
+            implements.CANDLE,
+            implements.CANDLE,
+            implements.CANDLE,
+            implements.CANDLE,
+            implements.CANDLE,
             weapons.SCISSORS
         ],
         "weapon_proficiencies": [
@@ -863,16 +872,27 @@ OccupationTable = {
     Occupation.ElvenFalconer: {
         "race": Race.Elf,
         "items": [
-            weapons.SMALL_IRON_DAGGER
+            weapons.SMALL_BRONZE_DAGGER,
+            clothes.GREEN_FEATHERED_CAP,
+            clothes.BROWN_LINEN_SHIRT,
+            clothes.BLACK_LINEN_PANTS,
+            armor.LARGE_BROWN_HOODED_CLOAK,
+            armor.THICK_LEATHER_GLOVES,
+            armor.LEATHER_BOOTS
         ],
         "weapon_proficiencies": [
             WeaponType.Dagger
-
         ]
     },
     Occupation.ElvenForester: {
         "race": Race.Elf,
         "items": [
+            clothes.GREEN_FEATHERED_CAP,
+            clothes.WHITE_SILK_SHIRT,
+            clothes.BLACK_LINEN_PANTS,
+            armor.LARGE_BROWN_HOODED_CLOAK,
+            armor.LEATHER_BOOTS,
+            miscitems.BAG_OF_HERBS,
             weapons.WOODEN_STAFF
         ],
         "weapon_proficiencies": [
@@ -882,56 +902,112 @@ OccupationTable = {
     Occupation.ElvenGlassblower: {
         "race": Race.Elf,
         "items": [
-
+            weapons.WOODEN_MALLET,
+            clothes.BROWN_LEATHER_APRON,
+            armor.THICK_LEATHER_GLOVES,
+            clothes.WHITE_SILK_SHIRT,
+            clothes.BLACK_LINEN_PANTS,
+            armor.LEATHER_BOOTS,
+            miscitems.GLASS_BEADS
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Club
         ]
     },
     Occupation.ElvenNavigator: {
         "race": Race.Elf,
         "items": [
-
+            clothes.SAILORS_CAP,
+            clothes.WHITE_SILK_SHIRT,
+            implements.SPYGLASS,
+            armor.LEATHER_PANTS,
+            armor.LEATHER_BOOTS,
+            weapons.WOODEN_SHORTBOW
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Shortbow
         ]
     },
     Occupation.ElvenSage: {
         "race": Race.Elf,
         "items": [
-            weapons.SMALL_IRON_DAGGER
+            weapons.SMALL_BRONZE_DAGGER,
+            clothes.GRAY_LINEN_ROBE,
+            clothes.ROPE_BELT,
+            implements.SHEET_OF_PARCHMENT_PAPER,
+            weapons.MITHRIL_QUILL,
+            clothes.BLACK_CANVAS_SHOES
         ],
         "weapon_proficiencies": [
             WeaponType.Dagger
-
         ]
     },
     Occupation.Farmer: {
         "items": [
-
+            armor.THICK_LEATHER_GLOVES,
+            clothes.CHECKERED_FLANNEL_SHIRT,
+            clothes.BLACK_LEATHER_BELT,
+            clothes.BLUE_DENIM_JEANS,
+            weapons.IRON_PITCHFORK,
+            armor.LEATHER_BOOTS
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Spear
         ]
     },
     Occupation.FortuneTeller: {
         "items": [
-            weapons.SMALL_IRON_DAGGER
+            weapons.SMALL_IRON_DAGGER,
+            clothes.BLUE_HOODED_WOOL_CLOAK,
+            clothes.RED_SILK_SHIRT,
+            clothes.BLACK_AND_RED_COTTON_SHEMAGH,
+            clothes.PURPLE_SILK_HEADSCARF,
+            clothes.BLACK_LINEN_PANTS,
+            clothes.BLACK_CANVAS_SHOES,
+            implements.TAROT_DECK
         ],
         "weapon_proficiencies": [
             WeaponType.Dagger
-
         ]
     },
     Occupation.Gambler: {
         "items": [
-            weapons.WOODEN_CLUB
+            clothes.WHITE_SILK_SHIRT,
+            clothes.BLACK_LEATHER_BELT,
+            armor.LEATHER_BRACERS,
+            armor.LEATHER_PANTS,
+            armor.LEATHER_BOOTS,
+            weapons.WOODEN_CLUB,
+            implements.DICE
         ],
         "weapon_proficiencies": [
             WeaponType.Club
-
         ]
     },
     Occupation.Gongfarmer: {
         "items": [
-
+            clothes.BROWN_LEATHER_APRON,
+            clothes.BROWN_LINEN_SHIRT,
+            armor.LEATHER_PANTS,
+            armor.LEATHER_BOOTS,
+            miscitems.SACK_OF_NIGHTSOIL,
+            weapons.IRON_TROWEL
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Dagger
         ]
     },
     Occupation.Gravedigger: {
         "items": [
-
+            clothes.STITCHED_HEMP_VEST,
+            armor.THICK_LEATHER_GLOVES,
+            armor.LEATHER_PANTS,
+            armor.LEATHER_BOOTS,
+            weapons.SHOVEL,
+            weapons.IRON_TROWEL
+        ],
+        "weapon_proficiencies": [
+            WeaponType.Staff
         ]
     },
     Occupation.GuildBeggar: {

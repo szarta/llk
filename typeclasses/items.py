@@ -280,6 +280,31 @@ class Crossbow(Weapon):
         self.db.die_face = 6
 
 
+class Shortbow(Weapon):
+
+    def at_object_creation(self):
+        super().at_object_creation()
+        self.db.required_weapon_proficiency = WeaponType.Shortbow
+
+        self.db.projectile_launcher = True
+
+        self.db.die_rolls = 1
+        self.db.die_face = 6
+
+
+class Spear(Weapon):
+    """
+    TODO: spear does double damage on a mounted charge
+    """
+
+    def at_object_creation(self):
+        super().at_object_creation()
+        self.db.required_weapon_proficiency = WeaponType.Spear
+
+        self.db.die_rolls = 1
+        self.db.die_face = 8
+
+
 class Dart(Weapon):
 
     def at_object_creation(self):

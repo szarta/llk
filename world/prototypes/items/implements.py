@@ -39,6 +39,32 @@ LANTERN = {
     "possible_wear_locations": [WearLocation.Held]
 }
 
+CANDLE = {
+    "typeclass": "typeclasses.items.IgnitableLightSource",
+    "key": "candle",
+    "light_type": LightGenerationType.WeakAmbientLight,
+    "material": MaterialType.Wax,
+    "possible_wear_locations": [WearLocation.Held]
+}
+
+SHEET_OF_PARCHMENT_PAPER = {
+    "typeclass": "typeclasses.items.Item",
+    "key": "sheet of parchment paper",
+    "material": MaterialType.ParchmentPaper
+}
+
+TAROT_DECK = {
+    "typeclass": "typeclasses.items.Item",
+    "key": "deck of tarot cards",
+    "desc": "A deck of tarot cards."
+}
+
+DICE = {
+    "typeclass": "typeclasses.items.Item",
+    "key": "set of dice",
+    "desc": "A set of dice."
+}
+
 STEEL_TONGS = {
     "typeclass": "typeclasses.items.Item",
     "key": "steel tongs",

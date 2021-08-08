@@ -78,6 +78,13 @@ WHITE_LINEN_SHIRT = {
     "possible_wear_locations": [WearLocation.Torso]
 }
 
+BROWN_LINEN_SHIRT = {
+    "typeclass": "typeclasses.items.WearableItem",
+    "key": "brown shirt",
+    "material": MaterialType.Linen,
+    "possible_wear_locations": [WearLocation.Torso]
+}
+
 STITCHED_HEMP_VEST = {
     "typeclass": "typeclasses.items.WearableItem",
     "key": "stitched vest",
@@ -171,6 +178,20 @@ FINE_BLACK_LEATHER_SHOES = {
 # Head #
 ########
 
+SAILORS_CAP = {
+    "typeclass": "typeclasses.items.WearableItem",
+    "key": "sailor's cap",
+    "material": MaterialType.Wool,
+    "possible_wear_locations": [WearLocation.Head]
+}
+
+PURPLE_SILK_HEADSCARF = {
+    "typeclass": "typeclasses.items.WearableItem",
+    "key": "purple headscarf",
+    "material": MaterialType.Silk,
+    "possible_wear_locations": [WearLocation.Head]
+}
+
 GREEN_FEATHERED_CAP = {
     "typeclass": "typeclasses.items.WearableItem",
     "key": "green feathered cap",
@@ -224,9 +245,30 @@ PURPLE_STARRY_ROBE = {
     "possible_wear_locations": [WearLocation.Body]
 }
 
+GRAY_LINEN_ROBE = {
+    "typeclass": "typeclasses.items.WearableItem",
+    "key": "gray robe",
+    "material": MaterialType.Linen,
+    "possible_wear_locations": [WearLocation.Body]
+}
+
 #########
 # Misc  #
 #########
+
+BLUE_HOODED_WOOL_CLOAK = {
+    "typeclass": "typeclasses.items.WearableItem",
+    "key": "blue hooded cloak",
+    "material": MaterialType.Wool,
+    "possible_wear_locations": [WearLocation.Back]
+}
+
+BLACK_AND_RED_COTTON_SHEMAGH = {
+    "typeclass": "typeclasses.items.WearableItem",
+    "key": "black and red shemagh",
+    "material": MaterialType.Cotton,
+    "possible_wear_locations": [WearLocation.Neck]
+}
 
 WHITE_COTTON_APRON = {
     "typeclass": "typeclasses.items.WearableItem",

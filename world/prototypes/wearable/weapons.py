@@ -58,6 +58,22 @@ WOODEN_MALLET = {
     "material": MaterialType.Wood
 }
 
+WOODEN_SHORTBOW = {
+    "typeclass": "typeclasses.items.Shortbow",
+    "key": "shortbow",
+    "material": MaterialType.Wood
+}
+
+##########
+# Bronze #
+##########
+
+SMALL_BRONZE_DAGGER = {
+    "typeclass": "typeclasses.items.Dagger",
+    "key": "small dagger",
+    "material": MaterialType.Bronze
+}
+
 ########
 # Iron #
 ########
@@ -65,6 +81,12 @@ WOODEN_MALLET = {
 SHARP_IRON_CLEAVER = {
     "typeclass": "typeclasses.items.Axe",
     "key": "sharp cleaver",
+    "material": MaterialType.Iron
+}
+
+IRON_PITCHFORK = {
+    "typeclass": "typeclasses.items.Spear",
+    "key": "pitchfork",
     "material": MaterialType.Iron
 }
 
@@ -77,6 +99,12 @@ IRON_CROWBAR = {
 IRON_CHISEL = {
     "typeclass": "typeclasses.items.Dagger",
     "key": "chisel",
+    "material": MaterialType.Iron
+}
+
+IRON_TROWEL = {
+    "typeclass": "typeclasses.items.Dagger",
+    "key": "trowel",
     "material": MaterialType.Iron
 }
 

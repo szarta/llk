@@ -50,6 +50,11 @@ BURLAP_SACK = {
     "material": MaterialType.Burlap,
 }
 
+SACK_OF_NIGHTSOIL = {
+    "typeclass": "typeclasses.items.Item",
+    "key": "sack of nightsoil"
+}
+
 BAG_OF_FINE_DIRT = {
     "typeclass": "typeclasses.items.Item",
     "key": "bag of fine dirt",
@@ -60,6 +65,12 @@ BAG_OF_FINE_STONE = {
     "typeclass": "typeclasses.items.Item",
     "key": "bag of fine stone",
     "desc": "A bag of fine stone (ten pounds)."
+}
+
+BAG_OF_HERBS = {
+    "typeclass": "typeclasses.items.Item",
+    "key": "bag of herbs",
+    "desc": "A bag of herbs (one pound)."
 }
 
 BAG_OF_CLAY = {
@@ -86,6 +97,12 @@ SHOEHORN = {
     "typeclass": "typeclasses.items.Item",
     "key": "shoehorn",
     "material": MaterialType.Steel,
+}
+
+GLASS_BEADS = {
+    "typeclass": "typeclasses.items.Item",
+    "key": "beads",
+    "material": MaterialType.Glass,
 }
 
 GIANT_RUBY_GEM = {
