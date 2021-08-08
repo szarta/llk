@@ -16,6 +16,7 @@ own cmdsets by inheriting from them or directly from `evennia.CmdSet`.
 
 from evennia import default_cmds
 from commands import character
+from commands import calendar
 
 
 class CharacterCmdSet(default_cmds.CharacterCmdSet):
@@ -37,6 +38,7 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         self.add(character.CmdModifiers)
         self.add(character.CmdEquipment)
         self.add(character.CmdInventory)
+        self.add(calendar.CmdTime)
 
 
 class AccountCmdSet(default_cmds.AccountCmdSet):
