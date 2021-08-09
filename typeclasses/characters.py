@@ -96,6 +96,40 @@ class Character(gendersub.GenderCharacter):
     at_post_puppet - Echoes "AccountName has entered the game" to the room.
 
     """
+    def at_object_creation(self):
+        super().at_object_creation()
+
+        self.db.level = 0
+        self.db.xp = 0
+        self.db.ac = 10
+        self.db.alignment = Alignment.Neutral
+
+        self.db.strength = 7
+        self.db.agility = 7
+        self.db.stamina = 7
+        self.db.personality = 7
+        self.db.intelligence = 7
+        self.db.luck = 7
+        self.db.hp = 1
+        self.db.speed = 30
+
+        self.db.auras = []
+
+        self.db.known_languages = []
+        self.db.known_languages.append(Language.Common)
+
+        self.db.weapon_proficiencies = []
+
+        self.db.gold = 0
+        self.db.silver = 0
+        self.db.copper = 0
+
+        self.db.occupation = get_random_occupation()
+        self.db.race = Race.Human
+        self.db.age = 0
+
+        self.db.current_hp = self.get_modified_hp()
+
     def get_modified_hp(self):
         stam = self.get_modified_stamina()
         modifier = calculate_ability_modifier(stam)
@@ -206,15 +240,16 @@ class Character(gendersub.GenderCharacter):
             aura.build_modifier_description()
             self.db.auras.append(aura)
 
+
+class RandomlyGeneratedCharacter(Character):
+    """
+    A character randomly generated follows most of the guidelines from the
+    rulebook. Some initial values set can be modified later.
+    """
+
     def at_object_creation(self):
         super().at_object_creation()
 
-        self.db.level = 0
-        self.db.ac = 10
-        self.db.xp = 0
-        self.db.alignment = Alignment.Neutral
-
-        # these are base stats before any modifiers or active effects
         self.db.strength = roll_dice(3, 6)
         self.db.agility = roll_dice(3, 6)
         self.db.stamina = roll_dice(3, 6)
@@ -224,15 +259,8 @@ class Character(gendersub.GenderCharacter):
         self.db.hp = roll_dice(1, 4)
         self.db.speed = 30
 
-        self.db.auras = []
-
         self.db.birth_augur = random.choice(list(BirthAugur))
         self.set_birth_augur_effect()
-
-        self.db.known_languages = []
-        self.db.known_languages.append(Language.Common)
-
-        self.db.weapon_proficiencies = []
 
         self.db.gold = 0
         self.db.silver = 0
