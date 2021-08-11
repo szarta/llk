@@ -54,9 +54,16 @@ class Item(DefaultObject):
         # 10 sp = 1gp, silver to gold
         # 10 gp = 1ep, gold to electrum
         # 10 ep = 1pp, electrum to platinum
-        self.copper_value = 0
+        self.db.copper_value = 0
 
+        # a short description of the item, used in the display of the
+        # inventory command
         self.db.desc = "This is an item."
+
+        # self.db.in_room_desc = ""
+
+        # the string to show for command: look <item name>
+        # self.db.look_at_desc = ""
 
 
 class Ammunition(Item):
