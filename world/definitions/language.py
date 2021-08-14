@@ -21,22 +21,47 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
+from utils.enum import AutoNumberEnum
 
-DRIED_ASSORTED_FRUIT = {
-    "typeclass": "typeclasses.items.Item",
-    "key": "dried assorted fruit",
-    "desc": "A handful of dried assorted fruit.",
-    "is_edible": True
-}
 
-SIDE_OF_BEEF = {
-    "typeclass": "typeclasses.items.Item",
-    "key": "side of beef",
-    "is_edible": True
-}
+class Language(AutoNumberEnum):
+    def __init__(self, display_name='unknown'):
+        self.display_name = display_name
 
-STINKY_CHEESE = {
-    "typeclass": "typeclasses.items.Item",
-    "key": "quarter wheel stinky cheese",
-    "is_edible": True
-}
+    Common = "Common"
+    Thieves = "Thieves' Cant"
+    Chaos = "Chaos"
+    Law = "Law"
+    Neutrality = "Neutrality"
+    Dwarf = "Dwarf"
+    Elf = "Elf"
+    Halfling = "Halfling"
+    Gnome = "Gnome"
+    Bugbear = "Bugbear"
+    Goblin = "Goblin"
+    Gnoll = "Gnoll"
+    Harpy = "Harpy"
+    Hobgoblin = "Hobgoblin"
+    Kobold = "Kobold"
+    Lizardman = "Lizardman"
+    Minotaur = "Minotaur"
+    Ogre = "Ogre"
+    Orc = "Orc"
+    Serpentman = "Serpentman"
+    Troglodyte = "Troglodyte"
+    Angelic = "Angelic"
+    Centaur = "Centaur"
+    Demonic = "Demonic"
+    Doppelganger = "Doppleganger"
+    Dragon = "Dragon"
+    Pixie = "Pixie"
+    Giant = "Giant"
+    Griffon = "Griffon"
+    Naga = "Naga"
+    Bear = "Bear"
+    Eagle = "Eagle"
+    Ferret = "Ferret"
+    Horse = "Horse"
+    Wolf = "Wolf"
+    Spider = "Spider"
+    Undercommon = "Undercommon"

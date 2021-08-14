@@ -67,7 +67,7 @@ from world.definitions.itemdefs import FillLevel
 from world.definitions.itemdefs import MaterialType
 from world.definitions.itemdefs import WearLocation
 from world.definitions.light import LightGenerationType
-from world.definitions.chardefs import Language
+from world.definitions.language import Language
 
 
 '''

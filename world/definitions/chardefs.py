@@ -27,14 +27,14 @@ from utils.enum import AutoNumberEnum
 from world.definitions.auradefs import AuraEffectType
 from world.definitions.itemdefs import WeaponType
 
-import world.prototypes.wearable.armor as armor
-import world.prototypes.wearable.clothes as clothes
-import world.prototypes.wearable.weapons as weapons
+import world.prototypes.armor as armor
+import world.prototypes.clothes as clothes
+import world.prototypes.weapons as weapons
 
-import world.prototypes.items.containers as containers
-import world.prototypes.items.misc as miscitems
-import world.prototypes.items.food as food
-import world.prototypes.items.implements as implements
+import world.prototypes.containers as containers
+import world.prototypes.misc as miscitems
+import world.prototypes.food as food
+import world.prototypes.implements as implements
 
 
 class Race(AutoNumberEnum):
@@ -319,49 +319,6 @@ class ArmorCoverageLevel(AutoNumberEnum):
     Strong = "Strong"
     Armored = "Armored"
     Tank = "Tank"
-
-
-class Language(AutoNumberEnum):
-    def __init__(self, display_name='unknown'):
-        self.display_name = display_name
-
-    Common = "Common"
-    Thieves = "Thieves' Cant"
-    Chaos = "Chaos"
-    Law = "Law"
-    Neutrality = "Neutrality"
-    Dwarf = "Dwarf"
-    Elf = "Elf"
-    Halfling = "Halfling"
-    Gnome = "Gnome"
-    Bugbear = "Bugbear"
-    Goblin = "Goblin"
-    Gnoll = "Gnoll"
-    Harpy = "Harpy"
-    Hobgoblin = "Hobgoblin"
-    Kobold = "Kobold"
-    Lizardman = "Lizardman"
-    Minotaur = "Minotaur"
-    Ogre = "Ogre"
-    Orc = "Orc"
-    Serpentman = "Serpentman"
-    Troglodyte = "Troglodyte"
-    Angelic = "Angelic"
-    Centaur = "Centaur"
-    Demonic = "Demonic"
-    Doppelganger = "Doppleganger"
-    Dragon = "Dragon"
-    Pixie = "Pixie"
-    Giant = "Giant"
-    Griffon = "Griffon"
-    Naga = "Naga"
-    Bear = "Bear"
-    Eagle = "Eagle"
-    Ferret = "Ferret"
-    Horse = "Horse"
-    Wolf = "Wolf"
-    Spider = "Spider"
-    Undercommon = "Undercommon"
 
 
 class Occupation(AutoNumberEnum):
@@ -790,7 +747,7 @@ OccupationTable = {
             clothes.GRAY_LINEN_PANTS,
             armor.LEATHER_BOOTS,
             armor.THICK_LEATHER_GLOVES,
-            miscitems.BURLAP_SACK
+            containers.BURLAP_SACK
         ],
         "weapon_proficiencies": [
             WeaponType.Staff

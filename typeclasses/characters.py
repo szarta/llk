@@ -27,7 +27,7 @@ import evennia
 from evennia.utils import create
 from evennia.contrib import gendersub
 
-from world.definitions.chardefs import Language
+from world.definitions.language import Language
 from world.definitions.chardefs import OccupationTable
 from world.definitions.chardefs import get_random_occupation
 from world.definitions.chardefs import BirthAugur

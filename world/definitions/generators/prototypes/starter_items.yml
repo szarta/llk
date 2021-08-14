@@ -210,9 +210,9 @@ weapons:
       key: "<material /> short sword"
       material: "iron"
 
-    - name: IRON_PICK
+    - name: IRON_MINING_PICK
       base: "typeclasses.items.Club"
-      key: "<material /> pick"
+      key: "<material /> mining pick"
       material: "iron"
 
     - name: SHOVEL
@@ -422,7 +422,7 @@ clothes:
           possible-wear-locations:
               - feet
 
-    - name: FINE_BlACK_LEATHER_SHOES
+    - name: FINE_BLACK_LEATHER_SHOES
       base: "typeclasses.items.WearableItem"
       key: "fine black <material /> shoes"
       material: "leather"
@@ -580,10 +580,20 @@ misc:
       key: "bag of fine dirt"
       desc: "A bag of fine dirt (one pound)."
 
+    - name: BAG_OF_FINE_STONE
+      base: "typeclasses.items.Item"
+      key: "bag of fine stone"
+      desc: "A bag of fine dirt (ten pounds)."
+
     - name: BAG_OF_HERBS
       base: "typeclasses.items.Item"
       key: "bag of herbs"
       desc: "A bag of herbs (one pound)."
+
+    - name: BAG_OF_CLAY
+      base: "typeclasses.items.Item"
+      key: "bag of clay"
+      desc: "A bag of clay (one pound)."
 
     - name: BOOK_OF_RPG_SECRETS
       base: "typeclasses.items.Book"
