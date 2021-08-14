@@ -21,6 +21,148 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+armor:
+
+    ## LEGS ##
+
+    - name: HIDE_PANTS
+      base: "typeclasses.items.WearableItem"
+      key: "<material /> pants"
+      material: "hide"
+      desc: "A pair of <material /> pants."
+      props:
+          armor-value: 10
+          possible-wear-locations:
+              - legs
+
+    - name: LEATHER_PANTS
+      base: "typeclasses.items.WearableItem"
+      key: "<material /> pants"
+      material: "leather"
+      desc: "A pair of <material /> pants."
+      props:
+          armor-value: 20
+          possible-wear-locations:
+              - legs
+
+
+    ## BACK ##
+    
+    - name: LARGE_HIDE_CLOAK
+      base: "typeclasses.items.WearableItem"
+      key: "large <material /> cloak"
+      material: "hide"
+      props:
+          armor-value: 10
+          possible-wear-locations:
+              - back
+
+    - name: LARGE_BROWN_HOODED_CLOAK
+      base: "typeclasses.items.WearableItem"
+      key: "large brown hooded cloak"
+      props:
+          armor-value: 10
+          possible-wear-locations:
+              - back
+
+    - name: LARGE_BLACK_LEATHER_CLOAK
+      base: "typeclasses.items.WearableItem"
+      key: "large black <material /> cloak"
+      material: "leather"
+      props:
+          armor-value: 20
+          possible-wear-locations:
+              - back
+
+
+food:
+    - name: DRIED_ASSORTED_FRUIT
+      base: "typeclasses.items.Item"
+      key: "dried assorted fruit"
+      desc: "A handful of dried assorted fruit."
+      props:
+          is-edible: true
+
+    - name: SIDE_OF_BEEF
+      base: "typeclasses.items.Item"
+      key: "side of beef"
+      props:
+          is-edible: true
+
+    - name: STINKY_CHEESE 
+      base: "typeclasses.items.Item"
+      key: "quarter wheel of stinky cheese"
+      props:
+          is-edible: true
+
+misc:
+    - name: ROLL_OF_LINEN 
+      base: "typeclasses.items.Item"
+      key: "<material /> roll"
+      desc: "A roll of <material />(one yard)."
+      material: "linen"
+
+    - name: CLUMP_OF_MITHRIL
+      base: "typeclasses.items.Item"
+      key: "<material /> clump"
+      desc: "A clump of <material /> (one ounce)."
+      material: "mithril"
+
+    - name: STACK_OF_WOOD
+      base: "typeclasses.items.Item"
+      key: "stack of <material />"
+      desc: "A stack of <material /> (ten pounds)."
+      material: "wood"
+
+    - name: SACK_OF_NIGHTSOIL
+      base: "typeclasses.items.Item"
+      key: "sack of nightsoil"
+
+    - name: BAG_OF_FINE_DIRT
+      base: "typeclasses.items.Item"
+      key: "bag of fine dirt"
+      desc: "A bag of fine dirt (one pound)."
+
+    - name: BAG_OF_HERBS
+      base: "typeclasses.items.Item"
+      key: "bag of herbs"
+      desc: "A bag of herbs (one pound)."
+
+    - name: BOOK_OF_RPG_SECRETS
+      base: "typeclasses.items.Book"
+      key: "dusty tome"
+      props:
+          # TODO: likely throw a book contents prop here
+          # contents would only be readable by those that can read the lang
+          copper-value: 50
+          language: "dragon"
+
+    - name: BOOK_OF_LEGAL_OPINIONS
+      base: "typeclasses.items.Book"
+      key: "thick leather-bound book"
+      props:
+          # TODO: likely throw a book contents prop here
+          # contents would only be readable by those that can read the lang
+          copper-value: 200
+          language: "elf"
+
+    - name: SHOEHORN
+      base: "typeclasses.items.Item"
+      key: "<material /> shoehorn"
+      material: "steel"
+
+    - name: GLASS_BEADS
+      base: "typeclasses.items.Item"
+      key: "<material /> beads"
+      material: "glass"
+
+    - name: GIANT_RUBY_GEM
+      base: "typeclasses.items.Item"
+      key: "giant <material /> gem"
+      material: "ruby"
+      props:
+          copper-value: 200
+
 containers:
     - name: WOODEN_STORAGE_BARREL
       base: "typeclasses.items.DryGoodsContainer"
@@ -28,6 +170,13 @@ containers:
       material: "wooden"
       props:
           max-items: 16
+
+    - name: BURLAP_SACK
+      base: "typeclasses.items.DryGoodsContainer"
+      key: "<material /> sack"
+      material: "burlap"
+      props:
+          max-items: 4
 
     - name: SMALL_CHEST
       base: "typeclasses.items.DryGoodsContainer"

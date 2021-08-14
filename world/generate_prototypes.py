@@ -65,7 +65,9 @@ SOFTWARE.
 """
 from world.definitions.itemdefs import FillLevel
 from world.definitions.itemdefs import MaterialType
+from world.definitions.itemdefs import WearLocation
 from world.definitions.light import LightGenerationType
+from world.definitions.chardefs import Language
 
 
 '''
@@ -81,11 +83,25 @@ material_mapping = {
     "iron": "MaterialType.Iron",
     "wax": "MaterialType.Wax",
     "parchment paper": "MaterialType.ParchmentPaper",
-    "hemp": "MaterialType.Hemp"
+    "hemp": "MaterialType.Hemp",
+    "linen": "MaterialType.Linen",
+    "mithril": "MaterialType.Mithril",
+    "burlap": "MaterialType.Burlap",
+    "leather": "MaterialType.Leather",
+    "glass": "MaterialType.Glass",
+    "ruby": "MaterialType.Ruby",
+    "hide": "MaterialType.Hide"
+}
+
+language_mapping = {
+    "dragon": "Language.Dragon",
+    "elf": "Language.Elf"
 }
 
 wearloc_mapping = {
-    "held": "WearLocation.Held"
+    "held": "WearLocation.Held",
+    "legs": "WearLocation.Legs",
+    "back": "WearLocation.Back"
 }
 
 fill_mapping = {
@@ -103,9 +119,10 @@ def get_translated_wear_locations(wearloc_list):
     ret = ""
     for loc in wearloc_list:
         actual_loc = wearloc_mapping[loc]
-        ret += f'        f{actual_loc},'
+        ret += f'        {actual_loc},\n'
 
-    ret = ret.rstrip(",")
+    ret = ret.rstrip().rstrip(",")
+    ret += '\n'
     return ret
 
 
@@ -146,6 +163,9 @@ def get_element_string(element):
             elif prop == "light-type":
                 light_level = light_mapping[val]
                 element_string += f'    "{actual_prop}": {light_level},\n'
+            elif prop == "language":
+                lang = language_mapping[val]
+                element_string += f'    "{actual_prop}": {lang},\n'
             else:
                 if f'{val}'.isnumeric():
                     element_string += f'    "{actual_prop}": {val},\n'
@@ -161,7 +181,10 @@ def gather_and_write_prototypes(proto_yaml_dir, proto_output_dir):
 
     prototype_types = [
         "containers",
-        "implements"
+        "implements",
+        "misc",
+        "food",
+        "armor"
     ]
 
     prototypes = {}
