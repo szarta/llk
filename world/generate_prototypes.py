@@ -139,6 +139,63 @@ def get_translated_key(element):
     return actual_key
 
 
+def get_indefinite_article(word):
+    lower_word = word.lower()
+
+    an_exceptions = [
+        "honest",
+        "honorable"
+    ]
+
+    a_exceptions = [
+        "union",
+        "united",
+        "unicorn",
+        "used",
+        "one"
+    ]
+
+    # could already have article attached
+    if lower_word not in ["an", "the", "a"]:
+        if lower_word[0] in ['a', 'e', 'i', 'o', 'u']:
+            # probably an, check for an_exceptions
+            if lower_word not in an_exceptions:
+                return "an"
+        else:
+            # probably a, check for a exceptions
+            if lower_word not in a_exceptions:
+                return "a"
+    else:
+        return word
+
+
+def get_generated_desc(element):
+    actual_desc = get_translated_key(element)
+
+    first_word = actual_desc.split(" ")[0]
+    prefix = get_indefinite_article(first_word).title()
+
+    actual_desc = f'{prefix} {actual_desc}.'
+    return actual_desc
+
+
+def get_translated_desc(element):
+    actual_desc = ""
+
+    if "desc" in element:
+        if "material" in element:
+            actual_desc = element["desc"].replace(
+                "<material />", element["material"]
+            )
+        else:
+            actual_desc = element["desc"]
+
+    else:
+        actual_desc = get_generated_desc(element)
+
+    return actual_desc
+
+
 def get_element_string(element):
     translated_key = get_translated_key(element)
     typeclass = element["base"]
@@ -148,6 +205,9 @@ def get_element_string(element):
     if "material" in element:
         actual_material = material_mapping[element["material"]]
         element_string += f'    "material": {actual_material},\n'
+
+    desc = get_translated_desc(element)
+    element_string += f'    "desc": "{desc}",\n'
 
     if "props" in element:
         for prop in element["props"].keys():

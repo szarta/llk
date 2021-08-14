@@ -251,7 +251,7 @@ implements:
 
     - name: STEEL_TONGS
       base: "typeclasses.items.Item"
-      key: "<material /> tongs"
+      key: "set of <material /> tongs"
       material: "steel"
       props:
           possible-wear-locations:
