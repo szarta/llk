@@ -1,0 +1,41 @@
+---
+npcs:
+    - key: transcendent philosopher
+      vnum: 1
+      in-room-desc: A <key /> is sitting here, deep in thought.
+      look-desc: |
+          How do you know this being that sits here is a <key />?
+          <br />
+          You suppose he, or she, or whatever it is would simply ask you,
+          \"Well how do we know anything?\", dodging the question in the 
+          annoying smart-ass way most philosophers do.
+          <br />
+          Suffice to say that this being appears contemplative in the face of
+          being stuck on a rock floating through an infinite cosmos. If 
+          he/she/it weren't a philosopher and it decided to be here anyway,
+          perhaps you would start to question it's sanity, or your own.
+
+
+rooms:
+    - key: On the Precipice of Existentialism
+      vnum: 1
+      base: rooms.ExistentialPlane
+      desc: |
+        You (or the incorporeal manifestation of your self) stands
+        (or floats, or exists, or whatever) on the cliffs of a rock surrounded
+        on all sides by what looks like a brilliant backdrop of 
+        <detail>stars</detail>, <detail>nebulae</detail>, and all sorts of 
+        other astronomical things that typically inspire awe in people.
+        <br />
+        But you are also not exactly people, so you (clearly) have other more
+        pressing matters to attend to.
+
+      details:
+          - key: stars
+            desc: OoOo stars.
+          - key: nebulae
+            desc: The plural of nebula. I looked it up, trust me.
+
+      npcs:
+          - vnum: 1
+

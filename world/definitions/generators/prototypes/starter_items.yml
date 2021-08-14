@@ -1,0 +1,124 @@
+---
+# MIT License
+#
+# Copyright (c) 2021 Brandon Arrendondo
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
+containers:
+    - name: WOODEN_STORAGE_BARREL
+      base: "typeclasses.items.DryGoodsContainer"
+      key: "<material /> storage barrel"
+      material: "wooden"
+      props:
+          max-items: 16
+
+    - name: SMALL_CHEST
+      base: "typeclasses.items.DryGoodsContainer"
+      key: "small <material /> storage chest"
+      material: "wooden"
+      props:
+          max-items: 4
+
+    - name: JAR_OF_HONEY
+      base: "typeclasses.items.LiquidContainer"
+      key: "<material /> jar"
+      material: "clay"
+      props:
+          fill-level: "full"
+          liquid-contents: "honey"
+
+    - name: FLASK_OF_OIL
+      base: "typeclasses.items.LiquidContainer"
+      key: "<material /> flask"
+      material: "steel"
+      props:
+          fill-level: "full"
+          liquid-contents: "oil"
+
+    - name: STEEL_VIAL
+      base: "typeclasses.items.LiquidContainer"
+      key: "<material /> vial"
+      material: "steel"
+      props:
+          fill-level: "empty"
+
+implements:
+
+    - name: HOLY_SYMBOL
+      base: "typeclasses.items.HolyItem"
+      key: "holy symbol"
+      material: "ivory"
+      props:
+          possible-wear-locations:
+              - held
+
+    - name: LANTERN
+      base: "typeclasses.items.IgnitableLightSource"
+      key: "<material /> lantern"
+      material: "iron"
+      props:
+          light-type: "average-ambient"
+          possible-wear-locations:
+              - held
+
+    - name: CANDLE
+      base: "typeclasses.items.IgnitableLightSource"
+      key: "<material /> candle"
+      material: "wax"
+      props:
+          light-type: "weak-ambient"
+          possible-wear-locations:
+              - held
+
+    - name: SHEET_OF_PARCHMENT_PAPER
+      base: "typeclasses.items.Item"
+      key: "sheet of <material />"
+      material: "parchment paper"
+
+    - name: TAROT_DECK
+      base: "typeclasses.items.Item"
+      key: "deck of tarot cards"
+
+    - name: DICE
+      base: "typeclasses.items.Item"
+      key: "set of dice"
+
+    - name: STEEL_TONGS
+      base: "typeclasses.items.Item"
+      key: "<material /> tongs"
+      material: "steel"
+      props:
+          possible-wear-locations:
+              - held
+
+    - name: HEMP_NET
+      base: "typeclasses.items.Item"
+      key: "<material /> net"
+      material: "hemp"
+      props:
+          possible-wear-locations:
+              - held
+
+    - name: SPYGLASS
+      base: "typeclasses.items.Item"
+      key: "spyglass"
+      props:
+          possible-wear-locations:
+              - held
