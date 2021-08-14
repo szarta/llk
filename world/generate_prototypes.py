@@ -90,7 +90,16 @@ material_mapping = {
     "leather": "MaterialType.Leather",
     "glass": "MaterialType.Glass",
     "ruby": "MaterialType.Ruby",
-    "hide": "MaterialType.Hide"
+    "hide": "MaterialType.Hide",
+    "bronze": "MaterialType.Bronze",
+    "silk": "MaterialType.Silk",
+    "cotton": "MaterialType.Cotton",
+    "wool": "MaterialType.Wool",
+    "woolen": "MaterialType.Wool",
+    "flannel": "MaterialType.Flannel",
+    "gold": "MaterialType.Gold",
+    "glass": "MaterialType.Glass",
+    "denim": "MaterialType.Denim"
 }
 
 language_mapping = {
@@ -101,6 +110,16 @@ language_mapping = {
 wearloc_mapping = {
     "held": "WearLocation.Held",
     "legs": "WearLocation.Legs",
+    "arms": "WearLocation.Arms",
+    "torso": "WearLocation.Torso",
+    "head": "WearLocation.Head",
+    "neck": "WearLocation.Neck",
+    "feet": "WearLocation.Feet",
+    "body": "WearLocation.Body",
+    "shoulders": "WearLocation.Shoulders",
+    "hands": "WearLocation.Hands",
+    "waist": "WearLocation.Waist",
+    "fingers": "WearLocation.Fingers",
     "back": "WearLocation.Back"
 }
 
@@ -244,7 +263,9 @@ def gather_and_write_prototypes(proto_yaml_dir, proto_output_dir):
         "implements",
         "misc",
         "food",
-        "armor"
+        "armor",
+        "clothes",
+        "weapons"
     ]
 
     prototypes = {}

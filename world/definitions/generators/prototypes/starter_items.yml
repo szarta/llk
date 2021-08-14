@@ -47,7 +47,7 @@ armor:
 
 
     ## BACK ##
-    
+
     - name: LARGE_HIDE_CLOAK
       base: "typeclasses.items.WearableItem"
       key: "large <material /> cloak"
@@ -74,6 +74,183 @@ armor:
           possible-wear-locations:
               - back
 
+    ## ARMS ##
+
+    - name: LEATHER_BRACERS
+      base: "typeclasses.items.WearableItem"
+      key: "<material /> bracers"
+      material: "leather"
+      props:
+          armor-value: 20
+          possible-wear-locations:
+              - arms
+
+    ## HANDS ##
+
+    - name: THICK_LEATHER_GLOVES
+      base: "typeclasses.items.WearableItem"
+      key: "thick <material /> gloves"
+      material: "leather"
+      props:
+          armor-value: 20
+          possible-wear-locations:
+              - hands
+
+    ## TORSO ##
+
+    - name: LEATHER_TUNIC
+      base: "typeclasses.items.WearableItem"
+      key: "<material /> tunic"
+      material: "leather"
+      props:
+          armor-value: 20
+          possible-wear-locations:
+              - torso
+
+    ## FEET ##
+
+    - name: LEATHER_BOOTS
+      base: "typeclasses.items.WearableItem"
+      key: "<material /> boots"
+      material: "leather"
+      props:
+          armor-value: 20
+          possible-wear-locations:
+              - feet
+
+    ## HEAD ##
+
+    - name: IRON_COIF
+      base: "typeclasses.items.WearableItem"
+      key: "<material /> coif"
+      material: "iron"
+      props:
+          armor-value: 40
+          possible-wear-locations:
+              - head
+
+    - name: IRON_HELM
+      base: "typeclasses.items.WearableItem"
+      key: "<material /> helm"
+      material: "iron"
+      props:
+          armor-value: 40
+          possible-wear-locations:
+              - head
+
+weapons:
+
+    - name: WOODEN_STAFF
+      base: "typeclasses.items.Staff"
+      key: "<material /> staff"
+      material: "wooden"
+
+    - name: WOODEN_CUDGEL
+      base: "typeclasses.items.Staff"
+      key: "<material /> cudgel"
+      material: "wooden"
+
+    - name: POLE
+      base: "typeclasses.items.Staff"
+      key: "<material /> pole"
+      material: "wooden"
+
+    - name: WOODEN_CLUB
+      base: "typeclasses.items.Club"
+      key: "<material /> club"
+      material: "wooden"
+
+    - name: WOODEN_MALLET
+      base: "typeclasses.items.Club"
+      key: "<material /> mallet"
+      material: "wooden"
+
+    - name: WOODEN_SHORTBOW
+      base: "typeclasses.items.Shortbow"
+      key: "<material /> shortbow"
+      material: "wooden"
+
+    - name: SMALL_BRONZE_DAGGER
+      base: "typeclasses.items.Dagger"
+      key: "small <material /> dagger"
+      material: "bronze"
+
+    - name: SHARP_IRON_CLEAVER
+      base: "typeclasses.items.Axe"
+      key: "sharp <material /> cleaver"
+      material: "iron"
+
+    - name: IRON_PITCHFORK
+      base: "typeclasses.items.Spear"
+      key: "<material /> pitchfork"
+      material: "iron"
+
+    - name: IRON_CROWBAR
+      base: "typeclasses.items.Club"
+      key: "<material /> crowbar"
+      material: "iron"
+
+    - name: IRON_CHISEL
+      base: "typeclasses.items.Dagger"
+      key: "<material /> chisel"
+      material: "iron"
+
+    - name: IRON_TROWEL
+      base: "typeclasses.items.Dagger"
+      key: "<material /> trowel"
+      material: "iron"
+
+    - name: IRON_LONG_SWORD
+      base: "typeclasses.items.Longsword"
+      key: "<material /> longsword"
+      material: "iron"
+
+    - name: IRON_SHORT_SWORD
+      base: "typeclasses.items.ShortSword"
+      key: "<material /> short sword"
+      material: "iron"
+
+    - name: IRON_PICK
+      base: "typeclasses.items.Club"
+      key: "<material /> pick"
+      material: "iron"
+
+    - name: SHOVEL
+      base: "typeclasses.items.Staff"
+      key: "<material /> shovel"
+      material: "iron"
+
+    - name: SMALL_IRON_DAGGER
+      base: "typeclasses.items.Dagger"
+      key: "small <material /> dagger"
+      material: "iron"
+
+    - name: IRON_PARING_KNIFE
+      base: "typeclasses.items.Dagger"
+      key: "<material /> paring knife"
+      material: "iron"
+
+    - name: SCISSORS
+      base: "typeclasses.items.Dagger"
+      key: "<material /> scissors"
+      material: "steel"
+
+    - name: MITHRIL_QUILL
+      base: "typeclasses.items.Dart"
+      key: "<material /> feather quill"
+      material: "mithril"
+
+    - name: BALL_PEEN_HAMMER
+      base: "typeclasses.items.Club"
+      key: "ball-peen hammer"
+
+    - name: SHARP_STITCHING_AWL
+      base: "typeclasses.items.Dagger"
+      key: "sharp stitching awl"
+
+    - name: FOLDING_STRAIGHT_EDGE_RAZOR
+      base: "typeclasses.items.Dagger"
+      key: "folding straight-edge razor"
 
 food:
     - name: DRIED_ASSORTED_FRUIT
@@ -89,14 +266,294 @@ food:
       props:
           is-edible: true
 
-    - name: STINKY_CHEESE 
+    - name: STINKY_CHEESE
       base: "typeclasses.items.Item"
       key: "quarter wheel of stinky cheese"
       props:
           is-edible: true
 
+clothes:
+    - name: ORANGE_COTTON_SHIRT
+      base: "typeclasses.items.WearableItem"
+      key: "orange <material /> shirt"
+      material: "cotton"
+      props:
+          possible-wear-locations:
+              - torso
+
+    - name: WHITE_COTTON_SHIRT
+      base: "typeclasses.items.WearableItem"
+      key: "white <material /> shirt"
+      material: "cotton"
+      props:
+          possible-wear-locations:
+              - torso
+
+    - name: WHITE_SILK_SHIRT
+      base: "typeclasses.items.WearableItem"
+      key: "white <material /> shirt"
+      material: "silk"
+      props:
+          possible-wear-locations:
+              - torso
+
+    - name: RED_SILK_SHIRT
+      base: "typeclasses.items.WearableItem"
+      key: "red <material /> shirt"
+      material: "silk"
+      props:
+          possible-wear-locations:
+              - torso
+
+    - name: PURPLE_SILK_SHIRT
+      base: "typeclasses.items.WearableItem"
+      key: "purple <material /> shirt"
+      material: "silk"
+      props:
+          possible-wear-locations:
+              - torso
+
+    - name: WHITE_LINEN_SHIRT
+      base: "typeclasses.items.WearableItem"
+      key: "white <material /> shirt"
+      material: "linen"
+      props:
+          possible-wear-locations:
+              - torso
+
+    - name: BROWN_LINEN_SHIRT
+      base: "typeclasses.items.WearableItem"
+      key: "brown <material /> shirt"
+      material: "linen"
+      props:
+          possible-wear-locations:
+              - torso
+
+    - name: CHECKERED_FLANNEL_SHIRT
+      base: "typeclasses.items.WearableItem"
+      key: "checkered <material /> shirt"
+      material: "flannel"
+      props:
+          possible-wear-locations:
+              - torso
+
+    - name: STITCHED_HEMP_VEST
+      base: "typeclasses.items.WearableItem"
+      key: "stitched <material /> vest"
+      material: "hemp"
+      props:
+          possible-wear-locations:
+              - torso
+
+    - name: GRAY_LINEN_PANTS
+      base: "typeclasses.items.WearableItem"
+      key: "gray <material /> pants"
+      desc: "A pair of gray <material /> pants."
+      material: "linen"
+      props:
+          possible-wear-locations:
+              - legs
+
+    - name: BLACK_LINEN_PANTS
+      base: "typeclasses.items.WearableItem"
+      key: "black <material /> pants"
+      desc: "A pair of black <material /> pants."
+      material: "linen"
+      props:
+          possible-wear-locations:
+              - legs 
+
+    - name: BLACK_SILK_TIGHTS
+      base: "typeclasses.items.WearableItem"
+      key: "black <material /> tights"
+      desc: "A pair of black <material /> tights."
+      material: "silk"
+      props:
+          possible-wear-locations:
+              - legs 
+
+    - name: FINE_BLACK_SLACKS
+      base: "typeclasses.items.WearableItem"
+      key: "fine black slacks"
+      desc: "A pair of fine black slacks."
+      material: "cotton"
+      props:
+          possible-wear-locations:
+              - legs
+
+    - name: BLUE_DENIM_JEANS
+      base: "typeclasses.items.WearableItem"
+      key: "blue <material /> jeans"
+      desc: "A pair of blue <material /> jeans."
+      material: "cotton"
+      props:
+          possible-wear-locations:
+              - legs
+
+    - name: SILK_SASH_BELT
+      base: "typeclasses.items.WearableItem"
+      key: "<material /> sash belt"
+      material: "silk"
+      props:
+          possible-wear-locations:
+              - waist
+
+    - name: ROPE_BELT
+      base: "typeclasses.items.WearableItem"
+      key: "<material /> rope belt"
+      material: "hemp"
+      props:
+          possible-wear-locations:
+              - waist
+
+    - name: BLACK_LEATHER_BELT
+      base: "typeclasses.items.WearableItem"
+      key: "black <material /> belt"
+      material: "leather"
+      props:
+          possible-wear-locations:
+              - waist
+
+    - name: BLACK_CANVAS_SHOES
+      base: "typeclasses.items.WearableItem"
+      key: "black canvas shoes"
+      material: "hemp"
+      props:
+          possible-wear-locations:
+              - feet
+
+    - name: FINE_BlACK_LEATHER_SHOES
+      base: "typeclasses.items.WearableItem"
+      key: "fine black <material /> shoes"
+      material: "leather"
+      props:
+          possible-wear-locations:
+              - feet
+
+    - name: SAILORS_CAP
+      base: "typeclasses.items.WearableItem"
+      key: "<material /> sailor's cap"
+      material: "wool"
+      props:
+          possible-wear-locations:
+              - head
+
+    - name: PURPLE_SILK_HEADSCARF
+      base: "typeclasses.items.WearableItem"
+      key: "purple <material /> headscarf"
+      material: "silk"
+      props:
+          possible-wear-locations:
+              - head
+
+    - name: GREEN_FEATHERED_CAP
+      base: "typeclasses.items.WearableItem"
+      key: "green feathered cap"
+      material: "wool"
+      props:
+          possible-wear-locations:
+              - head
+
+    - name: BROWN_WOOL_CAP
+      base: "typeclasses.items.WearableItem"
+      key: "brown <material /> cap"
+      material: "wool"
+      props:
+          possible-wear-locations:
+              - head
+
+    - name: SPECTACLES
+      base: "typeclasses.items.WearableItem"
+      key: "spectacles"
+      material: "glass"
+      props:
+          possible-wear-locations:
+              - head
+
+    - name: MONOCLE
+      base: "typeclasses.items.WearableItem"
+      key: "monocle"
+      material: "glass"
+      props:
+          possible-wear-locations:
+              - head
+
+    - name: ORNATE_GOLD_RING
+      base: "typeclasses.items.WearableItem"
+      key: "ornate <material /> ring"
+      material: "gold"
+      props:
+          copper-value: 100
+          possible-wear-locations:
+              - fingers
+
+    - name: PURPLE_STARRY_ROBE
+      base: "typeclasses.items.WearableItem"
+      key: "purple star robe"
+      desc: "A purple robe with yellow stars on it."
+      material: "silk"
+      props:
+          possible-wear-locations:
+              - body
+
+    - name: GRAY_LINEN_ROBE
+      base: "typeclasses.items.WearableItem"
+      key: "gray <material /> robe"
+      material: "linen"
+      props:
+          possible-wear-locations:
+              - body
+
+    - name: BLUE_HOODED_WOOL_CLOAK
+      base: "typeclasses.items.WearableItem"
+      key: "blue hooded <material /> cloak"
+      material: "wool"
+      props:
+          possible-wear-locations:
+              - back
+
+    - name: BLACK_AND_RED_COTTON_SHEMAGH
+      base: "typeclasses.items.WearableItem"
+      key: "black and red <material /> shemagh"
+      material: "cotton"
+      props:
+          possible-wear-locations:
+              - neck
+
+    - name: WHITE_COTTON_APRON
+      base: "typeclasses.items.WearableItem"
+      key: "white <material /> apron"
+      material: "cotton"
+      props:
+          possible-wear-locations:
+              - body
+
+    - name: BROWN_LEATHER_APRON
+      base: "typeclasses.items.WearableItem"
+      key: "brown <material /> apron"
+      material: "leather"
+      props:
+          possible-wear-locations:
+              - body
+
+    - name: PURPLE_CEREMONIAL_OVERCOAT
+      base: "typeclasses.items.WearableItem"
+      key: "purple ceremonial overcoat"
+      material: "wool"
+      props:
+          possible-wear-locations:
+              - body
+
+    - name: YELLOW_SUSPENDERS
+      base: "typeclasses.items.WearableItem"
+      key: "yellow suspenders"
+      desc: "A set of yellow suspenders."
+      props:
+          possible-wear-locations:
+              - shoulders
+
 misc:
-    - name: ROLL_OF_LINEN 
+    - name: ROLL_OF_LINEN
       base: "typeclasses.items.Item"
       key: "<material /> roll"
       desc: "A roll of <material />(one yard)."
